@@ -1,14 +1,14 @@
 ---
-title: "{{ replace .TranslationBaseName '-' ' ' | title }}"
+title: "Testsite"
 description: ""
-date: "{{ .Date }}"
+date: "2022-01-11T08:56:01+01:00"
 thumbnail: ""
 categories:
   - ""
 tags:
-  - ""
-menu: main # Optional, add page to a menu. Options: main, side, footer
-draft: true
+  - "Blog"
+#menu: main # Optional, add page to a menu. Options: main, side, footer
+draft: false
 type: "blog"
 # Theme-Defined params
 thumbnail: "img/placeholder.png" # Thumbnail image
