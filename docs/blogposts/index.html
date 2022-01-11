@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Blogposts - My New Hugo Site</title>
+	<title>Blogposts - Erlend Rushfeldt - Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="Blogposts" />
@@ -26,7 +26,7 @@
 
 	<link rel="stylesheet" href="/Blog/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/Blog/blogposts/index.xml" title="My New Hugo Site">
+	<link rel="alternate" type="application/rss+xml" href="/Blog/blogposts/index.xml" title="Erlend Rushfeldt - Blog">
 
 	<link rel="shortcut icon" href="/Blog/favicon.ico">
 		
@@ -37,14 +37,29 @@
 	<div class="container header__container">
 		
 	<div class="logo">
-		<a class="logo__link" href="/Blog/" title="My New Hugo Site" rel="home">
+		<a class="logo__link" href="/Blog/" title="Erlend Rushfeldt - Blog" rel="home">
 			<div class="logo__item logo__text">
-					<div class="logo__title">My New Hugo Site</div>
+					<div class="logo__title">Erlend Rushfeldt - Blog</div>
 					
 				</div>
 		</a>
 	</div>
-		<div class="divider"></div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/Blog/about/">
+				
+				<span class="menu__text">About me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
 	</div>
 </header>
 		<div class="wrapper flex">
@@ -56,22 +71,22 @@
 	</header><article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/Blog/blogposts/test/">
-		<img class="thumbnail__image" src="/Blog/img/placeholder.png" alt="Testsite">
+		<a class="thumbnail__link" href="/Blog/blogposts/vm-operations-wo-rdp/">
+		<img class="thumbnail__image" src="/Blog/img/azure-operations-wo-rdp.PNG" alt="VM operations in Azure without RDP">
 		</a>
 	</figure>
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/Blog/blogposts/test/" rel="bookmark">
-			Testsite
+			<a href="/Blog/blogposts/vm-operations-wo-rdp/" rel="bookmark">
+			VM operations in Azure without RDP
 			</a>
 		</h2>
-		<p class="list__lead post__lead">Example lead - highlighted near the title</p>
+		<p class="list__lead post__lead">How do you manage your VMs in Azure without needing to RDP to them?</p>
 		<div class="list__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-11T08:56:01&#43;01:00">11-01-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/Blog/categories/" rel="category">Categories</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-11T10:36:34&#43;01:00">11-01-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/Blog/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 	</header>
@@ -97,8 +112,25 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/Blog/blogposts/test/">Testsite</a></li>
+			<li class="widget__item"><a class="widget__link" href="/Blog/blogposts/vm-operations-wo-rdp/">VM operations in Azure without RDP</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/Blog/categories/azure/">Azure</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/Blog/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
+		<a class="widget-taglist__link widget__link btn" href="/Blog/tags/azure-vm/" title="Azure VM">Azure VM</a>
+		<a class="widget-taglist__link widget__link btn" href="/Blog/tags/operations/" title="Operations">Operations</a>
 	</div>
 </div>
 <div class="widget-social widget">
@@ -132,7 +164,7 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2022 My New Hugo Site.
+			&copy; 2022 Erlend Rushfeldt - Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

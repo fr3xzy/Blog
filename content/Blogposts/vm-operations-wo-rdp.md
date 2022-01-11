@@ -9,7 +9,7 @@ tags:
   - "Azure VM"
   - "Operations"
 #menu: main # Optional, add page to a menu. Options: main, side, footer
-draft: true
+draft: false
 type: "blog"
 # Theme-Defined params
 thumbnail: "img/azure-operations-wo-rdp.PNG" # Thumbnail image
