@@ -1,4 +1,4 @@
-baseURL = 'https://github.com/Erlendrushf/Blog'
+baseURL = 'https://erlendrushf.github.io/Blog/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'Mainroad'
