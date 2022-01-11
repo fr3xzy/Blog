@@ -1,17 +1,19 @@
 ---
-title: "Testsite"
+title: "VM operations in Azure without RDP"
 description: ""
-date: "2022-01-11T08:56:01+01:00"
+date: "2022-01-11T10:36:34+01:00"
 categories:
-  - ""
+  - "Azure"
 tags:
-  - ""
+  - "Azure Compute"
+  - "Azure VM"
+  - "Operations"
 #menu: main # Optional, add page to a menu. Options: main, side, footer
-draft: false
+draft: true
 type: "blog"
 # Theme-Defined params
-thumbnail: "img/placeholder.png" # Thumbnail image
-lead: "Example lead - highlighted near the title" # Lead text
+thumbnail: "img/azure-operations-wo-rdp.PNG" # Thumbnail image
+lead: "How do you manage your VMs in Azure without needing to RDP to them?" # Lead text
 comments: false # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page

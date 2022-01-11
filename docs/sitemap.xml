@@ -2,16 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://erlendrushf.github.io/Blog/blogposts/</loc>
-    <lastmod>2022-01-11T08:56:01+01:00</lastmod>
-  </url><url>
-    <loc>https://erlendrushf.github.io/Blog/</loc>
-    <lastmod>2022-01-11T08:56:01+01:00</lastmod>
-  </url><url>
-    <loc>https://erlendrushf.github.io/Blog/blogposts/test/</loc>
-    <lastmod>2022-01-11T08:56:01+01:00</lastmod>
+    <loc>https://erlendrushf.github.io/Blog/about/</loc>
   </url><url>
     <loc>https://erlendrushf.github.io/Blog/categories/</loc>
+  </url><url>
+    <loc>https://erlendrushf.github.io/Blog/</loc>
   </url><url>
     <loc>https://erlendrushf.github.io/Blog/tags/</loc>
   </url>

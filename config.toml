@@ -1,13 +1,13 @@
 baseURL = 'https://erlendrushf.github.io/Blog/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Erlend Rushfeldt - Blog'
 theme = 'Mainroad'
 paginate = "10" # Number of posts per page
 publishdir = "docs"
 
 [Author] # Used in authorbox
   name = "Erlend Rushfeldt"
-  bio = ""
+  bio = "Erlend is a Cloud Consultant who has a passion for technology and learning."
   avatar = "img/avatar.png"
 
 [Params]
