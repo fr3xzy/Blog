@@ -17,7 +17,7 @@ lead: "How do you manage your VMs in Azure without needing to RDP to them?" # Le
 comments: false # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page
-toc: true # Enable Table of Contents for specific page
+toc: false # Enable Table of Contents for specific page
 mathjax: true # Enable MathJax for specific page
 sidebar: "right" # Enable sidebar (on the right side) per page
 widgets: # Enable sidebar widgets in given order per page
@@ -26,3 +26,63 @@ widgets: # Enable sidebar widgets in given order per page
   - "taglist"
   - "social"
 ---
+
+The "Traditional" way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone ofcourse) since you usally already was inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then?
+You are able to just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended.
+
+In the [2020 Unit 42 Incident Response and Data Breach Report](https://www.paloaltonetworks.com/resources/research/2020-unit42-incident-response-and-data-breach-report) published by Paloalto Networks, it is reported that 50% of initial attacks was through RDP.
+There are services in Azure that makes using RDP safer (like Bastion or JIT-access), but in this series I will focus on services you can use to manage VMs without RDP.
+This article series will contain this post as a introduction before going into the different Azure services.
+
+Here are some services that can help you do common operations on your VM from the Azure Portal:
+
+## Run scripts on your VM with Run command
+Lets say you want to change a registry key or want to return a setting to the portal, the Run Command feature helps you! With Run Command you can choose from a set of pre-configured scripts from Microsoft or you can run a custom script. Run command work for both Windows and Linux VMs, but there is more premade script for Windows.
+
+There are some limitations to what you can do with Run Command custom scripts, here are a few of those restrictions:
+- Output is limited to the last 4,096 bytes.
+- You can't cancel a running script.
+- Only one script can run at a time
+- The maximum time a script can run is 90 minutes
+- Script that prompt for input are not supported.
+
+You can find the Run Command feature in the portal by navigating to your VM and scroll down the left menu till you find the Run Command blade:
+
+![Run command feature](/static/img/Azure-run-command.PNG)
+
+## Troubleshoot a network connection with Network watcher
+In Azure there is alot of networking. And in the cloud with software defined networking, it might not always be as easy as "check if the cable is connected". A feature that will help you with troubleshooting network connections in Azure is the Network Watcher, also known as "Connection Troubleshoot".
+
+![Connection Troubleshoot](/static/img/Connection-troubleshoot.PNG)
+
+With Network Watcher you specify which direction you want to test, inbound or outbound. Next you choose what's your desired destination or source. Here you can choose your current IP-address, a specified IP-address, or an [Azure service tag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags).
+
+Finally you select what port you want to test. There are several commonly used services and ports that are pre-configured. So don't worry if you don't remember what port PostgreSQL uses! If you dont find the service or port in the pre-configured list, you can also specify a custom port and what protocol it uses.
+
+When you click **check connection** Network Watcher will check if the port and protocol specified is allowed in or out of the VM. Now, the Connection troubleshoot will only check if the traffic is allowed or blocked in the Network Security Group for the VM and correlating Subnet. That means that even if Connection Troubleshoot says the traffic is allowed, it might still not work. There is thankfully a detailed version of the connection troubleshooter that is linked on the connection troubleshoot page.
+
+## Update management using Azure Automation
+But what about Security patches and other updates? I don't want the VM to install them whenever they are released without me knowing. Well there is a soltuion for that too, and its way less complicated than creating a SCCM server and configuring WSUS on all servers.
+
+In Azure Automation there is a feature that is called Update Management. Update Management is a free feature of Azure Automation that helps you patch both your Windows and Linux servers. With Update Management you get a centralized page where you can see and configure:
+- VMs to enable the feature on
+- Check compliance of VMs
+- Define deployment schedule
+- Deployment status
+
+## Deploy application to VMs with Azure compute galleries
+In the inital config after deploying a VM, you might want to install an application on the VM for it to function. Microsoft changed the formerly known Shared Image Gallery to Azure compute gallery. The reason for the namechange is that in addition to storing and sharing images, you can now do the same for application packages.
+
+With Azure compute gallery you get the benefits of:
+- Grouping and versioning of packages.
+- Control access with Azure Role Based Access Control (RBAC).
+- Install from storage account without a direct internet connection.
+- Automatic deployment with a DeployIfNotExists policy.
+
+## Backup your VM with Azure Backup
+
+
+## Collect logs from your VM in the portal with Azure VM Inspector
+
+
+## Manage certificates and secrets with Azure Key Vault
