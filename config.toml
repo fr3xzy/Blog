@@ -1,12 +1,13 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://github.com/Erlendrushf/Blog'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'Mainroad'
 paginate = "10" # Number of posts per page
+publishdir = "docs"
 
 [Author] # Used in authorbox
-  name = "John Doe"
-  bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
+  name = "Erlend Rushfeldt"
+  bio = ""
   avatar = "img/avatar.png"
 
 [Params]
@@ -19,7 +20,7 @@ paginate = "10" # Number of posts per page
   pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
   post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
   mainSections = ["post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
-  dateformat = "2006-01-02" # Change the format of dates
+  dateformat = "02-01-2006" # Change the format of dates
   mathjax = true # Enable MathJax
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config

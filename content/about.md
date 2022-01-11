@@ -1,14 +1,14 @@
 ---
-title: "{{ replace .TranslationBaseName '-' ' ' | title }}"
+title: "About me"
 description: ""
-date: "{{ .Date }}"
+date: "2022-01-11T09:45:59+01:00"
 categories:
   - ""
 tags:
   - ""
-#menu: main # Optional, add page to a menu. Options: main, side, footer
+menu: main # Optional, add page to a menu. Options: main, side, footer
 draft: true
-type: "blog"
+#type: ""
 # Theme-Defined params
 thumbnail: "img/placeholder.png" # Thumbnail image
 lead: "Example lead - highlighted near the title" # Lead text

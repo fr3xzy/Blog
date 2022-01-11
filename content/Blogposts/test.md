@@ -2,11 +2,10 @@
 title: "Testsite"
 description: ""
 date: "2022-01-11T08:56:01+01:00"
-thumbnail: ""
 categories:
   - ""
 tags:
-  - "Blog"
+  - ""
 #menu: main # Optional, add page to a menu. Options: main, side, footer
 draft: false
 type: "blog"
@@ -23,4 +22,5 @@ widgets: # Enable sidebar widgets in given order per page
   - "search"
   - "recent"
   - "taglist"
+  - "social"
 ---
