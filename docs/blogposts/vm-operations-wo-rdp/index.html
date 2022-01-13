@@ -8,7 +8,7 @@
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:title" content="VM operations in Azure without RDP" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="The &ldquo;Traditional&rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://erlendrushf.github.io/Blog/blogposts/vm-operations-wo-rdp/" /><meta property="article:section" content="Blogposts" />
 <meta property="article:published_time" content="2022-01-11T10:36:34+01:00" />
@@ -16,13 +16,13 @@
 
 
 		<meta itemprop="name" content="VM operations in Azure without RDP">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-01-11T10:36:34+01:00" />
+<meta itemprop="description" content="The &ldquo;Traditional&rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended."><meta itemprop="datePublished" content="2022-01-11T10:36:34+01:00" />
 <meta itemprop="dateModified" content="2022-01-11T10:36:34+01:00" />
-<meta itemprop="wordCount" content="0">
-<meta itemprop="keywords" content="Azure Compute,Azure VM,Operations," />
+<meta itemprop="wordCount" content="1254">
+<meta itemprop="keywords" content="Azure Compute,Azure VM,Operations,Azure Automation," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VM operations in Azure without RDP"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="The &ldquo;Traditional&rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended."/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -88,7 +88,61 @@
 		<img class="thumbnail__image" src="/Blog/img/azure-operations-wo-rdp.PNG" alt="VM operations in Azure without RDP">
 		
 	</figure><div class="content post__content clearfix">
-			
+			<p>The &ldquo;Traditional&rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then?
+You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended.</p>
+<p>In the <a href="https://www.paloaltonetworks.com/resources/research/2020-unit42-incident-response-and-data-breach-report">2020 Unit 42 Incident Response and Data Breach Report</a> published by Palo alto Networks, it is reported that 50% of initial attacks was through RDP.
+There are services in Azure that makes using RDP safer (like Bastion or JIT-access), but in this series I will focus on services you can use to manage VMs without RDP.
+This article series will contain this post as an introduction before going into the different Azure services.</p>
+<p>Here are some services that can help you do common operations on your VM from the Azure Portal:</p>
+<h2 id="run-scripts-on-your-vm-with-run-command">Run scripts on your VM with Run command</h2>
+<p>Let&rsquo;s say you want to change a registry key or want to return a setting to the portal, the Run Command feature helps you! With Run Command you can choose from a set of pre-configured scripts from Microsoft, or you can run a custom script. Run command work for both Windows and Linux VMs, but there is more premade script for Windows.</p>
+<p>There are some limitations to what you can do with Run Command custom scripts, here are a few of those restrictions:</p>
+<ul>
+<li>Output is limited to the last 4,096 bytes.</li>
+<li>You can&rsquo;t cancel a running script.</li>
+<li>Only one script can run at a time</li>
+<li>The maximum time a script can run is 90 minutes</li>
+<li>Script that prompt for input is not supported.</li>
+</ul>
+<p>You can find the Run Command feature in the portal by navigating to your VM and scroll down the left menu till you find the Run Command blade:</p>
+<p><img src="/static/img/Azure-run-command.PNG" alt="Run command feature"></p>
+<h2 id="troubleshoot-a-network-connection-with-network-watcher">Troubleshoot a network connection with Network watcher</h2>
+<p>In Azure there is a lot of networking. And in the cloud with software defined networking, it might not always be as easy as &ldquo;check if the cable is connected&rdquo;. A feature that will help you with troubleshooting network connections in Azure is the Network Watcher, also known as &ldquo;Connection Troubleshoot&rdquo;.</p>
+<p><img src="/static/img/Connection-troubleshoot.PNG" alt="Connection Troubleshoot"></p>
+<p>With Network Watcher you specify which direction you want to test, inbound or outbound. Next you choose what&rsquo;s your desired destination or source. Here you can choose your current IP-address, a specified IP-address, or an <a href="https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags">Azure service tag</a>.</p>
+<p>Finally, you select what port you want to test. There are several commonly used services and ports that are pre-configured. So don&rsquo;t worry if you don&rsquo;t remember what port PostgreSQL uses! If you don&rsquo;t find the service or port in the pre-configured list, you can also specify a custom port and what protocol it uses.</p>
+<p>When you click <strong>check connection</strong> Network Watcher will check if the port and protocol specified is allowed in or out of the VM. Now, the Connection troubleshoot will only check if the traffic is allowed or blocked in the Network Security Group for the VM and correlating Subnet. That means that even if Connection Troubleshoot says the traffic is allowed, it might still not work. There is thankfully a detailed version of the connection troubleshooter that is linked on the connection troubleshoot page.</p>
+<h2 id="update-management-using-azure-automation">Update management using Azure Automation</h2>
+<p>But what about Security patches and other updates? I don&rsquo;t want the VM to install them whenever they are released without me knowing. Well, there is a solution for that too, and its way less complicated than creating a SCCM server and configuring WSUS on all servers.</p>
+<p>In Azure Automation there is a feature that is called Update Management. Update Management is a free feature of Azure Automation that helps you patch both your Windows and Linux servers. With Update Management you get a centralized page where you can see and configure:</p>
+<ul>
+<li>VMs to enable the feature on</li>
+<li>Check compliance of VMs</li>
+<li>Define deployment schedule</li>
+<li>Deployment status</li>
+</ul>
+<h2 id="deploy-application-to-vms-with-azure-compute-galleries">Deploy application to VMs with Azure compute galleries</h2>
+<p>In the initial config after deploying a VM, you might want to install an application on the VM for it to function. Microsoft changed the formerly known Shared Image Gallery to Azure compute gallery. The reason for the name change is that in addition to storing and sharing images, you can now do the same for application packages.</p>
+<p>With Azure compute gallery you get the benefits of:</p>
+<ul>
+<li>Grouping and versioning of packages.</li>
+<li>Control access with Azure Role Based Access Control (RBAC).</li>
+<li>Install from storage account without a direct internet connection.</li>
+<li>Automatic deployment with a DeployIfNotExists policy.</li>
+</ul>
+<p>For example, let&rsquo;s say that you want to update antivirus on all your servers. So instead of RDPing in to all your servers and update or install the new version, you can create an application package in Azure Compute Gallery and create an Azure Policy to automatically deploy the software to servers.</p>
+<h2 id="collect-logs-from-your-vm-in-the-portal-with-azure-vm-inspector">Collect logs from your VM in the portal with Azure VM Inspector</h2>
+<p>A first step in troubleshooting an application or service is often checking the logs on the server. In Azure there is a feature for VMs to collect event logs, configurations, settings, and registry keys. Then read through the report directly from the portal. This feature is called VM Inspector and is per January of 2022 still in preview. That means that you will have to enable the feature for your subscription.</p>
+<p><strong>Note:</strong> Microsoft does not recommend using preview features in production and the price of a service may change when it goes globally available.</p>
+<p>There are some prerequisites for VM Inspector. You need to have managed disks on your VM, the disks can&rsquo;t be encrypted, and since it is in preview there are a limited amount of regions where it is available.
+After you have enabled VM Inspector on your subscription you need to connect it to an existing storage account or creating a new one. Once you have connected it to a storage account, you can create your first report! After the report is finished, it will be stored as a zip-file in the connected storage account.</p>
+<p>This tool combined with the Run Command feature makes it possible to troubleshoot and fix most configuration and other simple errors remotely!</p>
+<h2 id="manage-certificates-and-secrets-with-azure-key-vault">Manage certificates and secrets with Azure Key Vault</h2>
+<p>Management of certificates can be an unappreciated job. It can include waking up at 07:00 on a Sunday to change a certificate and getting yelled at Monday morning cause an undocumented application that used the certificate is now partly unavailable for users. All this headache could be avoided by using Azure Key Vault and some of its features for managing and distributing certificates and secrets!</p>
+<p>Azure Key Vault lets you generate, import, or even buy a managed certificate. With generated and managed certificates you can configure automatic renewal of the certificates. Since the certificates in Azure Key Vault is referenced on the name of the certificate with underlying versions, you can use Azure Event Grid to monitor the certificate for changes and let it call a runbook in Azure Automation to automatically update the certificate on the server.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this blog I gave a quick introduction to some tools and features in Azure that can help you manage your servers on an OS level without needing to RDP into them. Going forward I will create follow up blogs going further into these features.</p>
+
 		</div>
 		<footer class="post__footer">
 			
@@ -103,6 +157,9 @@
 		</li>
 		<li class="tags__item">
 			<a class="tags__link btn" href="/Blog/tags/operations/" rel="tag">Operations</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/Blog/tags/azure-automation/" rel="tag">Azure Automation</a>
 		</li>
 	</ul>
 </div>
@@ -145,6 +202,7 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/Blog/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
 		<a class="widget-taglist__link widget__link btn" href="/Blog/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
 		<a class="widget-taglist__link widget__link btn" href="/Blog/tags/azure-vm/" title="Azure VM">Azure VM</a>
 		<a class="widget-taglist__link widget__link btn" href="/Blog/tags/operations/" title="Operations">Operations</a>

@@ -13,7 +13,7 @@
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
       
       <guid>https://erlendrushf.github.io/Blog/blogposts/vm-operations-wo-rdp/</guid>
-      <description></description>
+      <description>The &amp;ldquo;Traditional&amp;rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended.</description>
     </item>
     
     <item>
