@@ -105,10 +105,10 @@ This article series will contain this post as an introduction before going into 
 <li>Script that prompt for input is not supported.</li>
 </ul>
 <p>You can find the Run Command feature in the portal by navigating to your VM and scroll down the left menu till you find the Run Command blade:</p>
-<p><img src="/img/Azure-run-command.PNG" alt="Run command feature"></p>
+<p><img src="/Blog/img/Azure-run-command.PNG" alt="Run command feature"></p>
 <h2 id="troubleshoot-a-network-connection-with-network-watcher">Troubleshoot a network connection with Network watcher</h2>
 <p>In Azure there is a lot of networking. And in the cloud with software defined networking, it might not always be as easy as &ldquo;check if the cable is connected&rdquo;. A feature that will help you with troubleshooting network connections in Azure is the Network Watcher, also known as &ldquo;Connection Troubleshoot&rdquo;.</p>
-<p><img src="/img/Connection-troubleshoot.PNG" alt="Connection Troubleshoot"></p>
+<p><img src="/Blog/img/Connection-troubleshoot.PNG" alt="Connection Troubleshoot"></p>
 <p>With Network Watcher you specify which direction you want to test, inbound or outbound. Next you choose what&rsquo;s your desired destination or source. Here you can choose your current IP-address, a specified IP-address, or an <a href="https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags">Azure service tag</a>.</p>
 <p>Finally, you select what port you want to test. There are several commonly used services and ports that are pre-configured. So don&rsquo;t worry if you don&rsquo;t remember what port PostgreSQL uses! If you don&rsquo;t find the service or port in the pre-configured list, you can also specify a custom port and what protocol it uses.</p>
 <p>When you click <strong>check connection</strong> Network Watcher will check if the port and protocol specified is allowed in or out of the VM. Now, the Connection troubleshoot will only check if the traffic is allowed or blocked in the Network Security Group for the VM and correlating Subnet. That means that even if Connection Troubleshoot says the traffic is allowed, it might still not work. There is thankfully a detailed version of the connection troubleshooter that is linked on the connection troubleshoot page.</p>
