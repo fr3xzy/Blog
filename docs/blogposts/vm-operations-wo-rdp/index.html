@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="VM operations in Azure without RDP">
 <meta itemprop="description" content="The &ldquo;Traditional&rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended."><meta itemprop="datePublished" content="2022-01-11T10:36:34+01:00" />
 <meta itemprop="dateModified" content="2022-01-11T10:36:34+01:00" />
-<meta itemprop="wordCount" content="1254">
+<meta itemprop="wordCount" content="1233">
 <meta itemprop="keywords" content="Azure Compute,Azure VM,Operations,Azure Automation," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VM operations in Azure without RDP"/>
@@ -139,7 +139,7 @@ After you have enabled VM Inspector on your subscription you need to connect it 
 <p>This tool combined with the Run Command feature makes it possible to troubleshoot and fix most configuration and other simple errors remotely!</p>
 <h2 id="manage-certificates-and-secrets-with-azure-key-vault">Manage certificates and secrets with Azure Key Vault</h2>
 <p>Management of certificates can be an unappreciated job. It can include waking up at 07:00 on a Sunday to change a certificate and getting yelled at Monday morning cause an undocumented application that used the certificate is now partly unavailable for users. All this headache could be avoided by using Azure Key Vault and some of its features for managing and distributing certificates and secrets!</p>
-<p>Azure Key Vault lets you generate, import, or even buy a managed certificate. With generated and managed certificates you can configure automatic renewal of the certificates. Since the certificates in Azure Key Vault is referenced on the name of the certificate with underlying versions, you can use Azure Event Grid to monitor the certificate for changes and let it call a runbook in Azure Automation to automatically update the certificate on the server.</p>
+<p>Azure Key Vault lets you generate, import, or even buy a managed certificate. With generated and managed certificates you can configure automatic renewal of the certificates. You can then install the Azure Key Vault extension on your VMs and have them automatically deploy the new versions of the certificate to the VM.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this blog I gave a quick introduction to some tools and features in Azure that can help you manage your servers on an OS level without needing to RDP into them. Going forward I will create follow up blogs going further into these features.</p>
 

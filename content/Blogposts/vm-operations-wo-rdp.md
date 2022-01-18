@@ -95,7 +95,7 @@ This tool combined with the Run Command feature makes it possible to troubleshoo
 ## Manage certificates and secrets with Azure Key Vault
 Management of certificates can be an unappreciated job. It can include waking up at 07:00 on a Sunday to change a certificate and getting yelled at Monday morning cause an undocumented application that used the certificate is now partly unavailable for users. All this headache could be avoided by using Azure Key Vault and some of its features for managing and distributing certificates and secrets!
 
-Azure Key Vault lets you generate, import, or even buy a managed certificate. With generated and managed certificates you can configure automatic renewal of the certificates. Since the certificates in Azure Key Vault is referenced on the name of the certificate with underlying versions, you can use Azure Event Grid to monitor the certificate for changes and let it call a runbook in Azure Automation to automatically update the certificate on the server.
+Azure Key Vault lets you generate, import, or even buy a managed certificate. With generated and managed certificates you can configure automatic renewal of the certificates. You can then install the Azure Key Vault extension on your VMs and have them automatically deploy the new versions of the certificate to the VM.
 
 ## Conclusion
 In this blog I gave a quick introduction to some tools and features in Azure that can help you manage your servers on an OS level without needing to RDP into them. Going forward I will create follow up blogs going further into these features.
