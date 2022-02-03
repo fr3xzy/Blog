@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Erlend Rushfeldt - Blog</title>
-    <link>www.errush.org/</link>
+    <link>/</link>
     <description>Recent content on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 10:36:34 +0100</lastBuildDate><atom:link href="www.errush.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 10:36:34 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VM operations in Azure without RDP</title>
-      <link>www.errush.org/blogposts/vm-operations-wo-rdp/</link>
+      <link>/blogposts/vm-operations-wo-rdp/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
       
-      <guid>www.errush.org/blogposts/vm-operations-wo-rdp/</guid>
+      <guid>/blogposts/vm-operations-wo-rdp/</guid>
       <description>The &amp;ldquo;Traditional&amp;rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>www.errush.org/about/</link>
+      <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>www.errush.org/about/</guid>
+      <guid>/about/</guid>
       <description>Erlend is working as a consultant for Atea in Norway. He works with cloud services like Microsoft Azure and AWS. Join him on his journey exploring the exciting field of Cloud!
 Certifications:
  AZ-104 - Azure Administrator Associate AZ-140 - Azure Virtual Desktop Speciality SC-300 - Identity and Access Administrator Associate CLF-C01 - AWS Certified Cloud practitioner  </description>

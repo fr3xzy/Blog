@@ -10,7 +10,7 @@
 		<meta property="og:title" content="VM operations in Azure without RDP" />
 <meta property="og:description" content="The &ldquo;Traditional&rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="www.errush.org/blogposts/vm-operations-wo-rdp/" /><meta property="article:section" content="Blogposts" />
+<meta property="og:url" content="/blogposts/vm-operations-wo-rdp/" /><meta property="article:section" content="Blogposts" />
 <meta property="article:published_time" content="2022-01-11T10:36:34+01:00" />
 <meta property="article:modified_time" content="2022-01-11T10:36:34+01:00" />
 
@@ -29,10 +29,10 @@
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 
-	<link rel="stylesheet" href="/www.errush.org/css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 	
 
-	<link rel="shortcut icon" href="/www.errush.org/favicon.ico">
+	<link rel="shortcut icon" href="/favicon.ico">
 		
 </head>
 <body class="body">
@@ -41,7 +41,7 @@
 	<div class="container header__container">
 		
 	<div class="logo">
-		<a class="logo__link" href="/www.errush.org" title="Erlend Rushfeldt - Blog" rel="home">
+		<a class="logo__link" href="/" title="Erlend Rushfeldt - Blog" rel="home">
 			<div class="logo__item logo__text">
 					<div class="logo__title">Erlend Rushfeldt - Blog</div>
 					
@@ -55,7 +55,7 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
-			<a class="menu__link" href="www.errush.org/about/">
+			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About me</span>
 				
@@ -78,14 +78,14 @@
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-11T10:36:34&#43;01:00">11-01-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="www.errush.org/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-01-11T10:36:34&#43;01:00">11-01-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 		</header>
 		
 	<figure class="post__thumbnail thumbnail">
 		
-		<img class="thumbnail__image" src="/www.errush.org/img/azure-operations-wo-rdp.PNG" alt="VM operations in Azure without RDP">
+		<img class="thumbnail__image" src="/img/azure-operations-wo-rdp.PNG" alt="VM operations in Azure without RDP">
 		
 	</figure><div class="content post__content clearfix">
 			<p>The &ldquo;Traditional&rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then?
@@ -150,16 +150,16 @@ After you have enabled VM Inspector on your subscription you need to connect it 
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/www.errush.org/tags/azure-compute/" rel="tag">Azure Compute</a>
+			<a class="tags__link btn" href="/tags/azure-compute/" rel="tag">Azure Compute</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/www.errush.org/tags/azure-vm/" rel="tag">Azure VM</a>
+			<a class="tags__link btn" href="/tags/azure-vm/" rel="tag">Azure VM</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/www.errush.org/tags/operations/" rel="tag">Operations</a>
+			<a class="tags__link btn" href="/tags/operations/" rel="tag">Operations</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/www.errush.org/tags/azure-automation/" rel="tag">Azure Automation</a>
+			<a class="tags__link btn" href="/tags/azure-automation/" rel="tag">Azure Automation</a>
 		</li>
 	</ul>
 </div>
@@ -169,7 +169,7 @@ After you have enabled VM Inspector on your subscription you need to connect it 
 
 <div class="authorbox clearfix">
 	<figure class="authorbox__avatar">
-		<img alt="Erlend Rushfeldt avatar" src="/www.errush.org/img/avatar.png" class="avatar" height="90" width="90">
+		<img alt="Erlend Rushfeldt avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
 	</figure>
 	<div class="authorbox__header">
 		<span class="authorbox__name">About Erlend Rushfeldt</span>
@@ -188,24 +188,24 @@ After you have enabled VM Inspector on your subscription you need to connect it 
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
 		</label>
 		<input class="widget-search__submit" type="submit" value="Search">
-		<input type="hidden" name="sitesearch" value="www.errush.org" />
+		<input type="hidden" name="sitesearch" value="" />
 	</form>
 </div>
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="www.errush.org/blogposts/vm-operations-wo-rdp/">VM operations in Azure without RDP</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blogposts/vm-operations-wo-rdp/">VM operations in Azure without RDP</a></li>
 		</ul>
 	</div>
 </div>
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="www.errush.org/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
-		<a class="widget-taglist__link widget__link btn" href="www.errush.org/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
-		<a class="widget-taglist__link widget__link btn" href="www.errush.org/tags/azure-vm/" title="Azure VM">Azure VM</a>
-		<a class="widget-taglist__link widget__link btn" href="www.errush.org/tags/operations/" title="Operations">Operations</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-vm/" title="Azure VM">Azure VM</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/operations/" title="Operations">Operations</a>
 	</div>
 </div>
 <div class="widget-social widget">
@@ -245,6 +245,6 @@ After you have enabled VM Inspector on your subscription you need to connect it 
 	</div>
 </footer>
 	</div>
-<script async defer src="/www.errush.org/js/menu.js"></script>
+<script async defer src="/js/menu.js"></script>
 </body>
 </html>

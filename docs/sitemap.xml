@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>www.errush.org/categories/azure/</loc>
+    <loc>/categories/azure/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/tags/azure-automation/</loc>
+    <loc>/tags/azure-automation/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/tags/azure-compute/</loc>
+    <loc>/tags/azure-compute/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/tags/azure-vm/</loc>
+    <loc>/tags/azure-vm/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/blogposts/</loc>
+    <loc>/blogposts/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/</loc>
+    <loc>/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/tags/operations/</loc>
+    <loc>/tags/operations/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/blogposts/vm-operations-wo-rdp/</loc>
+    <loc>/blogposts/vm-operations-wo-rdp/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>www.errush.org/about/</loc>
+    <loc>/about/</loc>
   </url>
 </urlset>
