@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure Operations on Erlend Rushfeldt - Blog</title>
+    <link>/tags/azure-operations/</link>
+    <description>Recent content in Azure Operations on Erlend Rushfeldt - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Feb 2022 20:25:52 +0100</lastBuildDate><atom:link href="/tags/azure-operations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use Run Command to run scripts on your VM</title>
+      <link>/blogposts/run-command/</link>
+      <pubDate>Wed, 02 Feb 2022 20:25:52 +0100</pubDate>
+      
+      <guid>/blogposts/run-command/</guid>
+      <description>I started my previous blog by introducing Azure Run Command as a feature to run Powershell and Bash scripts on VMs straight from the Azure Portal. In this blog I&amp;rsquo;m gonna dive deeper into the feature and show a real life example of how to use it.
+The two versions of Run Command Something I didn&amp;rsquo;t mention in my last blog is that there are actually two different versions of Run Command.</description>
+    </item>
+    
+  </channel>
+</rss>

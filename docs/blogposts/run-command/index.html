@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Use Run Command to run scripts on your VM - Erlend Rushfeldt - Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="A deeper dive into the Run Command feature and showing examples on how to utilize it in automation">
+		<meta property="og:title" content="Use Run Command to run scripts on your VM" />
+<meta property="og:description" content="A deeper dive into the Run Command feature and showing examples on how to utilize it in automation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blogposts/run-command/" /><meta property="article:section" content="Blogposts" />
+<meta property="article:published_time" content="2022-02-02T20:25:52+01:00" />
+<meta property="article:modified_time" content="2022-02-02T20:25:52+01:00" />
+
+
+		<meta itemprop="name" content="Use Run Command to run scripts on your VM">
+<meta itemprop="description" content="A deeper dive into the Run Command feature and showing examples on how to utilize it in automation"><meta itemprop="datePublished" content="2022-02-02T20:25:52+01:00" />
+<meta itemprop="dateModified" content="2022-02-02T20:25:52+01:00" />
+<meta itemprop="wordCount" content="1012">
+<meta itemprop="keywords" content="Azure Compute,Azure Operations,Azure VM,Operations," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Use Run Command to run scripts on your VM"/>
+<meta name="twitter:description" content="A deeper dive into the Run Command feature and showing examples on how to utilize it in automation"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Erlend Rushfeldt - Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Erlend Rushfeldt - Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Use Run Command to run scripts on your VM</h1>
+			<p class="post__lead">Manage your VM by running PowerShell script straight from the Azure Portal.</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-02-02T20:25:52&#43;01:00">02-02-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/img/runcommand.PNG" alt="Use Run Command to run scripts on your VM">
+		
+	</figure><div class="content post__content clearfix">
+			<p>I started my previous blog by introducing Azure Run Command as a feature to run Powershell and Bash scripts on VMs straight from the Azure Portal. In this blog I&rsquo;m gonna dive deeper into the feature and show a real life example of how to use it.</p>
+<h2 id="the-two-versions-of-run-command">The two versions of Run Command</h2>
+<p>Something I didn&rsquo;t mention in my last blog is that there are actually two different versions of Run Command. They are action Run Command and Managed Run Command. Action Run Command is the most known version. This is also the feature that you have in the menu for VMs in Azure:</p>
+<p><img src="/img/Azure-run-command.PNG" alt="Run command feature"></p>
+<h2 id="action-run-command">Action Run Command</h2>
+<p>Let&rsquo;s explore what action Run Command actually is so we can compare the two features better! To put it simply, action Run Command is just a API call. When you start a Run Command script the portal sends a POST request to this API:</p>
+<pre tabindex="0"><code>https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/runCommand?api-version=2021-07-01
+</code></pre><p>And here&rsquo;s an example of what the body of the request looks like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="color:#f92672">&#34;commandId&#34;</span>: <span style="color:#e6db74">&#34;RunPowerShellScript&#34;</span>
+<span style="color:#e6db74">&#34;script&#34;</span>: <span style="color:#e6db74">&#34;Your script here&#34;</span>
+}
+</code></pre></div><p>But how does that help us? Well, now that we know that it' a API call we could automate it. For example, let&rsquo;s say that we have a VM that&rsquo;s a webserver and we have a URL test in Azure Monitor that checks the website that the VM hosts. The URL test checks for timeouts and will trigger an alert if the respond time goes over a configured limit. The alert then triggers a Logic App that will send a POST request to the API with a Powershell script in the request body. The script will restart the IIS service on the VM in hope that it will solve the problem.</p>
+<p>Maybe I&rsquo;ll write a blogpost about that solution one day, but for now look at these refrences on <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-integrations">how to integrate an Azure monitor alert with Logic Apps</a> and <a href="https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/azure-rest-api-through-logic-app/ba-p/2193956">how to send a Resource Graph API call with Logic Apps</a></p>
+<h2 id="managed-run-command">Managed Run Command</h2>
+<p>How about the Managed Run Command then? First I should mention that Managed Run Command is in public preview. You should always be careful to use preview features in production. Preview features do not have any SLAs, they could be dropped instead of released and if they&rsquo;re released the price for the feature can be higher than it was in preview.</p>
+<p>On to what it is. Managed Run Command is its own resource type and it removes most of the restrictions that were present for its predesessor. Now that it&rsquo;s a resource type we can use it for more advanced situations than Action Run Command. Let&rsquo;s look at a comparisson between the types from the <a href="https://docs.microsoft.com/nb-no/azure/virtual-machines/run-command-overview#compare-feature-support">Microsoft Docs</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature Support</th>
+<th>Action RunCommand</th>
+<th>Managed RunCommand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARM template</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Long running</td>
+<td>90 min limit</td>
+<td>customer specified timeout</td>
+</tr>
+<tr>
+<td>Execution account</td>
+<td>System/root</td>
+<td>Customer specified user</td>
+</tr>
+<tr>
+<td>Multiple run commands</td>
+<td>No</td>
+<td>Multiple in parallel or sequenced</td>
+</tr>
+<tr>
+<td>Large output</td>
+<td>Limited to 4K</td>
+<td>Uploaded to append blob</td>
+</tr>
+<tr>
+<td>Progress tracking</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Async execution</td>
+<td>Goal state/provisioning waits for script to complete</td>
+<td>Customer specified async flag if provisioning waits for the script</td>
+</tr>
+<tr>
+<td>Virtual machine scale set support</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>SAS generation</td>
+<td>No blob support</td>
+<td>Automated, CRP generates SAS for customer blobs and manages them</td>
+</tr>
+<tr>
+<td>Gallery (custom commands)</td>
+<td>Only built-in commandslds</td>
+<td>Customer can publish scripts and share them</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, there are a lot of upgrades from Action Run Command to the new Managed Run Command. Because of these upgrades we can use this feature for other purposes. Some of these purposes might be running script during the creation of a VM, long running reporting script or creating scripts for sharing and reuse.</p>
+<h2 id="create-a-managed-run-command-script-with-bicep">Create a Managed Run Command script with Bicep</h2>
+<p>Since Managed Run Command is a resource type and as of February of 2022 there doesn&rsquo;t seem to be a way to deploy Managed Run Command from the Azure Portal, I&rsquo;m going to show you how to deploy it through a Bicep template. I used code to deploy this code!</p>
+<p>The script that I&rsquo;m deploying does not matter as im just gonna show you how to deploy it with Bicep. So I&rsquo;m just gonna fill in some filler script. For a full reference on which properties are available with the Run Command API check <a href="https://docs.microsoft.com/en-us/azure/templates/microsoft.compute/virtualmachines/runcommands?tabs=bicep">this link.</a></p>
+<pre tabindex="0"><code>resource runcommand 'Microsoft.Compute/virtualMachines/runCommands@2021-07-01' = {
+  name: 'HelloWorld'
+  location: resourceGroup().location
+  parent: VM1
+  properties: {
+    source: {
+      commandId: 'HelloWorld'
+      script: 'Write-host &quot;Hello World&quot;'
+    }
+  }
+}
+</code></pre><p>What I start with is declaring a resource and using the Run Commands API. The Run Command resource is a child resource under the virtual machine resource. Meaning that I need a parent resource. For the example I&rsquo;ll call that parent for VM1. The part that is more interesting is the source property. Here I need to specify what the script is. I have used a simple Hello World command as an example, but it is also possible to use &ldquo;SciptUri&rdquo; instead. That means that you can have a script made already and stored in a storage account and then reference where the script is stored. Much simpler than writing the script into the Bicep file.</p>
+<p><em>Tip</em> If you want to use the Bicep file as a reusable template use paramters for commandId and scriptUri so you can define what script you wanna run and where it&rsquo;s located.</p>
+<p>You can use the Bicep code in your VM deployment template for doing post deployment configuration or by by referencing an existing VM in the Bicep file. Like this:</p>
+<pre tabindex="0"><code>resource VM1 'Microsoft.Compute/virtualMachines@2021-07-01' existing = {
+  name: 'VM1'
+}
+</code></pre><h2 id="summary">Summary</h2>
+<p>In this blogpost I have described the two different versions of the Run Command feature and compared them. The two examples of how to use the features have given an insight into other options to use them other than just runnning a command through the portal. Writing this blog and diving deeper into the technical side of the feature has been exiting and it is just why I started this blog. I&rsquo;m sure that this won&rsquo;t be the last time that I write about this feature as I continue to play with it on my own.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/azure-compute/" rel="tag">Azure Compute</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/azure-operations/" rel="tag">Azure Operations</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/azure-vm/" rel="tag">Azure VM</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/operations/" rel="tag">Operations</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Erlend Rushfeldt avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Erlend Rushfeldt</span>
+	</div>
+	<div class="authorbox__description">
+		Erlend is a Cloud Consultant who has a passion for technology and learning. Join him on his journey exploring the cloud!
+	</div>
+</div>
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/run-command/">Use Run Command to run scripts on your VM</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blogposts/vm-operations-wo-rdp/">VM operations in Azure without RDP</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-operations/" title="Azure Operations">Azure Operations</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-vm/" title="Azure VM">Azure VM</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/operations/" title="Operations">Operations</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/@ErlendRushfeldt" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/erlend-rushfeldt-b0a92a159" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Erlendrushf" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Erlend Rushfeldt - Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
