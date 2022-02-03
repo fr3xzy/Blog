@@ -51,3 +51,10 @@ And here's an example of what the body of the request looks like:
 }
 ```
 But how does that help us? Well, now that we know that it' a API call we could automate it. For example, let's say that we have a VM thats a webserver and we have a URL test in Azure Monitor that checks the website that runs on the VM. The URL test checks for timeouts and will trigger an alert if the respond time goes over a configured limit. The alert then triggers a Logic App that will send a POST request to the API with a Powershell script in the request body. The script will restart the IIS service in hope that will solve the problem.
+
+Demo with logic app and automatic respons to run command
+
+## Managed Run Command
+How about the Managed Run Command then? First I should mention that Managed Run Command is in public preview. You should always be careful to use preview features in production. Preview features do not have any SLAs, they could be dropped instead of released and if they're released the price for the feature can be higher than it was in preview.
+
+On to what it is. Managed Run Command is its own service.
