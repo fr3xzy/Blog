@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Erlend Rushfeldt - Blog</title>
-    <link>https://erlendrushf.github.io/Blog/categories/</link>
+    <link>www.errush.org/categories/</link>
     <description>Recent content in Categories on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 10:36:34 +0100</lastBuildDate><atom:link href="https://erlendrushf.github.io/Blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 10:36:34 +0100</lastBuildDate><atom:link href="www.errush.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure</title>
-      <link>https://erlendrushf.github.io/Blog/categories/azure/</link>
+      <link>www.errush.org/categories/azure/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
       
-      <guid>https://erlendrushf.github.io/Blog/categories/azure/</guid>
+      <guid>www.errush.org/categories/azure/</guid>
       <description></description>
     </item>
     

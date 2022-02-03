@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Erlend Rushfeldt - Blog</title>
-    <link>https://erlendrushf.github.io/Blog/tags/</link>
+    <link>www.errush.org/tags/</link>
     <description>Recent content in Tags on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jan 2022 10:36:34 +0100</lastBuildDate><atom:link href="https://erlendrushf.github.io/Blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 10:36:34 +0100</lastBuildDate><atom:link href="www.errush.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure Automation</title>
-      <link>https://erlendrushf.github.io/Blog/tags/azure-automation/</link>
+      <link>www.errush.org/tags/azure-automation/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
       
-      <guid>https://erlendrushf.github.io/Blog/tags/azure-automation/</guid>
+      <guid>www.errush.org/tags/azure-automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Azure Compute</title>
-      <link>https://erlendrushf.github.io/Blog/tags/azure-compute/</link>
+      <link>www.errush.org/tags/azure-compute/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
       
-      <guid>https://erlendrushf.github.io/Blog/tags/azure-compute/</guid>
+      <guid>www.errush.org/tags/azure-compute/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Azure VM</title>
-      <link>https://erlendrushf.github.io/Blog/tags/azure-vm/</link>
+      <link>www.errush.org/tags/azure-vm/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
       
-      <guid>https://erlendrushf.github.io/Blog/tags/azure-vm/</guid>
+      <guid>www.errush.org/tags/azure-vm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Operations</title>
-      <link>https://erlendrushf.github.io/Blog/tags/operations/</link>
+      <link>www.errush.org/tags/operations/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
       
-      <guid>https://erlendrushf.github.io/Blog/tags/operations/</guid>
+      <guid>www.errush.org/tags/operations/</guid>
       <description></description>
     </item>
     

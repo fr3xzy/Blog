@@ -49,12 +49,12 @@ There are some limitations to what you can do with Run Command custom scripts, h
 
 You can find the Run Command feature in the portal by navigating to your VM and scroll down the left menu till you find the Run Command blade:
 
-![Run command feature](/Blog/img/Azure-run-command.PNG)
+![Run command feature](/img/Azure-run-command.PNG)
 
 ## Troubleshoot a network connection with Network watcher
 In Azure there is a lot of networking. And in the cloud with software defined networking, it might not always be as easy as "check if the cable is connected". A feature that will help you with troubleshooting network connections in Azure is the Network Watcher, also known as "Connection Troubleshoot".
 
-![Connection Troubleshoot](/Blog/img/Connection-troubleshoot.PNG)
+![Connection Troubleshoot](/img/Connection-troubleshoot.PNG)
 
 With Network Watcher you specify which direction you want to test, inbound or outbound. Next you choose what's your desired destination or source. Here you can choose your current IP-address, a specified IP-address, or an [Azure service tag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags).
 

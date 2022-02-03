@@ -35,7 +35,7 @@ I started my previous blog by introducing Azure Run Command as a feature to run 
 ## The two versions of Run Command
 Something I didn't mention in my last blog is that there are actually two different versions of Run Command. They are action Run Command and Managed Run Command. Action Run Command is the most known version. This is also the feature that you have in the menu for VMs in Azure:
 
-![Run command feature](/Blog/img/Azure-run-command.PNG)
+![Run command feature](/img/Azure-run-command.PNG)
 
 ## Action Run Command
 Let's explore what action Run Command actually is so we can compare the two features better! To put it simply, action Run Command is just a API call. When you start a Run Command script the portal sends a POST request to this API: 

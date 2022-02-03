@@ -1,4 +1,4 @@
-baseURL = 'https://erlendrushf.github.io/Blog/'
+baseURL = 'www.errush.org'
 languageCode = 'en-us'
 title = 'Erlend Rushfeldt - Blog'
 theme = 'mainroad'
