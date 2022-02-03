@@ -1,7 +1,7 @@
 baseURL = 'https://erlendrushf.github.io/Blog/'
 languageCode = 'en-us'
 title = 'Erlend Rushfeldt - Blog'
-theme = 'Mainroad'
+theme = 'mainroad'
 paginate = "10" # Number of posts per page
 publishdir = "docs"
 
