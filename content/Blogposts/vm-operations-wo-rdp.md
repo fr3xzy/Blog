@@ -38,9 +38,11 @@ This article series will contain this post as an introduction before going into 
 Here are some services that can help you do common operations on your VM from the Azure Portal:
 
 ## Run scripts on your VM with Run command
+
 Let's say you want to change a registry key or want to return a setting to the portal, the Run Command feature helps you! With Run Command you can choose from a set of pre-configured scripts from Microsoft, or you can run a custom script. Run command work for both Windows and Linux VMs, but there is more premade script for Windows.
 
 There are some limitations to what you can do with Run Command custom scripts, here are a few of those restrictions:
+
 - Output is limited to the last 4,096 bytes.
 - You can't cancel a running script.
 - Only one script can run at a time
@@ -52,6 +54,7 @@ You can find the Run Command feature in the portal by navigating to your VM and 
 ![Run command feature](/img/Azure-run-command.PNG)
 
 ## Troubleshoot a network connection with Network watcher
+
 In Azure there is a lot of networking. And in the cloud with software defined networking, it might not always be as easy as "check if the cable is connected". A feature that will help you with troubleshooting network connections in Azure is the Network Watcher, also known as "Connection Troubleshoot".
 
 ![Connection Troubleshoot](/img/Connection-troubleshoot.PNG)
@@ -63,18 +66,22 @@ Finally, you select what port you want to test. There are several commonly used 
 When you click **check connection** Network Watcher will check if the port and protocol specified is allowed in or out of the VM. Now, the Connection troubleshoot will only check if the traffic is allowed or blocked in the Network Security Group for the VM and correlating Subnet. That means that even if Connection Troubleshoot says the traffic is allowed, it might still not work. There is thankfully a detailed version of the connection troubleshooter that is linked on the connection troubleshoot page.
 
 ## Update management using Azure Automation
+
 But what about Security patches and other updates? I don't want the VM to install them whenever they are released without me knowing. Well, there is a solution for that too, and its way less complicated than creating a SCCM server and configuring WSUS on all servers.
 
 In Azure Automation there is a feature that is called Update Management. Update Management is a free feature of Azure Automation that helps you patch both your Windows and Linux servers. With Update Management you get a centralized page where you can see and configure:
+
 - VMs to enable the feature on
 - Check compliance of VMs
 - Define deployment schedule
 - Deployment status
 
 ## Deploy application to VMs with Azure compute galleries
+
 In the initial config after deploying a VM, you might want to install an application on the VM for it to function. Microsoft changed the formerly known Shared Image Gallery to Azure compute gallery. The reason for the name change is that in addition to storing and sharing images, you can now do the same for application packages.
 
 With Azure compute gallery you get the benefits of:
+
 - Grouping and versioning of packages.
 - Control access with Azure Role Based Access Control (RBAC).
 - Install from storage account without a direct internet connection.
@@ -83,7 +90,8 @@ With Azure compute gallery you get the benefits of:
 For example, let's say that you want to update antivirus on all your servers. So instead of RDPing in to all your servers and update or install the new version, you can create an application package in Azure Compute Gallery and create an Azure Policy to automatically deploy the software to servers.
 
 ## Collect logs from your VM in the portal with Azure VM Inspector
-A first step in troubleshooting an application or service is often checking the logs on the server. In Azure there is a feature for VMs to collect event logs, configurations, settings, and registry keys. Then read through the report directly from the portal. This feature is called VM Inspector and is per January of 2022 still in preview. That means that you will have to enable the feature for your subscription. 
+
+A first step in troubleshooting an application or service is often checking the logs on the server. In Azure there is a feature for VMs to collect event logs, configurations, settings, and registry keys. Then read through the report directly from the portal. This feature is called VM Inspector and is per January of 2022 still in preview. That means that you will have to enable the feature for your subscription.
 
 **Note:** Microsoft does not recommend using preview features in production and the price of a service may change when it goes globally available.
 
@@ -93,9 +101,11 @@ After you have enabled VM Inspector on your subscription you need to connect it 
 This tool combined with the Run Command feature makes it possible to troubleshoot and fix most configuration and other simple errors remotely!
 
 ## Manage certificates and secrets with Azure Key Vault
+
 Management of certificates can be an unappreciated job. It can include waking up at 07:00 on a Sunday to change a certificate and getting yelled at Monday morning cause an undocumented application that used the certificate is now partly unavailable for users. All this headache could be avoided by using Azure Key Vault and some of its features for managing and distributing certificates and secrets!
 
 Azure Key Vault lets you generate, import, or even buy a managed certificate. With generated and managed certificates you can configure automatic renewal of the certificates. You can then install the Azure Key Vault extension on your VMs and have them automatically deploy the new versions of the certificate to the VM.
 
 ## Conclusion
+
 In this blog I gave a quick introduction to some tools and features in Azure that can help you manage your servers on an OS level without needing to RDP into them. Going forward I will create follow up blogs going further into these features.
