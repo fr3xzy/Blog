@@ -22,7 +22,6 @@ toc: false # Enable Table of Contents for specific page
 mathjax: true # Enable MathJax for specific page
 sidebar: "right" # Enable sidebar (on the right side) per page
 widgets: # Enable sidebar widgets in given order per page
-  - "search"
   - "recent"
   - "taglist"
   - "social"

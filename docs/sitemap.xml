@@ -2,38 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/automation/</loc>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
+  </url><url>
     <loc>/categories/azure/</loc>
-    <lastmod>2022-02-02T20:25:52+01:00</lastmod>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
+  </url><url>
+    <loc>/tags/azure-automation/</loc>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/tags/azure-compute/</loc>
-    <lastmod>2022-02-02T20:25:52+01:00</lastmod>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/tags/azure-operations/</loc>
-    <lastmod>2022-02-02T20:25:52+01:00</lastmod>
-  </url><url>
-    <loc>/tags/azure-vm/</loc>
-    <lastmod>2022-02-02T20:25:52+01:00</lastmod>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/blogposts/</loc>
-    <lastmod>2022-02-02T20:25:52+01:00</lastmod>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2022-02-02T20:25:52+01:00</lastmod>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/</loc>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
+  </url><url>
+    <loc>/blogposts/update-management-with-azureautomation/</loc>
+    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
+  </url><url>
+    <loc>/tags/azure-vm/</loc>
     <lastmod>2022-02-02T20:25:52+01:00</lastmod>
   </url><url>
     <loc>/tags/operations/</loc>
     <lastmod>2022-02-02T20:25:52+01:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-02-02T20:25:52+01:00</lastmod>
-  </url><url>
     <loc>/blogposts/run-command/</loc>
     <lastmod>2022-02-02T20:25:52+01:00</lastmod>
-  </url><url>
-    <loc>/tags/azure-automation/</loc>
-    <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
     <loc>/blogposts/vm-operations-wo-rdp/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>

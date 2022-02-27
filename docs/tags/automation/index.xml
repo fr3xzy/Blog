@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Azure Automation on Erlend Rushfeldt - Blog</title>
-    <link>/tags/azure-automation/</link>
-    <description>Recent content in Azure Automation on Erlend Rushfeldt - Blog</description>
+    <title>Automation on Erlend Rushfeldt - Blog</title>
+    <link>/tags/automation/</link>
+    <description>Recent content in Automation on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Feb 2022 13:13:44 +0100</lastBuildDate><atom:link href="/tags/azure-automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Feb 2022 13:13:44 +0100</lastBuildDate><atom:link href="/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Update management with Azure Automation</title>
       <link>/blogposts/update-management-with-azureautomation/</link>
@@ -14,15 +14,6 @@
       
       <guid>/blogposts/update-management-with-azureautomation/</guid>
       <description>With information security coming into the spotlight of mainstream media after more and more big companies experience millions of dollars in revenue loss due to security breaches and ransomware. Security is becoming, if not already; the field of IT with the most attention at it. Both companies and individuals are tearing apart operating systems and applications alike trying to find and even exploit the vulnerabilities they find. All this have made it even more critical for IT departments to be fast and thorough with patching systems because they are always catching up to the vulnerabilities.</description>
-    </item>
-    
-    <item>
-      <title>VM operations in Azure without RDP</title>
-      <link>/blogposts/vm-operations-wo-rdp/</link>
-      <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
-      
-      <guid>/blogposts/vm-operations-wo-rdp/</guid>
-      <description>The &amp;ldquo;Traditional&amp;rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then? You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended.</description>
     </item>
     
   </channel>
