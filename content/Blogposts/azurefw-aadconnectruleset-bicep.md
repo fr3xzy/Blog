@@ -13,8 +13,8 @@ tags:
 draft: false
 type: "blog"
 # Theme-Defined params
-thumbnail: "img/placeholder.png" # Thumbnail image
-lead: "Example lead - highlighted near the title" # Lead text
+thumbnail: "img/AAD-connect.PNG" # Thumbnail image
+lead: "Get the required firewallrules in Azure firewall for Azure AD connect using a Bicep template." # Lead text
 comments: false # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
 pager: false # Enable pager navigation (prev/next) for specific page
