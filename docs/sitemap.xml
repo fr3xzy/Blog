@@ -2,10 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/automation/</loc>
-    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
-  </url><url>
     <loc>/categories/azure/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/azure-ad-connect/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/azure-firewall/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/bicep/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/blogposts/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/blogposts/azurefw-aadconnectruleset-bicep/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/iac/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-03-23T13:57:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/automation/</loc>
     <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/tags/azure-automation/</loc>
@@ -15,18 +42,6 @@
     <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/tags/azure-operations/</loc>
-    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
-  </url><url>
-    <loc>/blogposts/</loc>
-    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2022-02-27T13:13:44+01:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
     <loc>/blogposts/update-management-with-azureautomation/</loc>

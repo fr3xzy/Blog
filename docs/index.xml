@@ -6,7 +6,16 @@
     <description>Recent content on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Feb 2022 13:13:44 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Mar 2022 13:57:21 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Azure Firewall ruleset for Azure AD with Bicep</title>
+      <link>/blogposts/azurefw-aadconnectruleset-bicep/</link>
+      <pubDate>Wed, 23 Mar 2022 13:57:21 +0100</pubDate>
+      
+      <guid>/blogposts/azurefw-aadconnectruleset-bicep/</guid>
+      <description>Anyone who have used the portal to add rules to Azure Firewall will know how tedious and annoying it can get. With small fields to write both destination and source, it does get old very quick. And something that I found myself doing for several customers was setting the rules required for Azure AD Connect. I quickly got tired of doing it manually, so I created a Bicep template to deploy it much easier and faster.</description>
+    </item>
+    
     <item>
       <title>Update management with Azure Automation</title>
       <link>/blogposts/update-management-with-azureautomation/</link>

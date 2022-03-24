@@ -10,7 +10,7 @@ tags:
   - "IaC"
   - "Azure AD Connect"
 #menu: main # Optional, add page to a menu. Options: main, side, footer
-draft: true
+draft: false
 type: "blog"
 # Theme-Defined params
 thumbnail: "img/placeholder.png" # Thumbnail image
@@ -27,13 +27,13 @@ widgets: # Enable sidebar widgets in given order per page
   - "social"
 ---
 
-Anyone who have used the portal to add rules to Azure Firewall will know how tedious and annoying it can get. With small fields to write both destination and source, it does get old very quick. And something that I found my self doing for several customers was setting the rules required for Azure AD Connect. I quickly got tired of doing it manually so I created a Bicep template to deploy it much easier and faster.
+Anyone who have used the portal to add rules to Azure Firewall will know how tedious and annoying it can get. With small fields to write both destination and source, it does get old very quick. And something that I found myself doing for several customers was setting the rules required for Azure AD Connect. I quickly got tired of doing it manually, so I created a Bicep template to deploy it much easier and faster.
 
 **Note** That this blogpost is about deploying the firewall rules to Azure Firewall. If you are only looking for required URLs go [here](#URLlist)
 
 ## Scenario
 
-In todays scenario, we are talking about having a domain controller on a VM in Azure and using an Azure Firewall to manage in- and outbound traffic. We then want to sync out AD identities to Azure AD using Azure AD Connect.
+In today's scenario, we are talking about having a domain controller on a VM in Azure and using an Azure Firewall to manage in- and outbound traffic. We then want to sync out AD identities to Azure AD using Azure AD Connect.
 
 ![Scenario](/img/AAD-connect.PNG)
 
@@ -209,9 +209,9 @@ resource fwPolicyrulecollection 'Microsoft.Network/firewallPolicies/ruleCollecti
 
 ## Deploying the template
 
-So how do you deploy this Bicep template? This template require you to have an already configured Azure Firewall and a firewall policy. Next you need to configure the parameters specified at the top of the template. Only 2 of them are strictly nessasery to configure as the priority parameter has a default value of 300, but if you have a rule with that priority, you need to change that too. The parameter "fwpolicyname" is as simple as the name of your existing firewall policy that you are deploying the ruleset to.
+So how do you deploy this Bicep template? This template requires you to have an already configured Azure Firewall and a firewall policy. Next you need to configure the parameters specified at the top of the template. Only 2 of them are strictly necessary to configure as the priority parameter has a default value of 300, but if you have a rule with that priority, you need to change that too. The parameter "fwpolicyname" is as simple as the name of your existing firewall policy that you are deploying the ruleset to.
 
-The "sourceaddresses" parameter is a bit different as it expects an array. Therefore your input should look something like this:
+The "sourceaddresses" parameter is a bit different as it expects an array. Therefore, your input should look something like this:
 ```xml
 [
   "10.10.7.5"
