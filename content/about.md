@@ -28,5 +28,6 @@ Join him on his journey exploring the exciting field of Cloud!
 **Certifications:**
 - AZ-104 - Azure Administrator Associate
 - AZ-140 - Azure Virtual Desktop Speciality
+- AZ-305 - Azure Solution Architect Expert
 - SC-300 - Identity and Access Administrator Associate
 - CLF-C01 - AWS Certified Cloud practitioner
