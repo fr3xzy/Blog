@@ -6,7 +6,17 @@
     <description>Recent content in Azure on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Mar 2022 13:57:21 +0100</lastBuildDate><atom:link href="/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 09:53:13 +0200</lastBuildDate><atom:link href="/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Automanage</title>
+      <link>/blogposts/intro-to-automanage/</link>
+      <pubDate>Fri, 22 Apr 2022 09:53:13 +0200</pubDate>
+      
+      <guid>/blogposts/intro-to-automanage/</guid>
+      <description>What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!
+What is Automanage? Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup.</description>
+    </item>
+    
     <item>
       <title>Deploy Azure Firewall ruleset for Azure AD with Bicep</title>
       <link>/blogposts/azurefw-aadconnectruleset-bicep/</link>

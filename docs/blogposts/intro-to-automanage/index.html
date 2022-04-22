@@ -4,25 +4,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Update management with Azure Automation - Erlend Rushfeldt - Blog</title>
+	<title>Introduction to Automanage - Erlend Rushfeldt - Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="How to keep your Azure VMs up to date with centralized management in Azure">
-		<meta property="og:title" content="Update management with Azure Automation" />
-<meta property="og:description" content="How to keep your Azure VMs up to date with centralized management in Azure" />
+	<meta name="description" content="">
+		<meta property="og:title" content="Introduction to Automanage" />
+<meta property="og:description" content="What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!
+What is Automanage? Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blogposts/update-management-with-azureautomation/" /><meta property="article:section" content="Blogposts" />
-<meta property="article:published_time" content="2022-02-27T13:13:44+01:00" />
-<meta property="article:modified_time" content="2022-02-27T13:13:44+01:00" />
+<meta property="og:url" content="/blogposts/intro-to-automanage/" /><meta property="article:section" content="Blogposts" />
+<meta property="article:published_time" content="2022-04-22T09:53:13+02:00" />
+<meta property="article:modified_time" content="2022-04-22T09:53:13+02:00" />
 
 
-		<meta itemprop="name" content="Update management with Azure Automation">
-<meta itemprop="description" content="How to keep your Azure VMs up to date with centralized management in Azure"><meta itemprop="datePublished" content="2022-02-27T13:13:44+01:00" />
-<meta itemprop="dateModified" content="2022-02-27T13:13:44+01:00" />
-<meta itemprop="wordCount" content="802">
-<meta itemprop="keywords" content="Azure Automation,Automation,Azure Compute,Azure Operations," />
+		<meta itemprop="name" content="Introduction to Automanage">
+<meta itemprop="description" content="What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!
+What is Automanage? Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup."><meta itemprop="datePublished" content="2022-04-22T09:53:13+02:00" />
+<meta itemprop="dateModified" content="2022-04-22T09:53:13+02:00" />
+<meta itemprop="wordCount" content="519">
+<meta itemprop="keywords" content="Governance,Compute,Azure VMs," />
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Update management with Azure Automation"/>
-<meta name="twitter:description" content="How to keep your Azure VMs up to date with centralized management in Azure"/>
+<meta name="twitter:title" content="Introduction to Automanage"/>
+<meta name="twitter:description" content="What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!
+What is Automanage? Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup."/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -72,40 +75,102 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Update management with Azure Automation</h1>
-			<p class="post__lead">How to keep your Azure VMs up to date with centralized management in Azure.</p>
+			<h1 class="post__title">Introduction to Automanage</h1>
+			<p class="post__lead">Get a intro to Azure Automanage and set-up best practice configuration for you new and existing VMs.</p>
 			<div class="post__meta meta"><div class="meta__item-author meta__item">
 	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
 </div>
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-02-27T13:13:44&#43;01:00">27-02-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-22T09:53:13&#43;02:00">22-04-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 		</header>
 		
 	<figure class="post__thumbnail thumbnail">
 		
-		<img class="thumbnail__image" src="/img/azureautomation.PNG" alt="Update management with Azure Automation">
+		<img class="thumbnail__image" src="/img/automanage.PNG" alt="Introduction to Automanage">
 		
 	</figure><div class="content post__content clearfix">
-			<p>With information security coming into the spotlight of mainstream media after more and more big companies experience millions of dollars in revenue loss due to security breaches and ransomware. Security is becoming, if not already; the field of IT with the most attention at it. Both companies and individuals are tearing apart operating systems and applications alike trying to find and even exploit the vulnerabilities they find. All this have made it even more critical for IT departments to be fast and thorough with patching systems because they are always catching up to the vulnerabilities.</p>
-<p>If you ask an IT Pro how you should go about patching your systems, he might tell you that first you need to deploy to the test environment and check that it doesn&rsquo;t break anything, and maybe even wait a few days for the manufacturer to release a list of known problems with the patch. Then you can finally deploy it to production.</p>
-<p>Even though that process lowers the risk of the patch breaking anything, it&rsquo;s not fast. If we look back on the Log4J vulnerability that was disclosed to the public on the 1st of December 2021, already on the 10th of December there were <a href="https://unit42.paloaltonetworks.com/apache-log4j-vulnerability-cve-2021-44228/#log4j-exploitation-attempts">reports</a> of mass exploits of the vulnerability in the wild.</p>
-<p>To manage patching of servers, IT-departments often have systems or third-party solutions that they can use to find and install new patches. Let&rsquo;s make up a scenario where you use SCCM to manage patching of your servers on-premises. And to support SCCM you also have 2-3 Software Update Point servers in different datacenters to minimize network traffic. Now, you have started a migration project to the cloud and you make an estimation on cost of lift and shift for your SCCM solution. You then see quite clearly that compute is expensive in the cloud. What do you do then?</p>
-<p>Luckily Microsoft values security and offers a free solution in Azure called Update Management with Azure Automation. You now have a SaaS solution that you can use to replace the patch management part of SCCM.</p>
-<h2 id="managing-patching-with-update-management">Managing patching with Update Management</h2>
-<p>There are different ways to enable Update Management on your VMs. Let&rsquo;s look at how to do it from the Virtual Machine overview in Azure. First go to the Azure portal and select Virtual Machines from the menu to the left:</p>
-<p><img src="/img/menu-vms.png" alt="virtualmachine"></p>
-<p>Here you mark the VMs that you want to enable it for. Then click the three dots in the top menu. In the menu that pops up, click on services and finally Update Management.</p>
-<p><img src="/img/vm-enable-um.png" alt="enableupdatemanagement"></p>
-<p>Here you choose to let Azure automatically configure a Log analytics workspace and automation account for you or choose already existing resources. You also get a summary that shows a status whether your VMs support Azure Update Management. If all the chosen VMs are supported, you now need to click enable.</p>
-<p><img src="/img/updatemanagement-configure.PNG" alt="configureupdatemanagement"></p>
-<p>After clicking enable, the deployment will begin. This might take some time as Azure need to install the required extension on your VMs and register the machine as ready.</p>
-<p>When your machines are done onboarding to Update Management, you will get a nice dashboard with your machines compliance. This will give you a nice overview of which machines are missing what updates. If you then need to install some of these updates you can click on &ldquo;schedule update deployment&rdquo;. There you specify what updates you want installed and exclude certain types or specified patches. You can also specify other steps in the maintenance windows like if the servers should reboot and if there should be done some extra pre- or post-configuration on the VMs.</p>
-<h2 id="your-options-for-automated-patching-in-azure">Your options for automated patching in Azure</h2>
-<p>I have talked mostly about Update Management with Azure Automation, but it&rsquo;s not your only options for automating security updates on your VMs in Azure. There is a feature that completely automate it for you. With automatic VM guest patching you just have to enable the feature on your VMs and Azure will automatically install all critical and security patches.</p>
-<p>Now there are both positives and negatives about automating every aspect of patching, but even with the tradeoffs, it might just be what you need. The big upside is obviously that it&rsquo;s fully automated from start till finish. On the downside, you are giving up all control. You don&rsquo;t get to choose what updates get installed or when they are installed.</p>
-<p>Beacause Azure automatically installs all patches that are marked as critical or security. You don&rsquo;t get the chance to opt out of any of these patches. Maybe the patch brings in a bug that breaks printing? Or creates performance issues? So, if you feel fine about the tradeoff that you don&rsquo;t have any control, but then you don&rsquo;t need to think about it at all. Then Automated VM guest patching might be for you.</p>
+			<p>What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!</p>
+<h2 id="what-is-automanage">What is Automanage?</h2>
+<p>Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup.</p>
+<p>Microsoft even created some predefined automanage profiles, one for Production workloads and one for Dev/Test. So which services are configurable in Automanage?</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Configuration Profile</th>
+<th>Supported Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Machines Insights Monitoring</td>
+<td>Production</td>
+<td>Windows, Linux, Azure Arc</td>
+</tr>
+<tr>
+<td>Backup</td>
+<td>Production</td>
+<td>Windows, Linux</td>
+</tr>
+<tr>
+<td>Microsoft Defender for Cloud</td>
+<td>Production, Dev/Test</td>
+<td>Windows, Linux</td>
+</tr>
+<tr>
+<td>Microsoft Antimalware</td>
+<td>Production, Dev/Test</td>
+<td>Windows</td>
+</tr>
+<tr>
+<td>Update Management</td>
+<td>Production, Dev/Test</td>
+<td>Windows, Linux, Azure Arc</td>
+</tr>
+<tr>
+<td>Change Tracking and Inventory</td>
+<td>Production, Dev/Test</td>
+<td>Windows, Linux, Azure Arc</td>
+</tr>
+<tr>
+<td>Guest configuration</td>
+<td>Production, Dev/Test</td>
+<td>Windows, Linux, Azure Arc</td>
+</tr>
+<tr>
+<td>Boot Diagnostics</td>
+<td>Production, Dev/Test</td>
+<td>Windows, Linux</td>
+</tr>
+<tr>
+<td>Windows Admin Center</td>
+<td>Production, Dev/Test</td>
+<td>Windows</td>
+</tr>
+<tr>
+<td>Azure Automation Account</td>
+<td>Production, Dev/Test</td>
+<td>Windows, Linux, Azure Arc</td>
+</tr>
+<tr>
+<td>Log Analytics Workspace</td>
+<td>Production, Dev/Test</td>
+<td>Windows, Linux, Azure Arc</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-a-custom-configuration-profile">Create a custom configuration profile</h2>
+<p>What if you don&rsquo;t want to use all the features and services in the built-in profiles? You just make your own custom profile. Here&rsquo;s how: Go to the Automanage service and click the &ldquo;Configuration profiles&rdquo; blade. Then click the Create button in the top left of the blade.</p>
+<p>Here you can start checking and unchecking the features you want to include in the configuration profile. You can also configure a backup policy and Antimalware scan policy. As you might notice, some of the services you can&rsquo;t check or uncheck. These are Azure Security Center, Automation Account, and Log Analytics Workspace. Azure Security Center is always checked and will onboard you VMs to the free tier of the service. With Azure Automation Account and Log Analytics Workspace it will be checked or unchecked based on the other services you enable. For example, if you enable Change Tracking, it will also enable the Automation Account because it is dependent of one.</p>
+<p><img src="/img/Custom-Profile.PNG" alt="custom profile"></p>
+<h2 id="apply-the-configuration-profile-for-vms">Apply the configuration profile for VMs</h2>
+<p>Now that you have created you own configuration profile or chosen to use one of the built-in ones. The next step is to apply the profile to one or more VM. There is also a built-in policy that you can use to apply configuration profiles for all or several VMs automatically, both new and existing ones. For simplicity I will show you how to apply the profile to a single VM.</p>
+<p>In the Automanage site, you click into the &ldquo;Automanage machines&rdquo; blade. Here there is a plus button in the top menu of the blade with the text &ldquo;Enable on existing machine&rdquo;. In this page you select the configuration profile to apply. And then you select which VMs to apply it to.</p>
+<p><img src="/img/automanage-apply-profile.PNG" alt="apply profile"></p>
+<p>After you apply the configuration profile, you will see all the VMs with a configuration profile applied with info on which profile is applied and the status of deployment. Automanage will use some time to deploy the resources and returning a status.</p>
+<p><img src="/img/automanage-applied.PNG" alt="Profile applied"></p>
 
 		</div>
 		<footer class="post__footer">
@@ -114,16 +179,13 @@
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/azure-automation/" rel="tag">Azure Automation</a>
+			<a class="tags__link btn" href="/tags/governance/" rel="tag">Governance</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/automation/" rel="tag">Automation</a>
+			<a class="tags__link btn" href="/tags/compute/" rel="tag">Compute</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/azure-compute/" rel="tag">Azure Compute</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/azure-operations/" rel="tag">Azure Operations</a>
+			<a class="tags__link btn" href="/tags/azure-vms/" rel="tag">Azure VMs</a>
 		</li>
 	</ul>
 </div>
