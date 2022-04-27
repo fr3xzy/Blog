@@ -6,7 +6,17 @@
     <description>Recent content in Blogposts on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 09:53:13 +0200</lastBuildDate><atom:link href="/blogposts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Apr 2022 09:08:39 +0200</lastBuildDate><atom:link href="/blogposts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The SQL Server AllowAllAzureIps setting</title>
+      <link>/blogposts/azure-sql-allowallazureip/</link>
+      <pubDate>Wed, 27 Apr 2022 09:08:39 +0200</pubDate>
+      
+      <guid>/blogposts/azure-sql-allowallazureip/</guid>
+      <description>This is going to be a longer one. You have been warned! This adventure started last week when I attended the Azure User Group Norway with a session on Azure SQL networking secrets by Dennes Torres.
+Dennes showed a setting in the firewall rules on Azure SQL server that said, &amp;ldquo;Allow Azure services and resources to access this server&amp;rdquo;. Now you might think &amp;ldquo;Yeah, I need that for my App Service to access the database&amp;rdquo;, but in reality, this setting will allow ALL Azure IPs to access the SQL server!</description>
+    </item>
+    
     <item>
       <title>Introduction to Automanage</title>
       <link>/blogposts/intro-to-automanage/</link>
