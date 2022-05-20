@@ -3,7 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/categories/azure/</loc>
-    <lastmod>2022-04-27T09:08:39+02:00</lastmod>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/tags/azure-policy/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/tags/azure-resource-graph/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/blogposts/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/tags/governance/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/tags/kql/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/blogposts/query-azure-policy-compliance/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-05-20T17:48:39+02:00</lastmod>
   </url><url>
     <loc>/tags/azure-paas/</loc>
     <lastmod>2022-04-27T09:08:39+02:00</lastmod>
@@ -14,25 +41,10 @@
     <loc>/tags/bicep/</loc>
     <lastmod>2022-04-27T09:08:39+02:00</lastmod>
   </url><url>
-    <loc>/blogposts/</loc>
-    <lastmod>2022-04-27T09:08:39+02:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2022-04-27T09:08:39+02:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2022-04-27T09:08:39+02:00</lastmod>
-  </url><url>
-    <loc>/tags/governance/</loc>
-    <lastmod>2022-04-27T09:08:39+02:00</lastmod>
-  </url><url>
     <loc>/tags/iac/</loc>
     <lastmod>2022-04-27T09:08:39+02:00</lastmod>
   </url><url>
     <loc>/tags/security/</loc>
-    <lastmod>2022-04-27T09:08:39+02:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2022-04-27T09:08:39+02:00</lastmod>
   </url><url>
     <loc>/blogposts/azure-sql-allowallazureip/</loc>

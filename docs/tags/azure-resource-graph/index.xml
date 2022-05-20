@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure Resource graph on Erlend Rushfeldt - Blog</title>
+    <link>/tags/azure-resource-graph/</link>
+    <description>Recent content in Azure Resource graph on Erlend Rushfeldt - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 May 2022 17:48:39 +0200</lastBuildDate><atom:link href="/tags/azure-resource-graph/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Query Azure Policy Compliance results using KQL</title>
+      <link>/blogposts/query-azure-policy-compliance/</link>
+      <pubDate>Fri, 20 May 2022 17:48:39 +0200</pubDate>
+      
+      <guid>/blogposts/query-azure-policy-compliance/</guid>
+      <description>Last blogpost I showed you an Azure Policy that checked for a SQL server firewall rule. The results would be a compliance view in Azure Policy. After the blogpost, me and Dennes Torres had a chat about the results you get in the compliance view. The problem: you don&amp;rsquo;t get the resource ID or resource name for the SQL server with the setting on. This isn&amp;rsquo;t really a problem if you have only one not-compliant resource, but if you have several, it becomes tedious.</description>
+    </item>
+    
+  </channel>
+</rss>
