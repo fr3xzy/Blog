@@ -7,7 +7,7 @@ categories:
 tags:
   - "Governance"
   - "Compute"
-  - "Azure VMs"
+  - "Azure VM"
 #menu: main # Optional, add page to a menu. Options: main, side, footer
 draft: false
 type: "blog"

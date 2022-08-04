@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Run scripts on VMs after deployment with Bicep - Erlend Rushfeldt - Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Run scripts on VMs after deployment with Bicep" />
+<meta property="og:description" content="Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! Note that there is other services like Azure Automation and Azure Automanage that do DSC, but this blogpost is about Run Commands." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blogposts/deploymentscripts-in-bicep/" /><meta property="article:section" content="Blogposts" />
+<meta property="article:published_time" content="2022-08-04T12:34:42+02:00" />
+<meta property="article:modified_time" content="2022-08-04T12:34:42+02:00" />
+
+
+		<meta itemprop="name" content="Run scripts on VMs after deployment with Bicep">
+<meta itemprop="description" content="Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! Note that there is other services like Azure Automation and Azure Automanage that do DSC, but this blogpost is about Run Commands."><meta itemprop="datePublished" content="2022-08-04T12:34:42+02:00" />
+<meta itemprop="dateModified" content="2022-08-04T12:34:42+02:00" />
+<meta itemprop="wordCount" content="885">
+<meta itemprop="keywords" content="Azure VM,Automation,Bicep,IAC," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Run scripts on VMs after deployment with Bicep"/>
+<meta name="twitter:description" content="Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! Note that there is other services like Azure Automation and Azure Automanage that do DSC, but this blogpost is about Run Commands."/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Erlend Rushfeldt - Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Erlend Rushfeldt - Blog</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Run scripts on VMs after deployment with Bicep</h1>
+			<p class="post__lead">Do configuration management on your VMs in Azure with post-deployment scripts using Run Commands and Bicep.</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-04T12:34:42&#43;02:00">04-08-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/img/runcommand-thumbnail.PNG" alt="Run scripts on VMs after deployment with Bicep">
+		
+	</figure><div class="content post__content clearfix">
+			<p>Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! <strong>Note</strong> that there is other services like <a href="https://docs.microsoft.com/nb-no/azure/automation/automation-dsc-overview">Azure Automation</a> and <a href="https://docs.microsoft.com/nb-no/azure/automanage/automanage-virtual-machines#participating-services">Azure Automanage</a> that do DSC, but this blogpost is about Run Commands.</p>
+<p>I have written about Run Commands on my blog before, and if you&rsquo;re interested, you can find the post <a href="https://www.errush.org/blogposts/run-command/">here</a>.
+In short terms, Run Commands uses the Virtual Machine Agent to run scripts on VMs. These scripts can either be PowerShell or Bash if you have Linux VMs. Today I will demonstrate how to use Run Commands in a Bicep template that will deploy a VM and run a simple script on it post-deployment.</p>
+<h3 id="the-bicep-template">The Bicep template</h3>
+<p>First, we need the VM. I won&rsquo;t go into too much detail on this part of the template, but what it does is that it creates a VM, NIC, and a Public IP address.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">param location string
+@secure()
+param adminuser string
+@secure()
+param adminpass string
+
+resource windowsVM &#39;Microsoft.Compute/virtualMachines@2020-12-01&#39; = {
+  name: &#39;VM-lab2&#39;
+  location: location
+  properties: {
+    diagnosticsProfile: {
+      bootDiagnostics: {
+        enabled: true
+      }
+    }
+    hardwareProfile: {
+      vmSize:  &#39;Standard_B2ms&#39;
+    }
+    osProfile: {
+      computerName: &#39;lab2&#39;
+      adminUsername: adminuser
+      adminPassword: adminpass
+    }
+    storageProfile: {
+      imageReference: {
+        publisher: &#39;MicrosoftWindowsServer&#39;
+        offer: &#39;WindowsServer&#39;
+        sku: &#39;2022-Datacenter&#39;
+        version: &#39;latest&#39;
+      }
+      osDisk: {
+        caching: &#39;ReadWrite&#39;
+        createOption: &#39;FromImage&#39;
+      }
+    }
+    networkProfile: {
+      networkInterfaces: [
+        {
+          id: nic.id
+        }
+      ]
+    }
+  }
+}
+
+resource nic &#39;Microsoft.Network/networkInterfaces@2021-08-01&#39; = {
+  name: &#39;VM-lab2-nic&#39;
+  location: location
+  properties: {
+    ipConfigurations: [
+       {
+          name: &#39;default&#39;
+          properties: {
+             subnet: {
+               id: vnet.properties.subnets[0].id
+             }
+            privateIPAddress: &#39;10.0.0.10&#39;
+            publicIPAddress: {
+              id: pip.id
+              sku: {
+                name: &#39;Basic&#39;
+                tier: &#39;Regional&#39;
+              }
+              properties: {
+                
+              }
+            }
+          }
+       }
+    ]
+  }
+}
+
+resource pip &#39;Microsoft.Network/publicIPAddresses@2021-08-01&#39; = {
+  name: &#39;pip-lab2&#39;
+  location: location
+  sku: {
+    name: &#39;Basic&#39;
+    tier: &#39;Regional&#39;
+  }
+  properties: {
+  
+  }
+}
+
+resource vnet &#39;Microsoft.Network/virtualNetworks@2022-01-01&#39; existing = {
+  name: &#39;vnet-lab1&#39;
+}
+
+</code></pre></div><p>I will then add the Run Commands part to the bottom of the template. For the Run Commands resource, I won&rsquo;t need to specify too much. The resource will of course require the standard name and location that all resources require, but other than that, it only need two properties. Since Run Commands is a child resource of VMs, I will need to specify the parent. The parent is the VM that will run the script. Defining the parent will also create a DepensOn logic in the template. Ensuring that Azure will create the VM before trying to run the script.</p>
+<p>Lastly, I need to specify the script I want to run. My script is a PowerShell script that will set some registry keys. These registry keys are a prerequisites for Azure AD Application Proxy. Some of you might know that my script is in fact useless, because on Windows Server 2022 (The OS I have chosen for the VM I&rsquo;m deploying) these registry keys that enable TLS 1.2 are there by default. But this script is for demonstration-purposes only. The only keys that this script will set is the DisabledByDefault ones. And that is how I will confirm that the script ran.</p>
+<p>Here is the part of the template with Run Commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">resource deploymentscript &#39;Microsoft.Compute/virtualMachines/runCommands@2022-03-01&#39; = {
+  parent: windowsVM
+  name: &#39;AadAppProxyPrerequisites&#39;
+  location: location
+  properties: {
+    source: {
+      script: &#39;&#39;&#39;Set-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\&#39; -Name EnableDefaultHTTP2 -Value 0
+
+      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\&#39; -Name DisabledByDefault -Value 0
+      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\&#39; -Name Enabled -Value 1
+      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\&#39; -Name DisabledByDefault -Value 0
+      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\&#39; -Name Enabled -Value 1
+      
+      Set-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319\&#39; -Name SchUseStrongCrypto -Value 1&#39;&#39;&#39;
+    }
+  }
+}
+
+</code></pre></div><p>As you can see, the script is written as a multi-line string. It works for this short and simple script, but it&rsquo;s not too good if you want to run a longer script. Fortunately, there is another way to do it.
+Instead of writing the script into to the template, I can upload the script to a Storage Account and use the property of SciptUri instead of Script in my template.
+That will look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">resource deploymentscript &#39;Microsoft.Compute/virtualMachines/runCommands@2022-03-01&#39; = {
+  parent: windowsVM
+  name: &#39;AadAppProxyPrerequisites&#39;
+  location: location
+  properties: {
+    source: {
+      ScriptUri: &#39;https://saerrush832094.blob.core.windows.net/test/AadAppProxyPrerequisites.ps1?sp=r<span style="color:#960050;background-color:#1e0010">&amp;</span>st=2022-08-04T11:19:33Z<span style="color:#960050;background-color:#1e0010">&amp;</span>se=2022-08-04T11:19:33Z<span style="color:#960050;background-color:#1e0010">&amp;</span>spr=https<span style="color:#960050;background-color:#1e0010">&amp;</span>sv=2021-06-08<span style="color:#960050;background-color:#1e0010">&amp;</span>sr=b<span style="color:#960050;background-color:#1e0010">&amp;</span>sig=aDnDOkH78ZI%2FIvZQE4lt0%2FEgQLmTP%2Fq%2BvS&#39;
+    }
+  }
+}
+
+</code></pre></div><p>Now this looks a lot better! The URL is a link to the PowerShell script in a blob container, at the end of the URL is a SAS-token that will give the deployment access to the file. The deployment will access the file and run the script.</p>
+<h3 id="the-result">The result</h3>
+<p>Let&rsquo;s deploy the template and look at the results.
+First, I&rsquo;m using PowerShell and the AZ module to create the deployment:
+<img src="/img/deploymentruncommand.PNG" alt="Deployment"></p>
+<p>The deployment looks good from the terminal. Let&rsquo;s check the Azure portal to see if all the resources were created.</p>
+<p><img src="/img/runcommand-deployment.PNG" alt="portal deployment"></p>
+<p>All looks good! I see that all the resources were created, even the Run Commands resource. That should mean that my script ran on the VM, but let&rsquo;s check if that was the case.</p>
+<p>To verify that the script ran, I RDP into the VM and check the registry for one of the keys that was not there by default.</p>
+<p><img src="/img/registryresults.PNG" alt="Registry results"></p>
+<p>And there it is, the DisabledByDefault key is present. Meaning that my script ran as intended and I can now install Azure AD Application Proxy on it without problems!</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/azure-vm/" rel="tag">Azure VM</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/automation/" rel="tag">Automation</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/bicep/" rel="tag">Bicep</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/iac/" rel="tag">IAC</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Erlend Rushfeldt avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Erlend Rushfeldt</span>
+	</div>
+	<div class="authorbox__description">
+		Erlend is a Cloud Consultant who has a passion for technology and learning. Join him on his journey exploring the cloud!
+	</div>
+</div>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/deploymentscripts-in-bicep/">Run scripts on VMs after deployment with Bicep</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blogposts/query-azure-policy-compliance/">Query Azure Policy Compliance results using KQL</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blogposts/azure-sql-allowallazureip/">The SQL Server AllowAllAzureIps setting</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blogposts/intro-to-automanage/">Introduction to Automanage</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blogposts/azurefw-aadconnectruleset-bicep/">Deploy Azure Firewall ruleset for Azure AD with Bicep</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/automation/" title="Automation">Automation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-ad-connect/" title="Azure AD Connect">Azure AD Connect</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-firewall/" title="Azure Firewall">Azure Firewall</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-operations/" title="Azure Operations">Azure Operations</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-paas/" title="Azure PaaS">Azure PaaS</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-policy/" title="Azure Policy">Azure Policy</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-resource-graph/" title="Azure Resource graph">Azure Resource graph</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-sql/" title="Azure SQL">Azure SQL</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-vm/" title="Azure VM">Azure VM</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bicep/" title="Bicep">Bicep</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/compute/" title="Compute">Compute</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/governance/" title="Governance">Governance</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iac/" title="IaC">IaC</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/kql/" title="KQL">KQL</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/operations/" title="Operations">Operations</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/@ErlendRushfeldt" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/erlend-rushfeldt-b0a92a159" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Erlendrushf" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Erlend Rushfeldt - Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

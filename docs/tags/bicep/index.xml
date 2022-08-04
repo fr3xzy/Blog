@@ -6,7 +6,16 @@
     <description>Recent content in Bicep on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Apr 2022 09:08:39 +0200</lastBuildDate><atom:link href="/tags/bicep/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Aug 2022 12:34:42 +0200</lastBuildDate><atom:link href="/tags/bicep/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Run scripts on VMs after deployment with Bicep</title>
+      <link>/blogposts/deploymentscripts-in-bicep/</link>
+      <pubDate>Thu, 04 Aug 2022 12:34:42 +0200</pubDate>
+      
+      <guid>/blogposts/deploymentscripts-in-bicep/</guid>
+      <description>Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! Note that there is other services like Azure Automation and Azure Automanage that do DSC, but this blogpost is about Run Commands.</description>
+    </item>
+    
     <item>
       <title>The SQL Server AllowAllAzureIps setting</title>
       <link>/blogposts/azure-sql-allowallazureip/</link>
