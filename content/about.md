@@ -22,7 +22,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "social"
 ---
 
-Erlend is working as a consultant for Atea in Norway. He works with cloud services like Microsoft Azure and AWS.
+Erlend is working as a Senior consultant for Atea in Norway. He is specialized in Microsoft Azure and is certified at expert level within the subject. He's over the average interested in automation and regularly uses infrastructure as code with the IaC language Bicep in his work. Erlend is extremely committed and has a big heart for his own professional field.
 Join him on his journey exploring the exciting field of Cloud!
 
 **Certifications:**
