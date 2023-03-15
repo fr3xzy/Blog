@@ -6,7 +6,16 @@
     <description>Recent content in KQL on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 May 2022 17:48:39 +0200</lastBuildDate><atom:link href="/tags/kql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 10:00:00 +0100</lastBuildDate><atom:link href="/tags/kql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reduce your Azure cost by finding unused resources</title>
+      <link>/blogposts/finding-orphaned-resources/</link>
+      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
+      
+      <guid>/blogposts/finding-orphaned-resources/</guid>
+      <description>In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment.</description>
+    </item>
+    
     <item>
       <title>Query Azure Policy Compliance results using KQL</title>
       <link>/blogposts/query-azure-policy-compliance/</link>

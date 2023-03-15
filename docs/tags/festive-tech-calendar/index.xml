@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Festive Tech Calendar on Erlend Rushfeldt - Blog</title>
+    <link>/tags/festive-tech-calendar/</link>
+    <description>Recent content in Festive Tech Calendar on Erlend Rushfeldt - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0100</lastBuildDate><atom:link href="/tags/festive-tech-calendar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Help Santa Secure His Naughty List</title>
+      <link>/blogposts/help-santa-secure-his-naughtylist/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
+      
+      <guid>/blogposts/help-santa-secure-his-naughtylist/</guid>
+      <description>Even on the North Pole they must adopt new technologies, and Santa has started using Bicep to deploy his list of this year&amp;rsquo;s presents. Last year, Santa got a huge fine from the North pole Data Protection Authority after he committed the full naughty list into source control in a public repository. This year, Santa needs help with securing his secrets in Bicep templates during deployments!
+Before I start the blogpost, I want to give a shoutout to the organizers of the Festive Tech Calendar for the amazing work they do!</description>
+    </item>
+    
+  </channel>
+</rss>

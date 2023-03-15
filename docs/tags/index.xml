@@ -6,13 +6,85 @@
     <description>Recent content in Tags on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Aug 2022 12:34:42 +0200</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 10:00:00 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Resource graph</title>
+      <link>/tags/azure-resource-graph/</link>
+      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
+      
+      <guid>/tags/azure-resource-graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure Spring Clean</title>
+      <link>/tags/azure-spring-clean/</link>
+      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
+      
+      <guid>/tags/azure-spring-clean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cost Management</title>
+      <link>/tags/cost-management/</link>
+      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
+      
+      <guid>/tags/cost-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KQL</title>
+      <link>/tags/kql/</link>
+      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
+      
+      <guid>/tags/kql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Automation</title>
       <link>/tags/automation/</link>
-      <pubDate>Thu, 04 Aug 2022 12:34:42 +0200</pubDate>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
       
       <guid>/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bicep</title>
+      <link>/tags/bicep/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
+      
+      <guid>/tags/bicep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Festive Tech Calendar</title>
+      <link>/tags/festive-tech-calendar/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
+      
+      <guid>/tags/festive-tech-calendar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IaC</title>
+      <link>/tags/iac/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
+      
+      <guid>/tags/iac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>/tags/security/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
+      
+      <guid>/tags/security/</guid>
       <description></description>
     </item>
     
@@ -26,24 +98,6 @@
     </item>
     
     <item>
-      <title>Bicep</title>
-      <link>/tags/bicep/</link>
-      <pubDate>Thu, 04 Aug 2022 12:34:42 +0200</pubDate>
-      
-      <guid>/tags/bicep/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IaC</title>
-      <link>/tags/iac/</link>
-      <pubDate>Thu, 04 Aug 2022 12:34:42 +0200</pubDate>
-      
-      <guid>/tags/iac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Azure Policy</title>
       <link>/tags/azure-policy/</link>
       <pubDate>Fri, 20 May 2022 17:48:39 +0200</pubDate>
@@ -53,29 +107,11 @@
     </item>
     
     <item>
-      <title>Azure Resource graph</title>
-      <link>/tags/azure-resource-graph/</link>
-      <pubDate>Fri, 20 May 2022 17:48:39 +0200</pubDate>
-      
-      <guid>/tags/azure-resource-graph/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Governance</title>
       <link>/tags/governance/</link>
       <pubDate>Fri, 20 May 2022 17:48:39 +0200</pubDate>
       
       <guid>/tags/governance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>KQL</title>
-      <link>/tags/kql/</link>
-      <pubDate>Fri, 20 May 2022 17:48:39 +0200</pubDate>
-      
-      <guid>/tags/kql/</guid>
       <description></description>
     </item>
     
@@ -94,15 +130,6 @@
       <pubDate>Wed, 27 Apr 2022 09:08:39 +0200</pubDate>
       
       <guid>/tags/azure-sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>/tags/security/</link>
-      <pubDate>Wed, 27 Apr 2022 09:08:39 +0200</pubDate>
-      
-      <guid>/tags/security/</guid>
       <description></description>
     </item>
     

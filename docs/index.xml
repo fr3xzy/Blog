@@ -6,7 +6,26 @@
     <description>Recent content on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Aug 2022 12:34:42 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 10:00:00 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reduce your Azure cost by finding unused resources</title>
+      <link>/blogposts/finding-orphaned-resources/</link>
+      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
+      
+      <guid>/blogposts/finding-orphaned-resources/</guid>
+      <description>In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment.</description>
+    </item>
+    
+    <item>
+      <title>Help Santa Secure His Naughty List</title>
+      <link>/blogposts/help-santa-secure-his-naughtylist/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
+      
+      <guid>/blogposts/help-santa-secure-his-naughtylist/</guid>
+      <description>Even on the North Pole they must adopt new technologies, and Santa has started using Bicep to deploy his list of this year&amp;rsquo;s presents. Last year, Santa got a huge fine from the North pole Data Protection Authority after he committed the full naughty list into source control in a public repository. This year, Santa needs help with securing his secrets in Bicep templates during deployments!
+Before I start the blogpost, I want to give a shoutout to the organizers of the Festive Tech Calendar for the amazing work they do!</description>
+    </item>
+    
     <item>
       <title>Run scripts on VMs after deployment with Bicep</title>
       <link>/blogposts/deploymentscripts-in-bicep/</link>
@@ -88,9 +107,7 @@ The two versions of Run Command Something I didn&amp;rsquo;t mention in my last 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Erlend is working as a consultant for Atea in Norway. He works with cloud services like Microsoft Azure and AWS. Join him on his journey exploring the exciting field of Cloud!
-Certifications:
- AZ-104 - Azure Administrator Associate AZ-140 - Azure Virtual Desktop Speciality AZ-305 - Azure Solution Architect Expert AZ-500 - Azure Security Engineer Associate SC-300 - Identity and Access Administrator Associate CLF-C01 - AWS Certified Cloud practitioner  </description>
+      <description>Erlend is working as a Senior consultant for Atea in Norway. He is specialized in Microsoft Azure and is certified at expert level within the subject. He&amp;rsquo;s over the average interested in automation and regularly uses infrastructure as code with the IaC language Bicep in his work. Erlend is extremely committed and has a big heart for his own professional field. Join him on his journey exploring the exciting field of Cloud!</description>
     </item>
     
   </channel>
