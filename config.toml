@@ -7,7 +7,7 @@ publishdir = "docs"
 
 [Author] # Used in authorbox
   name = "Erlend Rushfeldt"
-  bio = "Erlend is a Cloud Consultant who has a passion for technology and learning. Join him on his journey exploring the cloud!"
+  bio = "Erlend is a senior Consultant who has a passion for technology and learning. Join him on his journey exploring the cloud!"
   avatar = "img/avatar.png"
 
 [Params]
