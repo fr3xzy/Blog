@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2022-08-04T12:34:42+02:00" />
 <meta property="article:modified_time" content="2022-08-04T12:34:42+02:00" />
 
-
 		<meta itemprop="name" content="Run scripts on VMs after deployment with Bicep">
 <meta itemprop="description" content="Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! Note that there is other services like Azure Automation and Azure Automanage that do DSC, but this blogpost is about Run Commands."><meta itemprop="datePublished" content="2022-08-04T12:34:42+02:00" />
 <meta itemprop="dateModified" content="2022-08-04T12:34:42+02:00" />
@@ -93,131 +92,128 @@
 In short terms, Run Commands uses the Virtual Machine Agent to run scripts on VMs. These scripts can either be PowerShell or Bash if you have Linux VMs. Today I will demonstrate how to use Run Commands in a Bicep template that will deploy a VM and run a simple script on it post-deployment.</p>
 <h3 id="the-bicep-template">The Bicep template</h3>
 <p>First, we need the VM. I won&rsquo;t go into too much detail on this part of the template, but what it does is that it creates a VM, NIC, and a Public IP address.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">param location string
-@secure()
-param adminuser string
-@secure()
-param adminpass string
-
-resource windowsVM &#39;Microsoft.Compute/virtualMachines@2020-12-01&#39; = {
-  name: &#39;VM-lab2&#39;
-  location: location
-  properties: {
-    diagnosticsProfile: {
-      bootDiagnostics: {
-        enabled: true
-      }
-    }
-    hardwareProfile: {
-      vmSize:  &#39;Standard_B2ms&#39;
-    }
-    osProfile: {
-      computerName: &#39;lab2&#39;
-      adminUsername: adminuser
-      adminPassword: adminpass
-    }
-    storageProfile: {
-      imageReference: {
-        publisher: &#39;MicrosoftWindowsServer&#39;
-        offer: &#39;WindowsServer&#39;
-        sku: &#39;2022-Datacenter&#39;
-        version: &#39;latest&#39;
-      }
-      osDisk: {
-        caching: &#39;ReadWrite&#39;
-        createOption: &#39;FromImage&#39;
-      }
-    }
-    networkProfile: {
-      networkInterfaces: [
-        {
-          id: nic.id
-        }
-      ]
-    }
-  }
-}
-
-resource nic &#39;Microsoft.Network/networkInterfaces@2021-08-01&#39; = {
-  name: &#39;VM-lab2-nic&#39;
-  location: location
-  properties: {
-    ipConfigurations: [
-       {
-          name: &#39;default&#39;
-          properties: {
-             subnet: {
-               id: vnet.properties.subnets[0].id
-             }
-            privateIPAddress: &#39;10.0.0.10&#39;
-            publicIPAddress: {
-              id: pip.id
-              sku: {
-                name: &#39;Basic&#39;
-                tier: &#39;Regional&#39;
-              }
-              properties: {
-                
-              }
-            }
-          }
-       }
-    ]
-  }
-}
-
-resource pip &#39;Microsoft.Network/publicIPAddresses@2021-08-01&#39; = {
-  name: &#39;pip-lab2&#39;
-  location: location
-  sku: {
-    name: &#39;Basic&#39;
-    tier: &#39;Regional&#39;
-  }
-  properties: {
-  
-  }
-}
-
-resource vnet &#39;Microsoft.Network/virtualNetworks@2022-01-01&#39; existing = {
-  name: &#39;vnet-lab1&#39;
-}
-
-</code></pre></div><p>I will then add the Run Commands part to the bottom of the template. For the Run Commands resource, I won&rsquo;t need to specify too much. The resource will of course require the standard name and location that all resources require, but other than that, it only need two properties. Since Run Commands is a child resource of VMs, I will need to specify the parent. The parent is the VM that will run the script. Defining the parent will also create a DepensOn logic in the template. Ensuring that Azure will create the VM before trying to run the script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>param location string
+</span></span><span style="display:flex;"><span>@secure()
+</span></span><span style="display:flex;"><span>param adminuser string
+</span></span><span style="display:flex;"><span>@secure()
+</span></span><span style="display:flex;"><span>param adminpass string
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resource windowsVM &#39;Microsoft.Compute/virtualMachines@2020-12-01&#39; = {
+</span></span><span style="display:flex;"><span>  name: &#39;VM-lab2&#39;
+</span></span><span style="display:flex;"><span>  location: location
+</span></span><span style="display:flex;"><span>  properties: {
+</span></span><span style="display:flex;"><span>    diagnosticsProfile: {
+</span></span><span style="display:flex;"><span>      bootDiagnostics: {
+</span></span><span style="display:flex;"><span>        enabled: true
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    hardwareProfile: {
+</span></span><span style="display:flex;"><span>      vmSize:  &#39;Standard_B2ms&#39;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    osProfile: {
+</span></span><span style="display:flex;"><span>      computerName: &#39;lab2&#39;
+</span></span><span style="display:flex;"><span>      adminUsername: adminuser
+</span></span><span style="display:flex;"><span>      adminPassword: adminpass
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    storageProfile: {
+</span></span><span style="display:flex;"><span>      imageReference: {
+</span></span><span style="display:flex;"><span>        publisher: &#39;MicrosoftWindowsServer&#39;
+</span></span><span style="display:flex;"><span>        offer: &#39;WindowsServer&#39;
+</span></span><span style="display:flex;"><span>        sku: &#39;2022-Datacenter&#39;
+</span></span><span style="display:flex;"><span>        version: &#39;latest&#39;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      osDisk: {
+</span></span><span style="display:flex;"><span>        caching: &#39;ReadWrite&#39;
+</span></span><span style="display:flex;"><span>        createOption: &#39;FromImage&#39;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    networkProfile: {
+</span></span><span style="display:flex;"><span>      networkInterfaces: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          id: nic.id
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resource nic &#39;Microsoft.Network/networkInterfaces@2021-08-01&#39; = {
+</span></span><span style="display:flex;"><span>  name: &#39;VM-lab2-nic&#39;
+</span></span><span style="display:flex;"><span>  location: location
+</span></span><span style="display:flex;"><span>  properties: {
+</span></span><span style="display:flex;"><span>    ipConfigurations: [
+</span></span><span style="display:flex;"><span>       {
+</span></span><span style="display:flex;"><span>          name: &#39;default&#39;
+</span></span><span style="display:flex;"><span>          properties: {
+</span></span><span style="display:flex;"><span>             subnet: {
+</span></span><span style="display:flex;"><span>               id: vnet.properties.subnets[0].id
+</span></span><span style="display:flex;"><span>             }
+</span></span><span style="display:flex;"><span>            privateIPAddress: &#39;10.0.0.10&#39;
+</span></span><span style="display:flex;"><span>            publicIPAddress: {
+</span></span><span style="display:flex;"><span>              id: pip.id
+</span></span><span style="display:flex;"><span>              sku: {
+</span></span><span style="display:flex;"><span>                name: &#39;Basic&#39;
+</span></span><span style="display:flex;"><span>                tier: &#39;Regional&#39;
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>              properties: {
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resource pip &#39;Microsoft.Network/publicIPAddresses@2021-08-01&#39; = {
+</span></span><span style="display:flex;"><span>  name: &#39;pip-lab2&#39;
+</span></span><span style="display:flex;"><span>  location: location
+</span></span><span style="display:flex;"><span>  sku: {
+</span></span><span style="display:flex;"><span>    name: &#39;Basic&#39;
+</span></span><span style="display:flex;"><span>    tier: &#39;Regional&#39;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  properties: {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resource vnet &#39;Microsoft.Network/virtualNetworks@2022-01-01&#39; existing = {
+</span></span><span style="display:flex;"><span>  name: &#39;vnet-lab1&#39;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I will then add the Run Commands part to the bottom of the template. For the Run Commands resource, I won&rsquo;t need to specify too much. The resource will of course require the standard name and location that all resources require, but other than that, it only need two properties. Since Run Commands is a child resource of VMs, I will need to specify the parent. The parent is the VM that will run the script. Defining the parent will also create a DepensOn logic in the template. Ensuring that Azure will create the VM before trying to run the script.</p>
 <p>Lastly, I need to specify the script I want to run. My script is a PowerShell script that will set some registry keys. These registry keys are a prerequisites for Azure AD Application Proxy. Some of you might know that my script is in fact useless, because on Windows Server 2022 (The OS I have chosen for the VM I&rsquo;m deploying) these registry keys that enable TLS 1.2 are there by default. But this script is for demonstration-purposes only. The only keys that this script will set is the DisabledByDefault ones. And that is how I will confirm that the script ran.</p>
 <p>Here is the part of the template with Run Commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">resource deploymentscript &#39;Microsoft.Compute/virtualMachines/runCommands@2022-03-01&#39; = {
-  parent: windowsVM
-  name: &#39;AadAppProxyPrerequisites&#39;
-  location: location
-  properties: {
-    source: {
-      script: &#39;&#39;&#39;Set-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\&#39; -Name EnableDefaultHTTP2 -Value 0
-
-      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\&#39; -Name DisabledByDefault -Value 0
-      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\&#39; -Name Enabled -Value 1
-      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\&#39; -Name DisabledByDefault -Value 0
-      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\&#39; -Name Enabled -Value 1
-      
-      Set-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319\&#39; -Name SchUseStrongCrypto -Value 1&#39;&#39;&#39;
-    }
-  }
-}
-
-</code></pre></div><p>As you can see, the script is written as a multi-line string. It works for this short and simple script, but it&rsquo;s not too good if you want to run a longer script. Fortunately, there is another way to do it.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>resource deploymentscript &#39;Microsoft.Compute/virtualMachines/runCommands@2022-03-01&#39; = {
+</span></span><span style="display:flex;"><span>  parent: windowsVM
+</span></span><span style="display:flex;"><span>  name: &#39;AadAppProxyPrerequisites&#39;
+</span></span><span style="display:flex;"><span>  location: location
+</span></span><span style="display:flex;"><span>  properties: {
+</span></span><span style="display:flex;"><span>    source: {
+</span></span><span style="display:flex;"><span>      script: &#39;&#39;&#39;Set-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\&#39; -Name EnableDefaultHTTP2 -Value 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\&#39; -Name DisabledByDefault -Value 0
+</span></span><span style="display:flex;"><span>      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\&#39; -Name Enabled -Value 1
+</span></span><span style="display:flex;"><span>      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\&#39; -Name DisabledByDefault -Value 0
+</span></span><span style="display:flex;"><span>      Set-ItemProperty &#39;HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\&#39; -Name Enabled -Value 1
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      Set-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319\&#39; -Name SchUseStrongCrypto -Value 1&#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you can see, the script is written as a multi-line string. It works for this short and simple script, but it&rsquo;s not too good if you want to run a longer script. Fortunately, there is another way to do it.
 Instead of writing the script into to the template, I can upload the script to a Storage Account and use the property of SciptUri instead of Script in my template.
 That will look something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">resource deploymentscript &#39;Microsoft.Compute/virtualMachines/runCommands@2022-03-01&#39; = {
-  parent: windowsVM
-  name: &#39;AadAppProxyPrerequisites&#39;
-  location: location
-  properties: {
-    source: {
-      ScriptUri: &#39;https://saerrush832094.blob.core.windows.net/test/AadAppProxyPrerequisites.ps1?sp=r<span style="color:#960050;background-color:#1e0010">&amp;</span>st=2022-08-04T11:19:33Z<span style="color:#960050;background-color:#1e0010">&amp;</span>se=2022-08-04T11:19:33Z<span style="color:#960050;background-color:#1e0010">&amp;</span>spr=https<span style="color:#960050;background-color:#1e0010">&amp;</span>sv=2021-06-08<span style="color:#960050;background-color:#1e0010">&amp;</span>sr=b<span style="color:#960050;background-color:#1e0010">&amp;</span>sig=aDnDOkH78ZI%2FIvZQE4lt0%2FEgQLmTP%2Fq%2BvS&#39;
-    }
-  }
-}
-
-</code></pre></div><p>Now this looks a lot better! The URL is a link to the PowerShell script in a blob container, at the end of the URL is a SAS-token that will give the deployment access to the file. The deployment will access the file and run the script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>resource deploymentscript &#39;Microsoft.Compute/virtualMachines/runCommands@2022-03-01&#39; = {
+</span></span><span style="display:flex;"><span>  parent: windowsVM
+</span></span><span style="display:flex;"><span>  name: &#39;AadAppProxyPrerequisites&#39;
+</span></span><span style="display:flex;"><span>  location: location
+</span></span><span style="display:flex;"><span>  properties: {
+</span></span><span style="display:flex;"><span>    source: {
+</span></span><span style="display:flex;"><span>      ScriptUri: &#39;https://saerrush832094.blob.core.windows.net/test/AadAppProxyPrerequisites.ps1?sp=r<span style="color:#960050;background-color:#1e0010">&amp;</span>st=2022-08-04T11:19:33Z<span style="color:#960050;background-color:#1e0010">&amp;</span>se=2022-08-04T11:19:33Z<span style="color:#960050;background-color:#1e0010">&amp;</span>spr=https<span style="color:#960050;background-color:#1e0010">&amp;</span>sv=2021-06-08<span style="color:#960050;background-color:#1e0010">&amp;</span>sr=b<span style="color:#960050;background-color:#1e0010">&amp;</span>sig=aDnDOkH78ZI%2FIvZQE4lt0%2FEgQLmTP%2Fq%2BvS&#39;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now this looks a lot better! The URL is a link to the PowerShell script in a blob container, at the end of the URL is a SAS-token that will give the deployment access to the file. The deployment will access the file and run the script.</p>
 <h3 id="the-result">The result</h3>
 <p>Let&rsquo;s deploy the template and look at the results.
 First, I&rsquo;m using PowerShell and the AZ module to create the deployment:
@@ -273,11 +269,11 @@ First, I&rsquo;m using PowerShell and the AZ module to create the deployment:
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optmization-in-the-wild/">Cost Optmization in the Wild</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/finding-orphaned-resources/">Reduce your Azure cost by finding unused resources</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/help-santa-secure-his-naughtylist/">Help Santa Secure His Naughty List</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/deploymentscripts-in-bicep/">Run scripts on VMs after deployment with Bicep</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/query-azure-policy-compliance/">Query Azure Policy Compliance results using KQL</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blogposts/azure-sql-allowallazureip/">The SQL Server AllowAllAzureIps setting</a></li>
 		</ul>
 	</div>
 </div>
@@ -299,11 +295,13 @@ First, I&rsquo;m using PowerShell and the AZ module to create the deployment:
 		<a class="widget-taglist__link widget__link btn" href="/tags/bicep/" title="Bicep">Bicep</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/compute/" title="Compute">Compute</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cost-management/" title="Cost Management">Cost Management</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cost-optimization/" title="Cost Optimization">Cost Optimization</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/festive-tech-calendar/" title="Festive Tech Calendar">Festive Tech Calendar</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/governance/" title="Governance">Governance</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iac/" title="IaC">IaC</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kql/" title="KQL">KQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/operations/" title="Operations">Operations</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/public-speaking/" title="Public Speaking">Public Speaking</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
 	</div>
 </div>
@@ -323,7 +321,7 @@ First, I&rsquo;m using PowerShell and the AZ module to create the deployment:
 			</a>
 		</div>
 		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Erlendrushf" target="_blank">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Fr3xzy" target="_blank">
 				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
 				<span>GitHub</span>
 			</a>

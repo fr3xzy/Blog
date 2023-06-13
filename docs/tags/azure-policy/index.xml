@@ -6,7 +6,17 @@
     <description>Recent content in Azure Policy on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 May 2022 17:48:39 +0200</lastBuildDate><atom:link href="/tags/azure-policy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jun 2023 22:27:19 +0200</lastBuildDate><atom:link href="/tags/azure-policy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cost Optmization in the Wild</title>
+      <link>/blogposts/cost-optmization-in-the-wild/</link>
+      <pubDate>Mon, 12 Jun 2023 22:27:19 +0200</pubDate>
+      
+      <guid>/blogposts/cost-optmization-in-the-wild/</guid>
+      <description>Here is a collection of snippets of code used in the &amp;ldquo;Cost Optimization in the wild! - Experiences from reducing costs&amp;rdquo; presentation. If you are missing any snippets of code used in a demo, or if you have any other question, feel free to message me on Twitter or LinkedIn.
+Orphaned disks Old Snapshots App Gateways and Load Balancers Storage v1 App Service Plans Orphaned disks KQL to find disks resources | where type == &amp;#34;microsoft.</description>
+    </item>
+    
     <item>
       <title>Query Azure Policy Compliance results using KQL</title>
       <link>/blogposts/query-azure-policy-compliance/</link>

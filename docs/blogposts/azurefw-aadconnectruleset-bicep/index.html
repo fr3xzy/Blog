@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2022-03-23T13:57:21+01:00" />
 <meta property="article:modified_time" content="2022-03-23T13:57:21+01:00" />
 
-
 		<meta itemprop="name" content="Deploy Azure Firewall ruleset for Azure AD with Bicep">
 <meta itemprop="description" content="Get the required firewallrules in Azure firewall for Azure AD connect using a Bicep template."><meta itemprop="datePublished" content="2022-03-23T13:57:21+01:00" />
 <meta itemprop="dateModified" content="2022-03-23T13:57:21+01:00" />
@@ -119,12 +118,12 @@
 <td>AAD Connect Health</td>
 </tr>
 <tr>
-<td><a href="http://www.management.azure.com">www.management.azure.com</a></td>
+<td><a href="https://www.management.azure.com">www.management.azure.com</a></td>
 <td>https:443</td>
 <td>Various Azure services</td>
 </tr>
 <tr>
-<td><a href="http://www.policykeyservice.dc.ad.msft.net">www.policykeyservice.dc.ad.msft.net</a></td>
+<td><a href="https://www.policykeyservice.dc.ad.msft.net">www.policykeyservice.dc.ad.msft.net</a></td>
 <td>https:443</td>
 <td>AAD Connect Health</td>
 </tr>
@@ -139,7 +138,7 @@
 <td>MFA</td>
 </tr>
 <tr>
-<td><a href="http://www.office.com">www.office.com</a></td>
+<td><a href="https://www.office.com">www.office.com</a></td>
 <td>https:443</td>
 <td>Authentication</td>
 </tr>
@@ -212,173 +211,173 @@
 </table>
 <p>If you can&rsquo;t get Azure AD Connect to work with these ports opened, try this <a href="https://docs.microsoft.com/en-us/azure/active-directory/hybrid/tshoot-connect-connectivity#troubleshoot-connectivity-issues-in-the-installation-wizard">troubleshooting guide from Microsoft on the bare minimum requirements</a></p>
 <h2 id="bicep-template">Bicep template</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">param fwpolicyname string
-param priority int = 300
-param sourceaddresses array
-
-resource fwpolicy &#39;Microsoft.Network/firewallPolicies@2021-05-01&#39; existing = {
-  name: fwpolicyname
-}
-
-resource fwPolicyrulecollection &#39;Microsoft.Network/firewallPolicies/ruleCollectionGroups@2021-05-01&#39; = {
-  name: &#39;AllowAadConnect&#39;
-  parent: fwpolicy
-  properties: {
-    priority: priority
-    ruleCollections: [
-      {
-        ruleCollectionType: &#39;FirewallPolicyFilterRuleCollection&#39;
-        action: {
-          type: &#39;Allow&#39;
-        }
-        rules: [
-          {
-            name: &#39;AAD Connect health Service Endpoints&#39;
-            ruleType: &#39;ApplicationRule&#39;
-            targetFqdns: [
-              &#39;*.aadconnecthealth.azure.com&#39;
-              &#39;*servicebus.windows.net&#39;
-              &#39;*.adhybridhealth.azure.com&#39;
-              &#39;www.management.azure.com&#39;
-              &#39;www.policykeyservice.dc.ad.msft.net&#39;
-              &#39;secure.aadcdn.microsoftonline-p.com&#39;
-              &#39;aadcdn.msftauth.net&#39;
-            ]
-            sourceAddresses: sourceaddresses
-            protocols: [
-              {
-                protocolType: &#39;Https&#39;
-                port: 443
-              }
-            ]
-          }
-          {
-            name: &#39;Discovery&#39;
-            ruleType: &#39;ApplicationRule&#39;
-            targetFqdns: [
-              &#39;www.office.com&#39;
-            ]
-            sourceAddresses: sourceaddresses
-            protocols: [
-              {
-                protocolType: &#39;Https&#39;
-                port: 443
-              }
-            ]
-          }
-          {
-            name: &#39;Sign in AAD&#39;
-            ruleType: &#39;ApplicationRule&#39;
-            targetFqdns: [
-              &#39;*.windows.net&#39;
-            ]
-            sourceAddresses: sourceaddresses
-            protocols: [
-              {
-                protocolType: &#39;Https&#39;
-                port: 443
-              }
-            ]
-          }
-          {
-            name: &#39;Confidure and import/export AAD&#39;
-            ruleType: &#39;ApplicationRule&#39;
-            targetFqdns: [
-              &#39;*.microsoftonline.com&#39;
-            ]
-            sourceAddresses: sourceaddresses
-            protocols: [
-              {
-                protocolType: &#39;Https&#39;
-                port: 443
-              }
-            ]
-          }
-          {
-            name: &#39;Auth&#39;
-            ruleType: &#39;ApplicationRule&#39;
-            targetFqdns: [
-              &#39;*.msappproxy.net&#39;
-            ]
-            sourceAddresses: sourceaddresses
-            protocols: [
-              {
-                protocolType: &#39;Https&#39;
-                port: 443
-              }
-            ]
-          }
-          {
-            name: &#39;CRL&#39;
-            ruleType: &#39;ApplicationRule&#39;
-            targetFqdns: [
-              &#39;*.verisign.com&#39;
-              &#39;*.entrust.net&#39;
-            ]
-            sourceAddresses: sourceaddresses
-            protocols: [
-              {
-                protocolType: &#39;Http&#39;
-                port: 80
-              }
-            ]
-          }
-          {
-            name: &#39;Verify cert&#39;
-            ruleType: &#39;ApplicationRule&#39;
-            targetFqdns: [
-              &#39;*.crl3.digicert.com&#39;
-              &#39;*.crl4.digicert.com&#39;
-              &#39;*.ocsp.digicert.com&#39;
-              &#39;*.www.d-trust.net&#39;
-              &#39;*.root-c3-ca2-2009.ocsp.d-trust.net&#39;
-              &#39;*.crl.microsoft.com&#39;
-              &#39;*.oneocsp.microsoft.com&#39;
-              &#39;*.ocsp.msocsp.com&#39;
-            ]
-            sourceAddresses: sourceaddresses
-            protocols: [
-              {
-                protocolType: &#39;Http&#39;
-                port: 80
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-</code></pre></div><h2 id="deploying-the-template">Deploying the template</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>param fwpolicyname string
+</span></span><span style="display:flex;"><span>param priority int = 300
+</span></span><span style="display:flex;"><span>param sourceaddresses array
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resource fwpolicy &#39;Microsoft.Network/firewallPolicies@2021-05-01&#39; existing = {
+</span></span><span style="display:flex;"><span>  name: fwpolicyname
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resource fwPolicyrulecollection &#39;Microsoft.Network/firewallPolicies/ruleCollectionGroups@2021-05-01&#39; = {
+</span></span><span style="display:flex;"><span>  name: &#39;AllowAadConnect&#39;
+</span></span><span style="display:flex;"><span>  parent: fwpolicy
+</span></span><span style="display:flex;"><span>  properties: {
+</span></span><span style="display:flex;"><span>    priority: priority
+</span></span><span style="display:flex;"><span>    ruleCollections: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        ruleCollectionType: &#39;FirewallPolicyFilterRuleCollection&#39;
+</span></span><span style="display:flex;"><span>        action: {
+</span></span><span style="display:flex;"><span>          type: &#39;Allow&#39;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        rules: [
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            name: &#39;AAD Connect health Service Endpoints&#39;
+</span></span><span style="display:flex;"><span>            ruleType: &#39;ApplicationRule&#39;
+</span></span><span style="display:flex;"><span>            targetFqdns: [
+</span></span><span style="display:flex;"><span>              &#39;*.aadconnecthealth.azure.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;*servicebus.windows.net&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.adhybridhealth.azure.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;www.management.azure.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;www.policykeyservice.dc.ad.msft.net&#39;
+</span></span><span style="display:flex;"><span>              &#39;secure.aadcdn.microsoftonline-p.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;aadcdn.msftauth.net&#39;
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            sourceAddresses: sourceaddresses
+</span></span><span style="display:flex;"><span>            protocols: [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                protocolType: &#39;Https&#39;
+</span></span><span style="display:flex;"><span>                port: 443
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            name: &#39;Discovery&#39;
+</span></span><span style="display:flex;"><span>            ruleType: &#39;ApplicationRule&#39;
+</span></span><span style="display:flex;"><span>            targetFqdns: [
+</span></span><span style="display:flex;"><span>              &#39;www.office.com&#39;
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            sourceAddresses: sourceaddresses
+</span></span><span style="display:flex;"><span>            protocols: [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                protocolType: &#39;Https&#39;
+</span></span><span style="display:flex;"><span>                port: 443
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            name: &#39;Sign in AAD&#39;
+</span></span><span style="display:flex;"><span>            ruleType: &#39;ApplicationRule&#39;
+</span></span><span style="display:flex;"><span>            targetFqdns: [
+</span></span><span style="display:flex;"><span>              &#39;*.windows.net&#39;
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            sourceAddresses: sourceaddresses
+</span></span><span style="display:flex;"><span>            protocols: [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                protocolType: &#39;Https&#39;
+</span></span><span style="display:flex;"><span>                port: 443
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            name: &#39;Confidure and import/export AAD&#39;
+</span></span><span style="display:flex;"><span>            ruleType: &#39;ApplicationRule&#39;
+</span></span><span style="display:flex;"><span>            targetFqdns: [
+</span></span><span style="display:flex;"><span>              &#39;*.microsoftonline.com&#39;
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            sourceAddresses: sourceaddresses
+</span></span><span style="display:flex;"><span>            protocols: [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                protocolType: &#39;Https&#39;
+</span></span><span style="display:flex;"><span>                port: 443
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            name: &#39;Auth&#39;
+</span></span><span style="display:flex;"><span>            ruleType: &#39;ApplicationRule&#39;
+</span></span><span style="display:flex;"><span>            targetFqdns: [
+</span></span><span style="display:flex;"><span>              &#39;*.msappproxy.net&#39;
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            sourceAddresses: sourceaddresses
+</span></span><span style="display:flex;"><span>            protocols: [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                protocolType: &#39;Https&#39;
+</span></span><span style="display:flex;"><span>                port: 443
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            name: &#39;CRL&#39;
+</span></span><span style="display:flex;"><span>            ruleType: &#39;ApplicationRule&#39;
+</span></span><span style="display:flex;"><span>            targetFqdns: [
+</span></span><span style="display:flex;"><span>              &#39;*.verisign.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.entrust.net&#39;
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            sourceAddresses: sourceaddresses
+</span></span><span style="display:flex;"><span>            protocols: [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                protocolType: &#39;Http&#39;
+</span></span><span style="display:flex;"><span>                port: 80
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            name: &#39;Verify cert&#39;
+</span></span><span style="display:flex;"><span>            ruleType: &#39;ApplicationRule&#39;
+</span></span><span style="display:flex;"><span>            targetFqdns: [
+</span></span><span style="display:flex;"><span>              &#39;*.crl3.digicert.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.crl4.digicert.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.ocsp.digicert.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.www.d-trust.net&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.root-c3-ca2-2009.ocsp.d-trust.net&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.crl.microsoft.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.oneocsp.microsoft.com&#39;
+</span></span><span style="display:flex;"><span>              &#39;*.ocsp.msocsp.com&#39;
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>            sourceAddresses: sourceaddresses
+</span></span><span style="display:flex;"><span>            protocols: [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                protocolType: &#39;Http&#39;
+</span></span><span style="display:flex;"><span>                port: 80
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="deploying-the-template">Deploying the template</h2>
 <p>So how do you deploy this Bicep template? This template requires you to have an already configured Azure Firewall and a firewall policy. Next you need to configure the parameters specified at the top of the template. Only 2 of them are strictly necessary to configure as the priority parameter has a default value of 300, but if you have a rule with that priority, you need to change that too. The parameter &ldquo;fwpolicyname&rdquo; is as simple as the name of your existing firewall policy that you are deploying the ruleset to.</p>
 <p>The &ldquo;sourceaddresses&rdquo; parameter is a bit different as it expects an array. Therefore, your input should look something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">[
-  &#34;10.10.7.5&#34;
-  &#34;10.10.7.6&#34;
-]
-</code></pre></div><p>It&rsquo;s possible to put several or only one IP-address depending on how many servers you have installed Azure AD Connect on.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  &#34;10.10.7.5&#34;
+</span></span><span style="display:flex;"><span>  &#34;10.10.7.6&#34;
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>It&rsquo;s possible to put several or only one IP-address depending on how many servers you have installed Azure AD Connect on.</p>
 <p>I would recommend to use a smiple parameter file if you want a simpler experience when deploying. A parameter file would look like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#&#34;</span>,
-    <span style="color:#f92672">&#34;contentVersion&#34;</span>: <span style="color:#e6db74">&#34;1.0.0.0&#34;</span>,
-    <span style="color:#f92672">&#34;parameters&#34;</span>: {
-        <span style="color:#f92672">&#34;soureceaddresses&#34;</span>: {
-            <span style="color:#f92672">&#34;value&#34;</span>: [
-              <span style="color:#e6db74">&#34;10.10.7.5&#34;</span>
-              <span style="color:#e6db74">&#34;10.10.7.6&#34;</span>
-            ]
-        },
-        <span style="color:#f92672">&#34;fwpolicyname&#34;</span>: {
-          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;fwpolicyname111&#34;</span>
-        },
-        <span style="color:#f92672">&#34;priority&#34;</span>: {
-          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#ae81ff">250</span>
-        }
-    }
-}
-</code></pre></div><p>Now to deploy it with Powershell, you use the following command (after authentication ofcourse):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Powershell" data-lang="Powershell">New-AzResourceGroupDeployment -TemplateFile fwruleset.bicep -TemplateParameterFile parameters.json
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;contentVersion&#34;</span>: <span style="color:#e6db74">&#34;1.0.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;parameters&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;soureceaddresses&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;value&#34;</span>: [
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;10.10.7.5&#34;</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;10.10.7.6&#34;</span>
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;fwpolicyname&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;fwpolicyname111&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;priority&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#ae81ff">250</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now to deploy it with Powershell, you use the following command (after authentication ofcourse):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Powershell" data-lang="Powershell"><span style="display:flex;"><span>New-AzResourceGroupDeployment -TemplateFile fwruleset.bicep -TemplateParameterFile parameters.json
+</span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
@@ -423,11 +422,11 @@ resource fwPolicyrulecollection &#39;Microsoft.Network/firewallPolicies/ruleColl
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optmization-in-the-wild/">Cost Optmization in the Wild</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/finding-orphaned-resources/">Reduce your Azure cost by finding unused resources</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/help-santa-secure-his-naughtylist/">Help Santa Secure His Naughty List</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/deploymentscripts-in-bicep/">Run scripts on VMs after deployment with Bicep</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/query-azure-policy-compliance/">Query Azure Policy Compliance results using KQL</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blogposts/azure-sql-allowallazureip/">The SQL Server AllowAllAzureIps setting</a></li>
 		</ul>
 	</div>
 </div>
@@ -449,11 +448,13 @@ resource fwPolicyrulecollection &#39;Microsoft.Network/firewallPolicies/ruleColl
 		<a class="widget-taglist__link widget__link btn" href="/tags/bicep/" title="Bicep">Bicep</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/compute/" title="Compute">Compute</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cost-management/" title="Cost Management">Cost Management</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cost-optimization/" title="Cost Optimization">Cost Optimization</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/festive-tech-calendar/" title="Festive Tech Calendar">Festive Tech Calendar</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/governance/" title="Governance">Governance</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iac/" title="IaC">IaC</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kql/" title="KQL">KQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/operations/" title="Operations">Operations</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/public-speaking/" title="Public Speaking">Public Speaking</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
 	</div>
 </div>
@@ -473,7 +474,7 @@ resource fwPolicyrulecollection &#39;Microsoft.Network/firewallPolicies/ruleColl
 			</a>
 		</div>
 		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Erlendrushf" target="_blank">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Fr3xzy" target="_blank">
 				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
 				<span>GitHub</span>
 			</a>
