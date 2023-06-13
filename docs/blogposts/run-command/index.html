@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2022-02-02T20:25:52+01:00" />
 <meta property="article:modified_time" content="2022-02-02T20:25:52+01:00" />
 
-
 		<meta itemprop="name" content="Use Run Command to run scripts on your VM">
 <meta itemprop="description" content="A deeper dive into the Run Command feature and showing examples on how to utilize it in automation"><meta itemprop="datePublished" content="2022-02-02T20:25:52+01:00" />
 <meta itemprop="dateModified" content="2022-02-02T20:25:52+01:00" />
@@ -96,11 +95,11 @@
 <p>Let&rsquo;s explore what action Run Command actually is so we can compare the two features better! To put it simply, action Run Command is just a API call. When you start a Run Command script the portal sends a POST request to this API:</p>
 <pre tabindex="0"><code>https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/runCommand?api-version=2021-07-01
 </code></pre><p>And here&rsquo;s an example of what the body of the request looks like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;commandId&#34;</span>: <span style="color:#e6db74">&#34;RunPowerShellScript&#34;</span>
-<span style="color:#e6db74">&#34;script&#34;</span>: <span style="color:#e6db74">&#34;Your script here&#34;</span>
-}
-</code></pre></div><p>But how does that help us? Well, now that we know that it' a API call we could automate it. For example, let&rsquo;s say that we have a VM that&rsquo;s a webserver and we have a URL test in Azure Monitor that checks the website that the VM hosts. The URL test checks for timeouts and will trigger an alert if the respond time goes over a configured limit. The alert then triggers a Logic App that will send a POST request to the API with a Powershell script in the request body. The script will restart the IIS service on the VM in hope that it will solve the problem.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;commandId&#34;</span>: <span style="color:#e6db74">&#34;RunPowerShellScript&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;script&#34;</span>: <span style="color:#e6db74">&#34;Your script here&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>But how does that help us? Well, now that we know that it&rsquo; a API call we could automate it. For example, let&rsquo;s say that we have a VM that&rsquo;s a webserver and we have a URL test in Azure Monitor that checks the website that the VM hosts. The URL test checks for timeouts and will trigger an alert if the respond time goes over a configured limit. The alert then triggers a Logic App that will send a POST request to the API with a Powershell script in the request body. The script will restart the IIS service on the VM in hope that it will solve the problem.</p>
 <p>Maybe I&rsquo;ll write a blogpost about that solution one day, but for now look at these refrences on <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-common-schema-integrations">how to integrate an Azure monitor alert with Logic Apps</a> and <a href="https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/azure-rest-api-through-logic-app/ba-p/2193956">how to send a Resource Graph API call with Logic Apps</a></p>
 <h2 id="managed-run-command">Managed Run Command</h2>
 <p>How about the Managed Run Command then? First I should mention that Managed Run Command is in public preview. You should always be careful to use preview features in production. Preview features do not have any SLAs, they could be dropped instead of released and if they&rsquo;re released the price for the feature can be higher than it was in preview.</p>
@@ -170,22 +169,22 @@
 <h2 id="create-a-managed-run-command-script-with-bicep">Create a Managed Run Command script with Bicep</h2>
 <p>Since Managed Run Command is a resource type and as of February of 2022 there doesn&rsquo;t seem to be a way to deploy Managed Run Command from the Azure Portal, I&rsquo;m going to show you how to deploy it through a Bicep template. I used code to deploy this code!</p>
 <p>The script that I&rsquo;m deploying does not matter as im just gonna show you how to deploy it with Bicep. So I&rsquo;m just gonna fill in some filler script. For a full reference on which properties are available with the Run Command API check <a href="https://docs.microsoft.com/en-us/azure/templates/microsoft.compute/virtualmachines/runcommands?tabs=bicep">this link.</a></p>
-<pre tabindex="0"><code>resource runcommand 'Microsoft.Compute/virtualMachines/runCommands@2021-07-01' = {
-  name: 'HelloWorld'
+<pre tabindex="0"><code>resource runcommand &#39;Microsoft.Compute/virtualMachines/runCommands@2021-07-01&#39; = {
+  name: &#39;HelloWorld&#39;
   location: resourceGroup().location
   parent: VM1
   properties: {
     source: {
-      commandId: 'HelloWorld'
-      script: 'Write-host &quot;Hello World&quot;'
+      commandId: &#39;HelloWorld&#39;
+      script: &#39;Write-host &#34;Hello World&#34;&#39;
     }
   }
 }
 </code></pre><p>What I start with is declaring a resource and using the Run Commands API. The Run Command resource is a child resource under the virtual machine resource. Meaning that I need a parent resource. For the example I&rsquo;ll call that parent for VM1. The part that is more interesting is the source property. Here I need to specify what the script is. I have used a simple Hello World command as an example, but it is also possible to use &ldquo;SciptUri&rdquo; instead. That means that you can have a script made already and stored in a storage account and then reference where the script is stored. Much simpler than writing the script into the Bicep file.</p>
 <p><em>Tip</em> If you want to use the Bicep file as a reusable template use paramters for commandId and scriptUri so you can define what script you wanna run and where it&rsquo;s located.</p>
 <p>You can use the Bicep code in your VM deployment template for doing post deployment configuration or by by referencing an existing VM in the Bicep file. Like this:</p>
-<pre tabindex="0"><code>resource VM1 'Microsoft.Compute/virtualMachines@2021-07-01' existing = {
-  name: 'VM1'
+<pre tabindex="0"><code>resource VM1 &#39;Microsoft.Compute/virtualMachines@2021-07-01&#39; existing = {
+  name: &#39;VM1&#39;
 }
 </code></pre><h2 id="summary">Summary</h2>
 <p>In this blogpost I have described the two different versions of the Run Command feature and compared them. The two examples of how to use the features have given an insight into other options to use them other than just runnning a command through the portal. Writing this blog and diving deeper into the technical side of the feature has been exiting and it is just why I started this blog. I&rsquo;m sure that this won&rsquo;t be the last time that I write about this feature as I continue to play with it on my own.</p>
@@ -234,11 +233,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optmization-in-the-wild/">Cost Optmization in the Wild</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/finding-orphaned-resources/">Reduce your Azure cost by finding unused resources</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/help-santa-secure-his-naughtylist/">Help Santa Secure His Naughty List</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/deploymentscripts-in-bicep/">Run scripts on VMs after deployment with Bicep</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/query-azure-policy-compliance/">Query Azure Policy Compliance results using KQL</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blogposts/azure-sql-allowallazureip/">The SQL Server AllowAllAzureIps setting</a></li>
 		</ul>
 	</div>
 </div>
@@ -260,11 +259,13 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/bicep/" title="Bicep">Bicep</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/compute/" title="Compute">Compute</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cost-management/" title="Cost Management">Cost Management</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cost-optimization/" title="Cost Optimization">Cost Optimization</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/festive-tech-calendar/" title="Festive Tech Calendar">Festive Tech Calendar</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/governance/" title="Governance">Governance</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iac/" title="IaC">IaC</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kql/" title="KQL">KQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/operations/" title="Operations">Operations</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/public-speaking/" title="Public Speaking">Public Speaking</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
 	</div>
 </div>
@@ -284,7 +285,7 @@
 			</a>
 		</div>
 		<div class="widget-social__item widget__item">
-			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Erlendrushf" target="_blank">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/Fr3xzy" target="_blank">
 				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
 				<span>GitHub</span>
 			</a>
