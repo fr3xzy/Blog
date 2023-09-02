@@ -6,7 +6,16 @@
     <description>Recent content on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Jun 2023 22:27:19 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Sep 2023 10:49:59 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automate common cost optimizations</title>
+      <link>/blogposts/azurebacktoschool23/</link>
+      <pubDate>Sat, 02 Sep 2023 10:49:59 +0200</pubDate>
+      
+      <guid>/blogposts/azurebacktoschool23/</guid>
+      <description>Most of the common Azure cost optimizations are quick-fixes. These could include Public IPs that have been forgotten, VM Snapshots that have been lying around for too long or VMs that are stopped, but not deallocated. To have good cost hygiene in your environment, you could automate this using Azure Automation. In this article, I will show you how to automate common cost optimizations. Please check out Azure Back to School for more good content from the Azure Community</description>
+    </item>
+    
     <item>
       <title>Cost Optmization in the Wild</title>
       <link>/blogposts/cost-optmization-in-the-wild/</link>
@@ -119,7 +128,7 @@ The two versions of Run Command Something I didn&amp;rsquo;t mention in my last 
       <guid>/about/</guid>
       <description>Erlend is working as a Senior consultant for Innofactor in Norway. He is specialized in Microsoft Azure and is certified at expert level within the subject. He specializes in Azure Cost Optimization and have created cost optimization services that have helped customers save hundreds of thousands of Euros in Azure. Join him on his journey exploring the exciting field of Cloud!
 Certifications:
-AZ-104 - Azure Administrator Associate AZ-140 - Azure Virtual Desktop Speciality AZ-305 - Azure Solution Architect Expert AZ-500 - Azure Security Engineer Associate SC-300 - Identity and Access Administrator Associate CLF-C01 - AWS Certified Cloud practitioner </description>
+AZ-104 - Azure Administrator Associate AZ-140 - Azure Virtual Desktop Speciality AZ-305 - Azure Solution Architect Expert AZ-500 - Azure Security Engineer Associate SC-300 - Identity and Access Administrator Associate FOCP - FinOps Certified Practitioner CLF-C01 - AWS Certified Cloud practitioner </description>
     </item>
     
   </channel>
