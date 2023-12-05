@@ -6,7 +6,17 @@
     <description>Recent content in Cost Management on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Mar 2023 10:00:00 +0100</lastBuildDate><atom:link href="/tags/cost-management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 00:00:00 +0100</lastBuildDate><atom:link href="/tags/cost-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Santa´s Magic Cost Management Automation</title>
+      <link>/blogposts/santas-magic-cost-management-automation/</link>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0100</pubDate>
+      
+      <guid>/blogposts/santas-magic-cost-management-automation/</guid>
+      <description>This blogpost is posted in correlation with the Festive Tech Calendar. Festive Tech Calendar is a community event that goes on through the whole of December. The event is raising donations for the Raspberry PI Foundation. The Raspberry PI Foundation is a charity that help children learn to code. Please checkout the Just Giving page and the Festive Tech Calendar.
+Santa&amp;rsquo;s workshop has changed immensely the last 10 years. With kids wanting iPhones, PlayStations or the newest Fortnite battle pass.</description>
+    </item>
+    
     <item>
       <title>Reduce your Azure cost by finding unused resources</title>
       <link>/blogposts/finding-orphaned-resources/</link>

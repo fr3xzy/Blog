@@ -6,13 +6,40 @@
     <description>Recent content in Tags on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Sep 2023 10:49:59 +0200</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 00:00:00 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automation</title>
       <link>/tags/automation/</link>
-      <pubDate>Sat, 02 Sep 2023 10:49:59 +0200</pubDate>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0100</pubDate>
       
       <guid>/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cost Management</title>
+      <link>/tags/cost-management/</link>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0100</pubDate>
+      
+      <guid>/tags/cost-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Festive Tech Calendar</title>
+      <link>/tags/festive-tech-calendar/</link>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0100</pubDate>
+      
+      <guid>/tags/festive-tech-calendar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Governance</title>
+      <link>/tags/governance/</link>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0100</pubDate>
+      
+      <guid>/tags/governance/</guid>
       <description></description>
     </item>
     
@@ -40,15 +67,6 @@
       <pubDate>Mon, 12 Jun 2023 22:27:19 +0200</pubDate>
       
       <guid>/tags/azure-policy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Governance</title>
-      <link>/tags/governance/</link>
-      <pubDate>Mon, 12 Jun 2023 22:27:19 +0200</pubDate>
-      
-      <guid>/tags/governance/</guid>
       <description></description>
     </item>
     
@@ -89,29 +107,11 @@
     </item>
     
     <item>
-      <title>Cost Management</title>
-      <link>/tags/cost-management/</link>
-      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
-      
-      <guid>/tags/cost-management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Bicep</title>
       <link>/tags/bicep/</link>
       <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
       
       <guid>/tags/bicep/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Festive Tech Calendar</title>
-      <link>/tags/festive-tech-calendar/</link>
-      <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
-      
-      <guid>/tags/festive-tech-calendar/</guid>
       <description></description>
     </item>
     
