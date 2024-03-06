@@ -6,7 +6,16 @@
     <description>Recent content in Azure Automation on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Feb 2022 13:13:44 +0100</lastBuildDate><atom:link href="/tags/azure-automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Mar 2024 18:27:58 +0100</lastBuildDate><atom:link href="/tags/azure-automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log Analytics Agent deprecation - Prepare for the end</title>
+      <link>/blogposts/log-analytics-agent-deprecation/</link>
+      <pubDate>Wed, 06 Mar 2024 18:27:58 +0100</pubDate>
+      
+      <guid>/blogposts/log-analytics-agent-deprecation/</guid>
+      <description>On the 31st of August 2024, Microsoft will deprecate the Log Analytics VM Agent. This change has been announced years ago, but still many are not prepared. How can you assess your environment and migrate to the Azure Monitor Agent before the agent will stop working. In this 2 part blog service, we will look at how you can find and migrate away from the Log Analytics Agent before the VM extension gets deprecated.</description>
+    </item>
+    
     <item>
       <title>Update management with Azure Automation</title>
       <link>/blogposts/update-management-with-azureautomation/</link>

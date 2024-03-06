@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Erlend Rushfeldt - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Dec 2023 00:00:00 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Mar 2024 18:27:58 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Automation</title>
+      <link>/tags/azure-automation/</link>
+      <pubDate>Wed, 06 Mar 2024 18:27:58 +0100</pubDate>
+      
+      <guid>/tags/azure-automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure Compute</title>
+      <link>/tags/azure-compute/</link>
+      <pubDate>Wed, 06 Mar 2024 18:27:58 +0100</pubDate>
+      
+      <guid>/tags/azure-compute/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure Spring Clean</title>
+      <link>/tags/azure-spring-clean/</link>
+      <pubDate>Wed, 06 Mar 2024 18:27:58 +0100</pubDate>
+      
+      <guid>/tags/azure-spring-clean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KQL</title>
+      <link>/tags/kql/</link>
+      <pubDate>Wed, 06 Mar 2024 18:27:58 +0100</pubDate>
+      
+      <guid>/tags/kql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Automation</title>
       <link>/tags/automation/</link>
@@ -71,15 +107,6 @@
     </item>
     
     <item>
-      <title>KQL</title>
-      <link>/tags/kql/</link>
-      <pubDate>Mon, 12 Jun 2023 22:27:19 +0200</pubDate>
-      
-      <guid>/tags/kql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Public Speaking</title>
       <link>/tags/public-speaking/</link>
       <pubDate>Mon, 12 Jun 2023 22:27:19 +0200</pubDate>
@@ -94,15 +121,6 @@
       <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
       
       <guid>/tags/azure-resource-graph/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Azure Spring Clean</title>
-      <link>/tags/azure-spring-clean/</link>
-      <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
-      
-      <guid>/tags/azure-spring-clean/</guid>
       <description></description>
     </item>
     
@@ -184,24 +202,6 @@
       <pubDate>Wed, 23 Mar 2022 13:57:21 +0100</pubDate>
       
       <guid>/tags/azure-firewall/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Azure Automation</title>
-      <link>/tags/azure-automation/</link>
-      <pubDate>Sun, 27 Feb 2022 13:13:44 +0100</pubDate>
-      
-      <guid>/tags/azure-automation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Azure Compute</title>
-      <link>/tags/azure-compute/</link>
-      <pubDate>Sun, 27 Feb 2022 13:13:44 +0100</pubDate>
-      
-      <guid>/tags/azure-compute/</guid>
       <description></description>
     </item>
     
