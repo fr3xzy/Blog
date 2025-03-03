@@ -9,11 +9,11 @@
     <lastBuildDate>Sun, 02 Mar 2025 20:32:21 +0100</lastBuildDate>
     <atom:link href="//localhost:1313/blogposts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cost-Optimizing-Azure-Monitor</title>
+      <title>Cost Optimizing Azure Monitor</title>
       <link>//localhost:1313/blogposts/cost-optimizing-azure-monitor/</link>
       <pubDate>Sun, 02 Mar 2025 20:32:21 +0100</pubDate>
       <guid>//localhost:1313/blogposts/cost-optimizing-azure-monitor/</guid>
-      <description></description>
+      <description>&lt;p&gt;Insight into your platform can be of huge benefit to both operations, developers and the security team, but logging to much can result in high costs. How can you optimize logging and monitoring to pay for only what you need. There are several ways to save on logging and some patterns and anti-patterns to be aware of to not overspend on logging. Let&amp;rsquo;s look at that now.&lt;/p&gt;&#xA;&lt;p&gt;Before we start, I would like to thank Thomas Thornton and Joe Carlyle who are once again hosting the Azure Spring Clean! And don&amp;rsquo;t forget to check out the other amazing contributions to the community event over at the &lt;a href=&#34;https://azurespringclean.com/&#34;&gt;Azure Spring clean website.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Log Analytics Agent deprecation - Prepare for the end</title>

@@ -3,12 +3,14 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cost-Optimizing-Azure-Monitor - Erlend Rushfeldt - Blog</title>
+	<title>Cost Optimizing Azure Monitor - Erlend Rushfeldt - Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 		<meta property="og:url" content="//localhost:1313/blogposts/cost-optimizing-azure-monitor/">
   <meta property="og:site_name" content="Erlend Rushfeldt - Blog">
-  <meta property="og:title" content="Cost-Optimizing-Azure-Monitor">
+  <meta property="og:title" content="Cost Optimizing Azure Monitor">
+  <meta property="og:description" content="Insight into your platform can be of huge benefit to both operations, developers and the security team, but logging to much can result in high costs. How can you optimize logging and monitoring to pay for only what you need. There are several ways to save on logging and some patterns and anti-patterns to be aware of to not overspend on logging. Let’s look at that now.
+Before we start, I would like to thank Thomas Thornton and Joe Carlyle who are once again hosting the Azure Spring Clean! And don’t forget to check out the other amazing contributions to the community event over at the Azure Spring clean website.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blogposts">
@@ -16,12 +18,17 @@
     <meta property="article:modified_time" content="2025-03-02T20:32:21+01:00">
 
 		
-  <meta itemprop="name" content="Cost-Optimizing-Azure-Monitor">
+  <meta itemprop="name" content="Cost Optimizing Azure Monitor">
+  <meta itemprop="description" content="Insight into your platform can be of huge benefit to both operations, developers and the security team, but logging to much can result in high costs. How can you optimize logging and monitoring to pay for only what you need. There are several ways to save on logging and some patterns and anti-patterns to be aware of to not overspend on logging. Let’s look at that now.
+Before we start, I would like to thank Thomas Thornton and Joe Carlyle who are once again hosting the Azure Spring Clean! And don’t forget to check out the other amazing contributions to the community event over at the Azure Spring clean website.">
   <meta itemprop="datePublished" content="2025-03-02T20:32:21+01:00">
   <meta itemprop="dateModified" content="2025-03-02T20:32:21+01:00">
+  <meta itemprop="wordCount" content="418">
 		
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Cost-Optimizing-Azure-Monitor">
+  <meta name="twitter:title" content="Cost Optimizing Azure Monitor">
+  <meta name="twitter:description" content="Insight into your platform can be of huge benefit to both operations, developers and the security team, but logging to much can result in high costs. How can you optimize logging and monitoring to pay for only what you need. There are several ways to save on logging and some patterns and anti-patterns to be aware of to not overspend on logging. Let’s look at that now.
+Before we start, I would like to thank Thomas Thornton and Joe Carlyle who are once again hosting the Azure Spring Clean! And don’t forget to check out the other amazing contributions to the community event over at the Azure Spring clean website.">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -71,7 +78,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Cost-Optimizing-Azure-Monitor</h1>
+			<h1 class="post__title">Cost Optimizing Azure Monitor</h1>
 			<p class="post__lead">Example lead - highlighted near the title</p>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
@@ -82,10 +89,22 @@
 		
 	<figure class="post__thumbnail thumbnail">
 		
-		<img class="thumbnail__image" src="/img/placeholder.png" alt="Cost-Optimizing-Azure-Monitor">
+		<img class="thumbnail__image" src="/img/placeholder.png" alt="Cost Optimizing Azure Monitor">
 		
 	</figure><div class="content post__content clearfix">
-			
+			<p>Insight into your platform can be of huge benefit to both operations, developers and the security team, but logging to much can result in high costs. How can you optimize logging and monitoring to pay for only what you need. There are several ways to save on logging and some patterns and anti-patterns to be aware of to not overspend on logging. Let&rsquo;s look at that now.</p>
+<p>Before we start, I would like to thank Thomas Thornton and Joe Carlyle who are once again hosting the Azure Spring Clean! And don&rsquo;t forget to check out the other amazing contributions to the community event over at the <a href="https://azurespringclean.com/">Azure Spring clean website.</a></p>
+<h2 id="one-or-many-workspaces">One or many workspaces?</h2>
+<p>The first question that you need to take into account when looking at optimizing your loggingstrategy is &ldquo;Do I need all my logs in a central workspace?&rdquo;. There are some benefits to having all your logs in one workspace, and it used to be a recommended best-practice from Microsoft in the Azure Landing zones reference architecture. Having a central workspace makes it easy to have a single pane of glass for all your logs from the whole platform. It was also recommended to use this workspace for Sentinel. There was one big backside to this; it was expensive. When you activate Sentinel on a workspace, you double the cost for ingesting logs. Now, you would get the first 90 days of retention for free, compared to the 30 days with a regular workspace, but luckily there are now other features that can help us keep the first 90 days of retention low, but we will get to that.</p>
+<p>So you now pay double for ingesting all your logs into the central workspace with Sentinel activated, but at least you can now have your security team simply monitor and query all the logs from the platform. Thats good right? Well, are all Azure logs vital or even related to security? No. Metrics and application insights logs are some of the larger log tables we have and usually they don&rsquo;t really matter for security.</p>
+<p>Another topic is that for Sentinel, you usually want a longer retention for those logs. Sometimes it&rsquo;s for regulatory reasons, other times for practicality. You probably don&rsquo;t need more than 3 months of metrics from your app service or no need to keep those application exemptions from 6 months ago in your logs?</p>
+<h2 id="analyzing-usage">Analyzing usage</h2>
+<h2 id="basic-logs-and-archive-logs">Basic logs and archive logs</h2>
+<h2 id="move-to-resource-specific-logs">Move to resource specific logs</h2>
+<h2 id="table-transformation">Table Transformation</h2>
+<h2 id="export-for-long-term-storage">Export for long-term storage</h2>
+<h2 id="alerting">Alerting</h2>
+
 		</div>
 		<footer class="post__footer">
 			
@@ -115,7 +134,7 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optimizing-azure-monitor/">Cost-Optimizing-Azure-Monitor</a></li>
+			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optimizing-azure-monitor/">Cost Optimizing Azure Monitor</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/log-analytics-agent-deprecation/">Log Analytics Agent deprecation - Prepare for the end</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/santas-magic-cost-management-automation/">Santa´s Magic Cost Management Automation</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/azurebacktoschool23/">Automate common cost optimizations</a></li>
