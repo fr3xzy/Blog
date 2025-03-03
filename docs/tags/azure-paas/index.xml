@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure PaaS on Erlend Rushfeldt - Blog</title>
-    <link>//localhost:1313/tags/azure-paas/</link>
+    <link>/tags/azure-paas/</link>
     <description>Recent content in Azure PaaS on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Apr 2022 09:08:39 +0200</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/azure-paas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/azure-paas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The SQL Server AllowAllAzureIps setting</title>
-      <link>//localhost:1313/blogposts/azure-sql-allowallazureip/</link>
+      <link>/blogposts/azure-sql-allowallazureip/</link>
       <pubDate>Wed, 27 Apr 2022 09:08:39 +0200</pubDate>
-      <guid>//localhost:1313/blogposts/azure-sql-allowallazureip/</guid>
+      <guid>/blogposts/azure-sql-allowallazureip/</guid>
       <description>&lt;p&gt;This is going to be a longer one. You have been warned!&#xA;This adventure started last week when I attended the Azure User Group Norway with a session on Azure SQL networking secrets by &lt;a href=&#34;https://twitter.com/Dennes&#34;&gt;Dennes Torres&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Dennes showed a setting in the firewall rules on Azure SQL server that said, &amp;ldquo;Allow Azure services and resources to access this server&amp;rdquo;. Now you might think &amp;ldquo;Yeah, I need that for my App Service to access the database&amp;rdquo;, but in reality, this setting will allow &lt;strong&gt;ALL&lt;/strong&gt; Azure IPs to access the SQL server! Both me and the other attendees at the session was in shock and thought &amp;ldquo;How do I prevent this from being turned on?&amp;rdquo;. This got me diving down the rabbit hole of firewall rules on Azure SQL server and how this setting worked.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure Automation on Erlend Rushfeldt - Blog</title>
-    <link>//localhost:1313/tags/azure-automation/</link>
+    <link>/tags/azure-automation/</link>
     <description>Recent content in Azure Automation on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Mar 2024 18:27:58 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/azure-automation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/azure-automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Log Analytics Agent deprecation - Prepare for the end</title>
-      <link>//localhost:1313/blogposts/log-analytics-agent-deprecation/</link>
+      <link>/blogposts/log-analytics-agent-deprecation/</link>
       <pubDate>Wed, 06 Mar 2024 18:27:58 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/log-analytics-agent-deprecation/</guid>
+      <guid>/blogposts/log-analytics-agent-deprecation/</guid>
       <description>&lt;p&gt;On the 31st of August 2024, Microsoft will deprecate the Log Analytics VM Agent. This change has been announced years ago, but still many are not prepared. How can you assess your environment and migrate to the Azure Monitor Agent before the agent will stop working. In this 2 part blog service, we will look at how you can find and migrate away from the Log Analytics Agent before the VM extension gets deprecated. In part 1 we will start by finding the affected VMs we will need to migrate.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Update management with Azure Automation</title>
-      <link>//localhost:1313/blogposts/update-management-with-azureautomation/</link>
+      <link>/blogposts/update-management-with-azureautomation/</link>
       <pubDate>Sun, 27 Feb 2022 13:13:44 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/update-management-with-azureautomation/</guid>
+      <guid>/blogposts/update-management-with-azureautomation/</guid>
       <description>&lt;p&gt;With information security coming into the spotlight of mainstream media after more and more big companies experience millions of dollars in revenue loss due to security breaches and ransomware. Security is becoming, if not already; the field of IT with the most attention at it. Both companies and individuals are tearing apart operating systems and applications alike trying to find and even exploit the vulnerabilities they find. All this have made it even more critical for IT departments to be fast and thorough with patching systems because they are always catching up to the vulnerabilities.&lt;/p&gt;</description>
     </item>
     <item>
       <title>VM operations in Azure without RDP</title>
-      <link>//localhost:1313/blogposts/vm-operations-wo-rdp/</link>
+      <link>/blogposts/vm-operations-wo-rdp/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/vm-operations-wo-rdp/</guid>
+      <guid>/blogposts/vm-operations-wo-rdp/</guid>
       <description>&lt;p&gt;The &amp;ldquo;Traditional&amp;rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then?&#xA;You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended.&lt;/p&gt;</description>
     </item>
   </channel>

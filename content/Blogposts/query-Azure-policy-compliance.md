@@ -16,7 +16,7 @@ type: "blog"
 thumbnail: "img/policy.PNG" # Thumbnail image
 lead: "How do you get more information about your Azure policy compliance?" # Lead text
 comments: false # Enable Disqus comments for specific page
-authorbox: true # Enable authorbox for specific page
+authorbox: false # Enable authorbox for specific page
 pager: false # Enable pager navigation (prev/next) for specific page
 toc: false # Enable Table of Contents for specific page
 mathjax: true # Enable MathJax for specific page

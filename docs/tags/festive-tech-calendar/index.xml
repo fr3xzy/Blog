@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Festive Tech Calendar on Erlend Rushfeldt - Blog</title>
-    <link>//localhost:1313/tags/festive-tech-calendar/</link>
+    <link>/tags/festive-tech-calendar/</link>
     <description>Recent content in Festive Tech Calendar on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 Dec 2023 00:00:00 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/festive-tech-calendar/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/festive-tech-calendar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Santa´s Magic Cost Management Automation</title>
-      <link>//localhost:1313/blogposts/santas-magic-cost-management-automation/</link>
+      <link>/blogposts/santas-magic-cost-management-automation/</link>
       <pubDate>Tue, 05 Dec 2023 00:00:00 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/santas-magic-cost-management-automation/</guid>
+      <guid>/blogposts/santas-magic-cost-management-automation/</guid>
       <description>&lt;p&gt;This blogpost is posted in correlation with the Festive Tech Calendar. Festive Tech Calendar is a community event that goes on through the whole of December. The event is raising donations for the Raspberry PI Foundation. The Raspberry PI Foundation is a charity that help children learn to code. Please checkout the &lt;a href=&#34;https://www.justgiving.com/page/festive-tech-calendar-2023&#34;&gt;Just Giving page&lt;/a&gt; and the &lt;a href=&#34;https://festivetechcalendar.com/&#34;&gt;Festive Tech Calendar&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Santa&amp;rsquo;s workshop has changed immensely the last 10 years. With kids wanting iPhones, PlayStations or the newest Fortnite battle pass. To adopt to this, half of the elves now work as developers from home, writing code for new cool games and digital toys. In the year 2023, AI is on the rise and Santa wants to capitalize on the hype and produce new cool toys using AI. To innovate new toys, the elves has gotten their own Azure Sandbox subscriptions to play around with the new services.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Help Santa Secure His Naughty List</title>
-      <link>//localhost:1313/blogposts/help-santa-secure-his-naughtylist/</link>
+      <link>/blogposts/help-santa-secure-his-naughtylist/</link>
       <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/help-santa-secure-his-naughtylist/</guid>
+      <guid>/blogposts/help-santa-secure-his-naughtylist/</guid>
       <description>&lt;p&gt;Even on the North Pole they must adopt new technologies, and Santa has started using Bicep to deploy his list of this year&amp;rsquo;s presents. Last year, Santa got a huge fine from the North pole Data Protection Authority after he committed the full naughty list into source control in a public repository. This year, Santa needs help with securing his secrets in Bicep templates during deployments!&lt;/p&gt;&#xA;&lt;p&gt;Before I start the blogpost, I want to give a shoutout to the organizers of the Festive Tech Calendar for the amazing work they do! This year&amp;rsquo;s Festive Tech Calendar are raising money for the charity &lt;a href=&#34;https://www.missingpeople.org.uk/&#34;&gt;Missing people&lt;/a&gt;. A charity that helps find and reconnect missing persons with their loved ones. If you want to help in the fundraising, you can go to this &lt;a href=&#34;https://www.justgiving.com/fundraising/festivetechcalendar2022&#34;&gt;website&lt;/a&gt; and donate. Thank you!&lt;/p&gt;</description>
     </item>
   </channel>

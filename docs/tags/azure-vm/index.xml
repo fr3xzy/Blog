@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure VM on Erlend Rushfeldt - Blog</title>
-    <link>//localhost:1313/tags/azure-vm/</link>
+    <link>/tags/azure-vm/</link>
     <description>Recent content in Azure VM on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Aug 2022 12:34:42 +0200</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/azure-vm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/azure-vm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Run scripts on VMs after deployment with Bicep</title>
-      <link>//localhost:1313/blogposts/deploymentscripts-in-bicep/</link>
+      <link>/blogposts/deploymentscripts-in-bicep/</link>
       <pubDate>Thu, 04 Aug 2022 12:34:42 +0200</pubDate>
-      <guid>//localhost:1313/blogposts/deploymentscripts-in-bicep/</guid>
+      <guid>/blogposts/deploymentscripts-in-bicep/</guid>
       <description>&lt;p&gt;Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! &lt;strong&gt;Note&lt;/strong&gt; that there is other services like &lt;a href=&#34;https://docs.microsoft.com/nb-no/azure/automation/automation-dsc-overview&#34;&gt;Azure Automation&lt;/a&gt; and &lt;a href=&#34;https://docs.microsoft.com/nb-no/azure/automanage/automanage-virtual-machines#participating-services&#34;&gt;Azure Automanage&lt;/a&gt; that do DSC, but this blogpost is about Run Commands.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Introduction to Automanage</title>
-      <link>//localhost:1313/blogposts/intro-to-automanage/</link>
+      <link>/blogposts/intro-to-automanage/</link>
       <pubDate>Fri, 22 Apr 2022 09:53:13 +0200</pubDate>
-      <guid>//localhost:1313/blogposts/intro-to-automanage/</guid>
+      <guid>/blogposts/intro-to-automanage/</guid>
       <description>&lt;p&gt;What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-automanage&#34;&gt;What is Automanage?&lt;/h2&gt;&#xA;&lt;p&gt;Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Use Run Command to run scripts on your VM</title>
-      <link>//localhost:1313/blogposts/run-command/</link>
+      <link>/blogposts/run-command/</link>
       <pubDate>Wed, 02 Feb 2022 20:25:52 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/run-command/</guid>
+      <guid>/blogposts/run-command/</guid>
       <description>&lt;p&gt;I started my previous blog by introducing Azure Run Command as a feature to run Powershell and Bash scripts on VMs straight from the Azure Portal. In this blog I&amp;rsquo;m gonna dive deeper into the feature and show a real life example of how to use it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-two-versions-of-run-command&#34;&gt;The two versions of Run Command&lt;/h2&gt;&#xA;&lt;p&gt;Something I didn&amp;rsquo;t mention in my last blog is that there are actually two different versions of Run Command. They are action Run Command and Managed Run Command. Action Run Command is the most known version. This is also the feature that you have in the menu for VMs in Azure:&lt;/p&gt;</description>
     </item>
     <item>
       <title>VM operations in Azure without RDP</title>
-      <link>//localhost:1313/blogposts/vm-operations-wo-rdp/</link>
+      <link>/blogposts/vm-operations-wo-rdp/</link>
       <pubDate>Tue, 11 Jan 2022 10:36:34 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/vm-operations-wo-rdp/</guid>
+      <guid>/blogposts/vm-operations-wo-rdp/</guid>
       <description>&lt;p&gt;The &amp;ldquo;Traditional&amp;rdquo; way to manage servers was to RDP or SSH into them and apply the changes you needed to do. And this was regarded as safe to do (Not by everyone of course) since you usually already were inside the office or datacenter. But when your servers are in another datacenter or even on the other side of the world, what can you do then?&#xA;You can just open up RDP for your IP-address or a whole range of IP-addresses, but it is not recommended.&lt;/p&gt;</description>
     </item>
   </channel>

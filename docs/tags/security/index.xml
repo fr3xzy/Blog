@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Erlend Rushfeldt - Blog</title>
-    <link>//localhost:1313/tags/security/</link>
+    <link>/tags/security/</link>
     <description>Recent content in Security on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Help Santa Secure His Naughty List</title>
-      <link>//localhost:1313/blogposts/help-santa-secure-his-naughtylist/</link>
+      <link>/blogposts/help-santa-secure-his-naughtylist/</link>
       <pubDate>Fri, 23 Dec 2022 00:00:00 +0100</pubDate>
-      <guid>//localhost:1313/blogposts/help-santa-secure-his-naughtylist/</guid>
+      <guid>/blogposts/help-santa-secure-his-naughtylist/</guid>
       <description>&lt;p&gt;Even on the North Pole they must adopt new technologies, and Santa has started using Bicep to deploy his list of this year&amp;rsquo;s presents. Last year, Santa got a huge fine from the North pole Data Protection Authority after he committed the full naughty list into source control in a public repository. This year, Santa needs help with securing his secrets in Bicep templates during deployments!&lt;/p&gt;&#xA;&lt;p&gt;Before I start the blogpost, I want to give a shoutout to the organizers of the Festive Tech Calendar for the amazing work they do! This year&amp;rsquo;s Festive Tech Calendar are raising money for the charity &lt;a href=&#34;https://www.missingpeople.org.uk/&#34;&gt;Missing people&lt;/a&gt;. A charity that helps find and reconnect missing persons with their loved ones. If you want to help in the fundraising, you can go to this &lt;a href=&#34;https://www.justgiving.com/fundraising/festivetechcalendar2022&#34;&gt;website&lt;/a&gt; and donate. Thank you!&lt;/p&gt;</description>
     </item>
     <item>
       <title>The SQL Server AllowAllAzureIps setting</title>
-      <link>//localhost:1313/blogposts/azure-sql-allowallazureip/</link>
+      <link>/blogposts/azure-sql-allowallazureip/</link>
       <pubDate>Wed, 27 Apr 2022 09:08:39 +0200</pubDate>
-      <guid>//localhost:1313/blogposts/azure-sql-allowallazureip/</guid>
+      <guid>/blogposts/azure-sql-allowallazureip/</guid>
       <description>&lt;p&gt;This is going to be a longer one. You have been warned!&#xA;This adventure started last week when I attended the Azure User Group Norway with a session on Azure SQL networking secrets by &lt;a href=&#34;https://twitter.com/Dennes&#34;&gt;Dennes Torres&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Dennes showed a setting in the firewall rules on Azure SQL server that said, &amp;ldquo;Allow Azure services and resources to access this server&amp;rdquo;. Now you might think &amp;ldquo;Yeah, I need that for my App Service to access the database&amp;rdquo;, but in reality, this setting will allow &lt;strong&gt;ALL&lt;/strong&gt; Azure IPs to access the SQL server! Both me and the other attendees at the session was in shock and thought &amp;ldquo;How do I prevent this from being turned on?&amp;rdquo;. This got me diving down the rabbit hole of firewall rules on Azure SQL server and how this setting worked.&lt;/p&gt;</description>
     </item>
   </channel>

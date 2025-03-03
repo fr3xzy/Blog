@@ -16,7 +16,7 @@ type: "blog"
 thumbnail: "img/azure-operations-wo-rdp.PNG" # Thumbnail image
 lead: "How do you manage your VMs in Azure without needing to RDP to them?" # Lead text
 comments: false # Enable Disqus comments for specific page
-authorbox: true # Enable authorbox for specific page
+authorbox: false # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page
 toc: false # Enable Table of Contents for specific page
 mathjax: false # Enable MathJax for specific page

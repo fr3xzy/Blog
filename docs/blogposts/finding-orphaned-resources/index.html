@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Reduce your Azure cost by finding unused resources - Erlend Rushfeldt - Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:url" content="//localhost:1313/blogposts/finding-orphaned-resources/">
+		<meta property="og:url" content="/blogposts/finding-orphaned-resources/">
   <meta property="og:site_name" content="Erlend Rushfeldt - Blog">
   <meta property="og:title" content="Reduce your Azure cost by finding unused resources">
   <meta property="og:description" content="In Microsoft’s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment. Before I start, I would like to thank Thomas Thornton and Joe Carlyle for organizing the Azure Spring Clean. Please go check out the awesome content that other people in the community have created for the event!">
@@ -41,6 +41,7 @@
 	
 
 	<link rel="shortcut icon" href="/favicon.ico">
+		
 		
 </head>
 <body class="body">
@@ -172,11 +173,6 @@ For Public IPs we will look for public IPs where the property &ldquo;ipConfigura
 	</article>
 </main>
 
-<div class="authorbox clearfix">
-	<p class="authorbox__warning">
-		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
-	</p>
-</div>
 
 
 
@@ -202,6 +198,7 @@ For Public IPs we will look for public IPs where the property &ldquo;ipConfigura
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-firewall/" title="Azure Firewall">Azure Firewall</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-monitor/" title="Azure Monitor">Azure Monitor</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-operations/" title="Azure Operations">Azure Operations</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-paas/" title="Azure PaaS">Azure PaaS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-policy/" title="Azure Policy">Azure Policy</a>

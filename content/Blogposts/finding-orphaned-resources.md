@@ -16,7 +16,7 @@ type: "blog"
 thumbnail: "img/springcleanthumbnail.png" # Thumbnail image
 lead: "As a contribution for Azure Spring Clean, I wrote a blogpost about how to use KQL to find orphaned resources to help reduce your cloud waste." # Lead text
 comments: false # Enable Disqus comments for specific page
-authorbox: true # Enable authorbox for specific page
+authorbox: false # Enable authorbox for specific page
 pager: false # Enable pager navigation (prev/next) for specific page
 toc: false # Enable Table of Contents for specific page
 mathjax: true # Enable MathJax for specific page

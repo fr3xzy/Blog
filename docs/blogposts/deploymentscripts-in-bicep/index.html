@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Run scripts on VMs after deployment with Bicep - Erlend Rushfeldt - Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:url" content="//localhost:1313/blogposts/deploymentscripts-in-bicep/">
+		<meta property="og:url" content="/blogposts/deploymentscripts-in-bicep/">
   <meta property="og:site_name" content="Erlend Rushfeldt - Blog">
   <meta property="og:title" content="Run scripts on VMs after deployment with Bicep">
   <meta property="og:description" content="Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! Note that there is other services like Azure Automation and Azure Automanage that do DSC, but this blogpost is about Run Commands.">
@@ -41,6 +41,7 @@
 	
 
 	<link rel="shortcut icon" href="/favicon.ico">
+		
 		
 </head>
 <body class="body">
@@ -256,11 +257,6 @@ First, I&rsquo;m using PowerShell and the AZ module to create the deployment:
 	</article>
 </main>
 
-<div class="authorbox clearfix">
-	<p class="authorbox__warning">
-		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
-	</p>
-</div>
 
 
 
@@ -286,6 +282,7 @@ First, I&rsquo;m using PowerShell and the AZ module to create the deployment:
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-compute/" title="Azure Compute">Azure Compute</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-firewall/" title="Azure Firewall">Azure Firewall</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-monitor/" title="Azure Monitor">Azure Monitor</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-operations/" title="Azure Operations">Azure Operations</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-paas/" title="Azure PaaS">Azure PaaS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-policy/" title="Azure Policy">Azure Policy</a>

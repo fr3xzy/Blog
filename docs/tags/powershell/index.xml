@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PowerShell on Erlend Rushfeldt - Blog</title>
-    <link>//localhost:1313/tags/powershell/</link>
+    <link>/tags/powershell/</link>
     <description>Recent content in PowerShell on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 Sep 2023 10:49:59 +0200</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automate common cost optimizations</title>
-      <link>//localhost:1313/blogposts/azurebacktoschool23/</link>
+      <link>/blogposts/azurebacktoschool23/</link>
       <pubDate>Sat, 02 Sep 2023 10:49:59 +0200</pubDate>
-      <guid>//localhost:1313/blogposts/azurebacktoschool23/</guid>
+      <guid>/blogposts/azurebacktoschool23/</guid>
       <description>&lt;p&gt;Most of the common Azure cost optimizations are quick-fixes. These could include Public IPs that have been forgotten, VM Snapshots that have been lying around for too long or VMs that are stopped, but not deallocated. To have good cost hygiene in your environment, you could automate this using Azure Automation. In this article, I will show you how to automate common cost optimizations. Please check out &lt;a href=&#34;https://azurebacktoschool.github.io/&#34;&gt;Azure Back to School&lt;/a&gt; for more good content from the Azure Community&lt;/p&gt;</description>
     </item>
   </channel>
