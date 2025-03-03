@@ -3,15 +3,19 @@ title: "Cost Optimizing Azure Monitor"
 description: ""
 date: "2025-03-02T20:32:21+01:00"
 categories:
-  - ""
+  - "Azure"
 tags:
-  - ""
+  - "Cost Optimization"
+  - "Azure Monitor"
+  - "Governance"
+  - "KQL"
+  - "Azure Spring Clean"
 #menu: main # Optional, add page to a menu. Options: main, side, footer
 draft: true
 type: "blog"
 # Theme-Defined params
 thumbnail: "img/placeholder.png" # Thumbnail image
-lead: "Example lead - highlighted near the title" # Lead text
+lead: "Blogpost about cost optimizing Log Analytics monitoring for Azure Spring Clean 2025." # Lead text
 comments: false # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
 pager: false # Enable pager navigation (prev/next) for specific page
