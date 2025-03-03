@@ -2,28 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure Spring Clean on Erlend Rushfeldt - Blog</title>
-    <link>/tags/azure-spring-clean/</link>
+    <link>//localhost:1313/tags/azure-spring-clean/</link>
     <description>Recent content in Azure Spring Clean on Erlend Rushfeldt - Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Mar 2024 18:27:58 +0100</lastBuildDate><atom:link href="/tags/azure-spring-clean/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Mar 2024 18:27:58 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/azure-spring-clean/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Log Analytics Agent deprecation - Prepare for the end</title>
-      <link>/blogposts/log-analytics-agent-deprecation/</link>
+      <link>//localhost:1313/blogposts/log-analytics-agent-deprecation/</link>
       <pubDate>Wed, 06 Mar 2024 18:27:58 +0100</pubDate>
-      
-      <guid>/blogposts/log-analytics-agent-deprecation/</guid>
-      <description>On the 31st of August 2024, Microsoft will deprecate the Log Analytics VM Agent. This change has been announced years ago, but still many are not prepared. How can you assess your environment and migrate to the Azure Monitor Agent before the agent will stop working. In this 2 part blog service, we will look at how you can find and migrate away from the Log Analytics Agent before the VM extension gets deprecated.</description>
+      <guid>//localhost:1313/blogposts/log-analytics-agent-deprecation/</guid>
+      <description>&lt;p&gt;On the 31st of August 2024, Microsoft will deprecate the Log Analytics VM Agent. This change has been announced years ago, but still many are not prepared. How can you assess your environment and migrate to the Azure Monitor Agent before the agent will stop working. In this 2 part blog service, we will look at how you can find and migrate away from the Log Analytics Agent before the VM extension gets deprecated. In part 1 we will start by finding the affected VMs we will need to migrate.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Reduce your Azure cost by finding unused resources</title>
-      <link>/blogposts/finding-orphaned-resources/</link>
+      <link>//localhost:1313/blogposts/finding-orphaned-resources/</link>
       <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
-      
-      <guid>/blogposts/finding-orphaned-resources/</guid>
-      <description>In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment.</description>
+      <guid>//localhost:1313/blogposts/finding-orphaned-resources/</guid>
+      <description>&lt;p&gt;In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment. Before I start, I would like to thank &lt;a href=&#34;https://twitter.com/tamstar1234&#34;&gt;Thomas Thornton&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/wedoAzure&#34;&gt;Joe Carlyle&lt;/a&gt; for organizing the &lt;a href=&#34;https://www.azurespringclean.com/&#34;&gt;Azure Spring Clean&lt;/a&gt;. Please go check out the awesome content that other people in the community have created for the event!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

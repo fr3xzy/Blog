@@ -2,19 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure Firewall on Erlend Rushfeldt - Blog</title>
-    <link>/tags/azure-firewall/</link>
+    <link>//localhost:1313/tags/azure-firewall/</link>
     <description>Recent content in Azure Firewall on Erlend Rushfeldt - Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Mar 2022 13:57:21 +0100</lastBuildDate><atom:link href="/tags/azure-firewall/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Mar 2022 13:57:21 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/azure-firewall/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy Azure Firewall ruleset for Azure AD with Bicep</title>
-      <link>/blogposts/azurefw-aadconnectruleset-bicep/</link>
+      <link>//localhost:1313/blogposts/azurefw-aadconnectruleset-bicep/</link>
       <pubDate>Wed, 23 Mar 2022 13:57:21 +0100</pubDate>
-      
-      <guid>/blogposts/azurefw-aadconnectruleset-bicep/</guid>
-      <description>Anyone who have used the portal to add rules to Azure Firewall will know how tedious and annoying it can get. With small fields to write both destination and source, it does get old very quick. And something that I found myself doing for several customers was setting the rules required for Azure AD Connect. I quickly got tired of doing it manually, so I created a Bicep template to deploy it much easier and faster.</description>
+      <guid>//localhost:1313/blogposts/azurefw-aadconnectruleset-bicep/</guid>
+      <description>&lt;p&gt;Anyone who have used the portal to add rules to Azure Firewall will know how tedious and annoying it can get. With small fields to write both destination and source, it does get old very quick. And something that I found myself doing for several customers was setting the rules required for Azure AD Connect. I quickly got tired of doing it manually, so I created a Bicep template to deploy it much easier and faster.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

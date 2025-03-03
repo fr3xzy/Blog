@@ -2,10 +2,9 @@ baseURL = ''
 languageCode = 'en-us'
 title = 'Erlend Rushfeldt - Blog'
 theme = 'mainroad'
-paginate = "10" # Number of posts per page
 publishdir = "docs"
 
-[Author] # Used in authorbox
+[Params.Author] # Used in authorbox
   name = "Erlend Rushfeldt"
   bio = "Erlend is a senior Consultant at Innofactor Norway who has a passion for technology and learning. Join him on his journey exploring the cloud!"
   avatar = "/img/Erlend-Rushfeldt-BW.jpg"
@@ -34,7 +33,7 @@ publishdir = "docs"
   list = "left"  # Configure layout for list pages
   single = false # Configure layout for single pages
   # Enable widgets in given order
-  widgets = ["recent", "categories", "taglist", "social", "languages"]
+  widgets = ["recent", "categories", "taglist", "social"]
 
 [Params.widgets]
   recent_num = 5 # Set the number of articles in the "Recent articles" widget

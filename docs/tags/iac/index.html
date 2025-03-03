@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>IaC - Erlend Rushfeldt - Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-		<meta property="og:title" content="IaC" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/iac/" />
+		<meta property="og:url" content="//localhost:1313/tags/iac/">
+  <meta property="og:site_name" content="Erlend Rushfeldt - Blog">
+  <meta property="og:title" content="IaC">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
 
-		<meta itemprop="name" content="IaC">
-<meta itemprop="description" content="">
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="IaC"/>
-<meta name="twitter:description" content=""/>
+		
+  <meta itemprop="name" content="IaC">
+  <meta itemprop="datePublished" content="2022-12-23T00:00:00+01:00">
+  <meta itemprop="dateModified" content="2022-12-23T00:00:00+01:00">
+		
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IaC">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -81,17 +83,15 @@
 			</a>
 		</h2>
 		<p class="list__lead post__lead">This year I am a part of the Festive Tech Calendar and this blogpost is about securing secrets in Bicep deployments, with a festive twist.</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
-</div>
+		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-12-23T00:00:00&#43;01:00">23-12-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2022-12-23T00:00:00&#43;01:00">23-12-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Even on the North Pole they must adopt new technologies, and Santa has started using Bicep to deploy his list of this year&rsquo;s presents. Last year, Santa got a huge fine from the North pole Data Protection Authority after he committed the full naughty list into source control in a public repository. This year, Santa needs help with securing his secrets in Bicep templates during deployments!
-Before I start the blogpost, I want to give a shoutout to the organizers of the Festive Tech Calendar for the amazing work they do!
+		<p>Even on the North Pole they must adopt new technologies, and Santa has started using Bicep to deploy his list of this year&rsquo;s presents. Last year, Santa got a huge fine from the North pole Data Protection Authority after he committed the full naughty list into source control in a public repository. This year, Santa needs help with securing his secrets in Bicep templates during deployments!</p>
+<p>Before I start the blogpost, I want to give a shoutout to the organizers of the Festive Tech Calendar for the amazing work they do! This year&rsquo;s Festive Tech Calendar are raising money for the charity <a href="https://www.missingpeople.org.uk/">Missing people</a>. A charity that helps find and reconnect missing persons with their loved ones. If you want to help in the fundraising, you can go to this <a href="https://www.justgiving.com/fundraising/festivetechcalendar2022">website</a> and donate. Thank you!</p>
 	</div>
 </article><article class="list__item post">
 	
@@ -107,16 +107,14 @@ Before I start the blogpost, I want to give a shoutout to the organizers of the 
 			</a>
 		</h2>
 		<p class="list__lead post__lead">Do configuration management on your VMs in Azure with post-deployment scripts using Run Commands and Bicep.</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
-</div>
+		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-08-04T12:34:42&#43;02:00">04-08-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2022-08-04T12:34:42&#43;02:00">04-08-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! Note that there is other services like Azure Automation and Azure Automanage that do DSC, but this blogpost is about Run Commands.
+		<p>Bicep is an IaC-language which is created by Microsoft for Azure. Therefore, it does not have capabilities to do configuration management of Virtual machines directly. There are however ways to do some level of desired state configuration (DSC) on OS-level of Virtual machines using another Azure service. This service is Run Commands! <strong>Note</strong> that there is other services like <a href="https://docs.microsoft.com/nb-no/azure/automation/automation-dsc-overview">Azure Automation</a> and <a href="https://docs.microsoft.com/nb-no/azure/automanage/automanage-virtual-machines#participating-services">Azure Automanage</a> that do DSC, but this blogpost is about Run Commands.</p>
 	</div>
 </article><article class="list__item post">
 	
@@ -132,17 +130,16 @@ Before I start the blogpost, I want to give a shoutout to the organizers of the 
 			</a>
 		</h2>
 		<p class="list__lead post__lead">The story about a deep dive into Azure SQL firewall rules and the setting AllowAllAzureIps</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
-</div>
+		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-04-27T09:08:39&#43;02:00">27-04-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2022-04-27T09:08:39&#43;02:00">27-04-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		This is going to be a longer one. You have been warned! This adventure started last week when I attended the Azure User Group Norway with a session on Azure SQL networking secrets by Dennes Torres.
-Dennes showed a setting in the firewall rules on Azure SQL server that said, &ldquo;Allow Azure services and resources to access this server&rdquo;. Now you might think &ldquo;Yeah, I need that for my App Service to access the database&rdquo;, but in reality, this setting will allow ALL Azure IPs to access the SQL server!
+		<p>This is going to be a longer one. You have been warned!
+This adventure started last week when I attended the Azure User Group Norway with a session on Azure SQL networking secrets by <a href="https://twitter.com/Dennes">Dennes Torres</a>.</p>
+<p>Dennes showed a setting in the firewall rules on Azure SQL server that said, &ldquo;Allow Azure services and resources to access this server&rdquo;. Now you might think &ldquo;Yeah, I need that for my App Service to access the database&rdquo;, but in reality, this setting will allow <strong>ALL</strong> Azure IPs to access the SQL server! Both me and the other attendees at the session was in shock and thought &ldquo;How do I prevent this from being turned on?&rdquo;. This got me diving down the rabbit hole of firewall rules on Azure SQL server and how this setting worked.</p>
 	</div>
 </article><article class="list__item post">
 	
@@ -158,16 +155,14 @@ Dennes showed a setting in the firewall rules on Azure SQL server that said, &ld
 			</a>
 		</h2>
 		<p class="list__lead post__lead">Get the required firewallrules in Azure firewall for Azure AD connect using a Bicep template.</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
-</div>
+		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-03-23T13:57:21&#43;01:00">23-03-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2022-03-23T13:57:21&#43;01:00">23-03-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Anyone who have used the portal to add rules to Azure Firewall will know how tedious and annoying it can get. With small fields to write both destination and source, it does get old very quick. And something that I found myself doing for several customers was setting the rules required for Azure AD Connect. I quickly got tired of doing it manually, so I created a Bicep template to deploy it much easier and faster.
+		<p>Anyone who have used the portal to add rules to Azure Firewall will know how tedious and annoying it can get. With small fields to write both destination and source, it does get old very quick. And something that I found myself doing for several customers was setting the rules required for Azure AD Connect. I quickly got tired of doing it manually, so I created a Bicep template to deploy it much easier and faster.</p>
 	</div>
 </article>
 </main>
@@ -180,11 +175,11 @@ Dennes showed a setting in the firewall rules on Azure SQL server that said, &ld
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optimizing-azure-monitor/">Cost-Optimizing-Azure-Monitor</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/log-analytics-agent-deprecation/">Log Analytics Agent deprecation - Prepare for the end</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/santas-magic-cost-management-automation/">Santa´s Magic Cost Management Automation</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/azurebacktoschool23/">Automate common cost optimizations</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optmization-in-the-wild/">Cost Optmization in the Wild</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blogposts/finding-orphaned-resources/">Reduce your Azure cost by finding unused resources</a></li>
 		</ul>
 	</div>
 </div>
@@ -208,7 +203,7 @@ Dennes showed a setting in the firewall rules on Azure SQL server that said, &ld
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-operations/" title="Azure Operations">Azure Operations</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-paas/" title="Azure PaaS">Azure PaaS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-policy/" title="Azure Policy">Azure Policy</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/azure-resource-graph/" title="Azure Resource graph">Azure Resource graph</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-resource-graph/" title="Azure Resource Graph">Azure Resource Graph</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-spring-clean/" title="Azure Spring Clean">Azure Spring Clean</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-sql/" title="Azure SQL">Azure SQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-vm/" title="Azure VM">Azure VM</a>
@@ -257,7 +252,7 @@ Dennes showed a setting in the firewall rules on Azure SQL server that said, &ld
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2024 Erlend Rushfeldt - Blog.
+			&copy; 2025 Erlend Rushfeldt - Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

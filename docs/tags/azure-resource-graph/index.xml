@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Azure Resource graph on Erlend Rushfeldt - Blog</title>
-    <link>/tags/azure-resource-graph/</link>
-    <description>Recent content in Azure Resource graph on Erlend Rushfeldt - Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Azure Resource Graph on Erlend Rushfeldt - Blog</title>
+    <link>//localhost:1313/tags/azure-resource-graph/</link>
+    <description>Recent content in Azure Resource Graph on Erlend Rushfeldt - Blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Mar 2023 10:00:00 +0100</lastBuildDate><atom:link href="/tags/azure-resource-graph/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 10:00:00 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/azure-resource-graph/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reduce your Azure cost by finding unused resources</title>
-      <link>/blogposts/finding-orphaned-resources/</link>
+      <link>//localhost:1313/blogposts/finding-orphaned-resources/</link>
       <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
-      
-      <guid>/blogposts/finding-orphaned-resources/</guid>
-      <description>In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment.</description>
+      <guid>//localhost:1313/blogposts/finding-orphaned-resources/</guid>
+      <description>&lt;p&gt;In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment. Before I start, I would like to thank &lt;a href=&#34;https://twitter.com/tamstar1234&#34;&gt;Thomas Thornton&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/wedoAzure&#34;&gt;Joe Carlyle&lt;/a&gt; for organizing the &lt;a href=&#34;https://www.azurespringclean.com/&#34;&gt;Azure Spring Clean&lt;/a&gt;. Please go check out the awesome content that other people in the community have created for the event!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Query Azure Policy Compliance results using KQL</title>
-      <link>/blogposts/query-azure-policy-compliance/</link>
+      <link>//localhost:1313/blogposts/query-azure-policy-compliance/</link>
       <pubDate>Fri, 20 May 2022 17:48:39 +0200</pubDate>
-      
-      <guid>/blogposts/query-azure-policy-compliance/</guid>
-      <description>Last blogpost I showed you an Azure Policy that checked for a SQL server firewall rule. The results would be a compliance view in Azure Policy. After the blogpost, me and Dennes Torres had a chat about the results you get in the compliance view. The problem: you don&amp;rsquo;t get the resource ID or resource name for the SQL server with the setting on. This isn&amp;rsquo;t really a problem if you have only one not-compliant resource, but if you have several, it becomes tedious.</description>
+      <guid>//localhost:1313/blogposts/query-azure-policy-compliance/</guid>
+      <description>&lt;p&gt;Last blogpost I showed you an Azure Policy that checked for a SQL server firewall rule. The results would be a compliance view in Azure Policy. After the blogpost, me and Dennes Torres had a chat about the results you get in the compliance view. The problem: you don&amp;rsquo;t get the resource ID or resource name for the SQL server with the setting on. This isn&amp;rsquo;t really a problem if you have only one not-compliant resource, but if you have several, it becomes tedious.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

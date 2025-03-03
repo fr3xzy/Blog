@@ -2,29 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cost Management on Erlend Rushfeldt - Blog</title>
-    <link>/tags/cost-management/</link>
+    <link>//localhost:1313/tags/cost-management/</link>
     <description>Recent content in Cost Management on Erlend Rushfeldt - Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Dec 2023 00:00:00 +0100</lastBuildDate><atom:link href="/tags/cost-management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 00:00:00 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/cost-management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Santa´s Magic Cost Management Automation</title>
-      <link>/blogposts/santas-magic-cost-management-automation/</link>
+      <link>//localhost:1313/blogposts/santas-magic-cost-management-automation/</link>
       <pubDate>Tue, 05 Dec 2023 00:00:00 +0100</pubDate>
-      
-      <guid>/blogposts/santas-magic-cost-management-automation/</guid>
-      <description>This blogpost is posted in correlation with the Festive Tech Calendar. Festive Tech Calendar is a community event that goes on through the whole of December. The event is raising donations for the Raspberry PI Foundation. The Raspberry PI Foundation is a charity that help children learn to code. Please checkout the Just Giving page and the Festive Tech Calendar.
-Santa&amp;rsquo;s workshop has changed immensely the last 10 years. With kids wanting iPhones, PlayStations or the newest Fortnite battle pass.</description>
+      <guid>//localhost:1313/blogposts/santas-magic-cost-management-automation/</guid>
+      <description>&lt;p&gt;This blogpost is posted in correlation with the Festive Tech Calendar. Festive Tech Calendar is a community event that goes on through the whole of December. The event is raising donations for the Raspberry PI Foundation. The Raspberry PI Foundation is a charity that help children learn to code. Please checkout the &lt;a href=&#34;https://www.justgiving.com/page/festive-tech-calendar-2023&#34;&gt;Just Giving page&lt;/a&gt; and the &lt;a href=&#34;https://festivetechcalendar.com/&#34;&gt;Festive Tech Calendar&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Santa&amp;rsquo;s workshop has changed immensely the last 10 years. With kids wanting iPhones, PlayStations or the newest Fortnite battle pass. To adopt to this, half of the elves now work as developers from home, writing code for new cool games and digital toys. In the year 2023, AI is on the rise and Santa wants to capitalize on the hype and produce new cool toys using AI. To innovate new toys, the elves has gotten their own Azure Sandbox subscriptions to play around with the new services.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Reduce your Azure cost by finding unused resources</title>
-      <link>/blogposts/finding-orphaned-resources/</link>
+      <link>//localhost:1313/blogposts/finding-orphaned-resources/</link>
       <pubDate>Wed, 15 Mar 2023 10:00:00 +0100</pubDate>
-      
-      <guid>/blogposts/finding-orphaned-resources/</guid>
-      <description>In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment.</description>
+      <guid>//localhost:1313/blogposts/finding-orphaned-resources/</guid>
+      <description>&lt;p&gt;In Microsoft&amp;rsquo;s Well-Architected Framework there is a pillar for Cost Optimization. Some of the principals for optimizing cost are to continuously look for and clean up orphaned resources like disks and public IPs. In this blog I will show you some KQL queries that will help you find these resources and considerations you should take before cleaning them up. You can then use these queries in an Azure Workbook or dashboard to continuously review your environment. Before I start, I would like to thank &lt;a href=&#34;https://twitter.com/tamstar1234&#34;&gt;Thomas Thornton&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/wedoAzure&#34;&gt;Joe Carlyle&lt;/a&gt; for organizing the &lt;a href=&#34;https://www.azurespringclean.com/&#34;&gt;Azure Spring Clean&lt;/a&gt;. Please go check out the awesome content that other people in the community have created for the event!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

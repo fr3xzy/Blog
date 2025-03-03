@@ -2,135 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/azure/</loc>
+    <loc>//localhost:1313/blogposts/</loc>
+    <lastmod>2025-03-02T20:32:21+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blogposts/cost-optimizing-azure-monitor/</loc>
+    <lastmod>2025-03-02T20:32:21+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2025-03-02T20:32:21+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/azure/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/tags/azure-automation/</loc>
+    <loc>//localhost:1313/tags/azure-automation/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/tags/azure-compute/</loc>
+    <loc>//localhost:1313/tags/azure-compute/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/tags/azure-spring-clean/</loc>
+    <loc>//localhost:1313/tags/azure-spring-clean/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/</loc>
+    <loc>//localhost:1313/categories/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/tags/kql/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>//localhost:1313/blogposts/log-analytics-agent-deprecation/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/tags/kql/</loc>
+    <loc>//localhost:1313/tags/</loc>
     <lastmod>2024-03-06T18:27:58+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/log-analytics-agent-deprecation/</loc>
-    <lastmod>2024-03-06T18:27:58+01:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2024-03-06T18:27:58+01:00</lastmod>
-  </url><url>
-    <loc>/tags/automation/</loc>
+    <loc>//localhost:1313/tags/automation/</loc>
     <lastmod>2023-12-05T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/tags/cost-management/</loc>
+    <loc>//localhost:1313/tags/cost-management/</loc>
     <lastmod>2023-12-05T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/tags/festive-tech-calendar/</loc>
+    <loc>//localhost:1313/tags/festive-tech-calendar/</loc>
     <lastmod>2023-12-05T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/tags/governance/</loc>
+    <loc>//localhost:1313/tags/governance/</loc>
     <lastmod>2023-12-05T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/santas-magic-cost-management-automation/</loc>
+    <loc>//localhost:1313/blogposts/santas-magic-cost-management-automation/</loc>
     <lastmod>2023-12-05T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/azurebacktoschool23/</loc>
+    <loc>//localhost:1313/blogposts/azurebacktoschool23/</loc>
     <lastmod>2023-09-02T10:49:59+02:00</lastmod>
   </url><url>
-    <loc>/tags/cost-optimization/</loc>
+    <loc>//localhost:1313/tags/cost-optimization/</loc>
     <lastmod>2023-09-02T10:49:59+02:00</lastmod>
   </url><url>
-    <loc>/tags/powershell/</loc>
+    <loc>//localhost:1313/tags/powershell/</loc>
     <lastmod>2023-09-02T10:49:59+02:00</lastmod>
   </url><url>
-    <loc>/tags/azure-policy/</loc>
+    <loc>//localhost:1313/tags/azure-policy/</loc>
     <lastmod>2023-06-12T22:27:19+02:00</lastmod>
   </url><url>
-    <loc>/blogposts/cost-optmization-in-the-wild/</loc>
+    <loc>//localhost:1313/blogposts/cost-optmization-in-the-wild/</loc>
     <lastmod>2023-06-12T22:27:19+02:00</lastmod>
   </url><url>
-    <loc>/tags/public-speaking/</loc>
+    <loc>//localhost:1313/tags/public-speaking/</loc>
     <lastmod>2023-06-12T22:27:19+02:00</lastmod>
   </url><url>
-    <loc>/tags/azure-resource-graph/</loc>
+    <loc>//localhost:1313/tags/azure-resource-graph/</loc>
     <lastmod>2023-03-15T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/finding-orphaned-resources/</loc>
+    <loc>//localhost:1313/blogposts/finding-orphaned-resources/</loc>
     <lastmod>2023-03-15T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>/tags/bicep/</loc>
+    <loc>//localhost:1313/tags/bicep/</loc>
     <lastmod>2022-12-23T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/help-santa-secure-his-naughtylist/</loc>
+    <loc>//localhost:1313/blogposts/help-santa-secure-his-naughtylist/</loc>
     <lastmod>2022-12-23T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/tags/iac/</loc>
+    <loc>//localhost:1313/tags/iac/</loc>
     <lastmod>2022-12-23T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/tags/security/</loc>
+    <loc>//localhost:1313/tags/security/</loc>
     <lastmod>2022-12-23T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/tags/azure-vm/</loc>
+    <loc>//localhost:1313/tags/azure-vm/</loc>
     <lastmod>2022-08-04T12:34:42+02:00</lastmod>
   </url><url>
-    <loc>/blogposts/deploymentscripts-in-bicep/</loc>
+    <loc>//localhost:1313/blogposts/deploymentscripts-in-bicep/</loc>
     <lastmod>2022-08-04T12:34:42+02:00</lastmod>
   </url><url>
-    <loc>/blogposts/query-azure-policy-compliance/</loc>
+    <loc>//localhost:1313/blogposts/query-azure-policy-compliance/</loc>
     <lastmod>2022-05-20T17:48:39+02:00</lastmod>
   </url><url>
-    <loc>/tags/azure-paas/</loc>
+    <loc>//localhost:1313/tags/azure-paas/</loc>
     <lastmod>2022-04-27T09:08:39+02:00</lastmod>
   </url><url>
-    <loc>/tags/azure-sql/</loc>
+    <loc>//localhost:1313/tags/azure-sql/</loc>
     <lastmod>2022-04-27T09:08:39+02:00</lastmod>
   </url><url>
-    <loc>/blogposts/azure-sql-allowallazureip/</loc>
+    <loc>//localhost:1313/blogposts/azure-sql-allowallazureip/</loc>
     <lastmod>2022-04-27T09:08:39+02:00</lastmod>
   </url><url>
-    <loc>/tags/compute/</loc>
+    <loc>//localhost:1313/tags/compute/</loc>
     <lastmod>2022-04-22T09:53:13+02:00</lastmod>
   </url><url>
-    <loc>/blogposts/intro-to-automanage/</loc>
+    <loc>//localhost:1313/blogposts/intro-to-automanage/</loc>
     <lastmod>2022-04-22T09:53:13+02:00</lastmod>
   </url><url>
-    <loc>/tags/azure-ad-connect/</loc>
+    <loc>//localhost:1313/tags/azure-ad-connect/</loc>
     <lastmod>2022-03-23T13:57:21+01:00</lastmod>
   </url><url>
-    <loc>/tags/azure-firewall/</loc>
+    <loc>//localhost:1313/tags/azure-firewall/</loc>
     <lastmod>2022-03-23T13:57:21+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/azurefw-aadconnectruleset-bicep/</loc>
+    <loc>//localhost:1313/blogposts/azurefw-aadconnectruleset-bicep/</loc>
     <lastmod>2022-03-23T13:57:21+01:00</lastmod>
   </url><url>
-    <loc>/tags/azure-operations/</loc>
+    <loc>//localhost:1313/tags/azure-operations/</loc>
     <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/update-management-with-azureautomation/</loc>
+    <loc>//localhost:1313/blogposts/update-management-with-azureautomation/</loc>
     <lastmod>2022-02-27T13:13:44+01:00</lastmod>
   </url><url>
-    <loc>/tags/operations/</loc>
+    <loc>//localhost:1313/tags/operations/</loc>
     <lastmod>2022-02-02T20:25:52+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/run-command/</loc>
+    <loc>//localhost:1313/blogposts/run-command/</loc>
     <lastmod>2022-02-02T20:25:52+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/vm-operations-wo-rdp/</loc>
+    <loc>//localhost:1313/blogposts/vm-operations-wo-rdp/</loc>
     <lastmod>2022-01-11T10:36:34+01:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>//localhost:1313/about/</loc>
   </url>
 </urlset>

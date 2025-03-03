@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Automate common cost optimizations - Erlend Rushfeldt - Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="Post for Azure back to school 2023">
-		<meta property="og:title" content="Automate common cost optimizations" />
-<meta property="og:description" content="Post for Azure back to school 2023" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blogposts/azurebacktoschool23/" /><meta property="article:section" content="Blogposts" />
-<meta property="article:published_time" content="2023-09-02T10:49:59+02:00" />
-<meta property="article:modified_time" content="2023-09-02T10:49:59+02:00" />
+		<meta property="og:url" content="//localhost:1313/blogposts/azurebacktoschool23/">
+  <meta property="og:site_name" content="Erlend Rushfeldt - Blog">
+  <meta property="og:title" content="Automate common cost optimizations">
+  <meta property="og:description" content="Post for Azure back to school 2023">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogposts">
+    <meta property="article:published_time" content="2023-09-02T10:49:59+02:00">
+    <meta property="article:modified_time" content="2023-09-02T10:49:59+02:00">
+    <meta property="article:tag" content="Cost Optimization">
+    <meta property="article:tag" content="Automation">
+    <meta property="article:tag" content="PowerShell">
 
-		<meta itemprop="name" content="Automate common cost optimizations">
-<meta itemprop="description" content="Post for Azure back to school 2023"><meta itemprop="datePublished" content="2023-09-02T10:49:59+02:00" />
-<meta itemprop="dateModified" content="2023-09-02T10:49:59+02:00" />
-<meta itemprop="wordCount" content="1042">
-<meta itemprop="keywords" content="Cost Optimization,Automation,PowerShell," />
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Automate common cost optimizations"/>
-<meta name="twitter:description" content="Post for Azure back to school 2023"/>
+		
+  <meta itemprop="name" content="Automate common cost optimizations">
+  <meta itemprop="description" content="Post for Azure back to school 2023">
+  <meta itemprop="datePublished" content="2023-09-02T10:49:59+02:00">
+  <meta itemprop="dateModified" content="2023-09-02T10:49:59+02:00">
+  <meta itemprop="wordCount" content="1042">
+  <meta itemprop="keywords" content="Cost Optimization,Automation,PowerShell">
+		
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Automate common cost optimizations">
+  <meta name="twitter:description" content="Post for Azure back to school 2023">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -73,11 +81,9 @@
 		<header class="post__header">
 			<h1 class="post__title">Automate common cost optimizations</h1>
 			<p class="post__lead">Blog post for Azure back to school 2023</p>
-			<div class="post__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Erlend Rushfeldt</span>
-</div>
+			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-02T10:49:59&#43;02:00">02-09-2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2023-09-02T10:49:59&#43;02:00">02-09-2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
 	</span>
 </div></div>
 		</header>
@@ -102,13 +108,13 @@
 <p>To enforce either inheritence or creation of the exclusion tag, I would recommend to use Azure Policy. For inheritence I would recommend either &ldquo;Inherit a tag from the resource group&rdquo; or &ldquo;Inherit a tag from the subscription&rdquo; and for require the creation of the tag I would recommend the &ldquo;Require a tag on resources&rdquo;-policy. For all these policices, you only need to define the name of the tag. For this demo, I have named the exclusion tag &ldquo;ExcludeCostOptimization&rdquo;, but it is defined in a variable in the top of the script so you can change the name of the tag to what ever you need.</p>
 <h2 id="setting-up-the-automation-account">Setting up the Automation Account</h2>
 <p>Let&rsquo;s start by creating an Automation Account. If you are creating the account through the portal, you should be fine with using the default settings and clicking next, next, create. If you are depolying the Automation Account through code, the only thing you need to add in addition to the required properties is the managed identity. Here is what I am using with Bicep to deploy the Automation Account:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bicep" data-lang="bicep"><span style="display:flex;"><span><span style="color:#66d9ef">param</span> location <span style="color:#a6e22e">string</span> = <span style="color:#a6e22e">resourceGroup</span>().location
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bicep" data-lang="bicep"><span style="display:flex;"><span><span style="color:#66d9ef">param</span> location string = <span style="color:#a6e22e">resourceGroup</span>().location
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> automationAccount <span style="color:#e6db74">&#39;Microsoft.Automation/automationAccounts@2019-06-01&#39;</span> = {
 </span></span><span style="display:flex;"><span>  name: <span style="color:#e6db74">&#39;CostOptimizationAutomation&#39;</span>
 </span></span><span style="display:flex;"><span>  location: location
 </span></span><span style="display:flex;"><span>  identity: {
-</span></span><span style="display:flex;"><span>    type: <span style="color:#e6db74">&#39;SystemAssigned&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">type</span>: <span style="color:#e6db74">&#39;SystemAssigned&#39;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>  properties: {
 </span></span><span style="display:flex;"><span>    sku: {
@@ -169,7 +175,7 @@
 		<footer class="post__footer">
 			
 <div class="post__tags tags clearfix">
-	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 0 0 0-6 3 3 0 0 0 0 6"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/cost-optimization/" rel="tag">Cost Optimization</a>
@@ -187,15 +193,9 @@
 </main>
 
 <div class="authorbox clearfix">
-	<figure class="authorbox__avatar">
-		<img alt="Erlend Rushfeldt avatar" src="/img/Erlend-Rushfeldt-BW.jpg" class="avatar" height="90" width="90">
-	</figure>
-	<div class="authorbox__header">
-		<span class="authorbox__name">About Erlend Rushfeldt</span>
-	</div>
-	<div class="authorbox__description">
-		Erlend is a senior Consultant at Innofactor Norway who has a passion for technology and learning. Join him on his journey exploring the cloud!
-	</div>
+	<p class="authorbox__warning">
+		<strong>WARNING:</strong> Authorbox is activated, but [Author] parameters are not specified.
+	</p>
 </div>
 
 
@@ -206,11 +206,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optimizing-azure-monitor/">Cost-Optimizing-Azure-Monitor</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/log-analytics-agent-deprecation/">Log Analytics Agent deprecation - Prepare for the end</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/santas-magic-cost-management-automation/">Santa´s Magic Cost Management Automation</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/azurebacktoschool23/">Automate common cost optimizations</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optmization-in-the-wild/">Cost Optmization in the Wild</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blogposts/finding-orphaned-resources/">Reduce your Azure cost by finding unused resources</a></li>
 		</ul>
 	</div>
 </div>
@@ -225,7 +225,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-operations/" title="Azure Operations">Azure Operations</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-paas/" title="Azure PaaS">Azure PaaS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-policy/" title="Azure Policy">Azure Policy</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/azure-resource-graph/" title="Azure Resource graph">Azure Resource graph</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/azure-resource-graph/" title="Azure Resource Graph">Azure Resource Graph</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-spring-clean/" title="Azure Spring Clean">Azure Spring Clean</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-sql/" title="Azure SQL">Azure SQL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-vm/" title="Azure VM">Azure VM</a>
@@ -274,7 +274,7 @@
 	<div class="container footer__container flex">
 		
 		<div class="footer__copyright">
-			&copy; 2024 Erlend Rushfeldt - Blog.
+			&copy; 2025 Erlend Rushfeldt - Blog.
 			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
 		</div>
 	</div>

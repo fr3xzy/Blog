@@ -2,20 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compute on Erlend Rushfeldt - Blog</title>
-    <link>/tags/compute/</link>
+    <link>//localhost:1313/tags/compute/</link>
     <description>Recent content in Compute on Erlend Rushfeldt - Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 09:53:13 +0200</lastBuildDate><atom:link href="/tags/compute/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 09:53:13 +0200</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/compute/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to Automanage</title>
-      <link>/blogposts/intro-to-automanage/</link>
+      <link>//localhost:1313/blogposts/intro-to-automanage/</link>
       <pubDate>Fri, 22 Apr 2022 09:53:13 +0200</pubDate>
-      
-      <guid>/blogposts/intro-to-automanage/</guid>
-      <description>What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!
-What is Automanage? Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup.</description>
+      <guid>//localhost:1313/blogposts/intro-to-automanage/</guid>
+      <description>&lt;p&gt;What if you could make configuring the supporting services of your VMs so much easier? And without needing to assign and manage several policies. This is where Azure Automanage comes flying in like the savior you always needed!&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-automanage&#34;&gt;What is Automanage?&lt;/h2&gt;&#xA;&lt;p&gt;Automanage is as simple as a configuration profile that you apply to your VMs that will automatically configure the services that are best practice for VMs in Azure. For example, Azure Log Analytics and Azure Backup.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
