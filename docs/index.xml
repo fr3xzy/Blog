@@ -120,5 +120,12 @@
       <guid>/about/</guid>
       <description>&lt;p&gt;Erlend is working as a Consultant manager for Innofactor in Norway. He is specialized in Microsoft Azure and is certified at expert level within the subject. He specializes in Azure Cost Optimization and have created cost optimization services that have helped customers save hundreds of thousands of Euros in Azure.&#xA;Join him on his journey exploring the exciting field of Cloud!&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Certifications:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;AZ-104 - Azure Administrator Associate&lt;/li&gt;&#xA;&lt;li&gt;AZ-140 - Azure Virtual Desktop Speciality&lt;/li&gt;&#xA;&lt;li&gt;AZ-305 - Azure Solution Architect Expert&lt;/li&gt;&#xA;&lt;li&gt;AZ-500 - Azure Security Engineer Associate&lt;/li&gt;&#xA;&lt;li&gt;AZ-700 - Azure Network Engineer Associate&lt;/li&gt;&#xA;&lt;li&gt;SC-300 - Identity and Access Administrator Associate&lt;/li&gt;&#xA;&lt;li&gt;FOCP - FinOps Certified Practitioner&lt;/li&gt;&#xA;&lt;li&gt;CLF-C01 - AWS Certified Cloud practitioner&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
+    <item>
+      <title>Public Speaking</title>
+      <link>/speaking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/speaking/</guid>
+      <description>&lt;h2 id=&#34;previous-speakings&#34;&gt;Previous speakings&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;2021&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Atea Community Trondheim 2021&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;2023&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Azure User-group Norway Summer meetup&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;2024&#xA;&lt;ul&gt;&#xA;&lt;li&gt;EUCTech Spring&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=en2DQwZAHC4&#34;&gt;Microsoft Learn Zero to Hero Community&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;2025&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=bTZsm8HWEc8&#34;&gt;Microsoft Community Insights Podcast&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;upcoming-speakings&#34;&gt;Upcoming speakings&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cloudsummit.eu/en/session?guid=267d577f-ca0e-400a-b92f-966551a29545&#34;&gt;European AI &amp;amp; CloudSummit - May 2025&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
   </channel>
 </rss>

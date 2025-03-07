@@ -7,7 +7,7 @@ title: "Public Speaking"
 #tags:
 #  - ""
 menu: main # Optional, add page to a menu. Options: main, side, footer
-draft: true
+draft: false
 #type: "blog"
 # Theme-Defined params
 #thumbnail: "img/placeholder.png" # Thumbnail image
