@@ -30,6 +30,7 @@ Join him on his journey exploring the exciting field of Cloud!
 - AZ-140 - Azure Virtual Desktop Speciality
 - AZ-305 - Azure Solution Architect Expert
 - AZ-500 - Azure Security Engineer Associate
+- AZ-700 - Azure Network Engineer Associate
 - SC-300 - Identity and Access Administrator Associate
 - FOCP - FinOps Certified Practitioner
 - CLF-C01 - AWS Certified Cloud practitioner
