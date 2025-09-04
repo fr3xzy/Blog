@@ -36,7 +36,11 @@ widgets: # Enable sidebar widgets in given order per page
   - [Microsoft Learn Zero to Hero Community](https://www.youtube.com/watch?v=en2DQwZAHC4)
 - 2025
   - [Microsoft Community Insights Podcast](https://www.youtube.com/watch?v=bTZsm8HWEc8)
+  - [European AI & CloudSummit](https://cloudsummit.eu/en/session?guid=267d577f-ca0e-400a-b92f-966551a29545)
 
 ## Upcoming speakings
 
-- [European AI & CloudSummit - May 2025](https://cloudsummit.eu/en/session?guid=267d577f-ca0e-400a-b92f-966551a29545)
+- [Atea Community Trondheim September 2025](https://events.atea.no/public/events/aea2be3cf3/seminars/bfba96d07e)
+- [Atea Community Ålesund October 2025](https://events.atea.no/public/events/db56bb8f97/seminars/ccf2d8a79e)
+- [Atea Community Bergen October 2025](https://events.atea.no/public/events/dbb0587752/seminars/ae8fdcc515)
+- [Experts Live Denmark February 2026](https://eldk26.expertslive.dk/#/speakers?lang=en)

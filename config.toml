@@ -6,7 +6,7 @@ publishdir = "docs"
 
 [Params.Author] # Used in authorbox
   name = "Erlend Rushfeldt"
-  bio = "Erlend is a senior Consultant at Innofactor Norway who has a passion for technology and learning. Join him on his journey exploring the cloud!"
+  bio = "Erlend is a Cloud Advisor at Atea in Norway who has a passion for technology and learning. Join him on his journey exploring the cloud!"
   avatar = "/img/Erlend-Rushfeldt-BW.jpg"
 
 [Params]
