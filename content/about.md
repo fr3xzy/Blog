@@ -22,7 +22,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "social"
 ---
 
-Erlend is working as a Consultant manager for Innofactor in Norway. He is specialized in Microsoft Azure and is certified at expert level within the subject. He specializes in Azure Cost Optimization and have created cost optimization services that have helped customers save hundreds of thousands of Euros in Azure.
+Erlend is working as a Cloud Advisor at Atea in Norway. He is specialized in Microsoft Azure and is certified at expert level within the subject. He specializes in Azure Cost Optimization and have created cost optimization services that have helped customers save hundreds of thousands of Euros in Azure.
 Join him on his journey exploring the exciting field of Cloud!
 
 **Certifications:**
