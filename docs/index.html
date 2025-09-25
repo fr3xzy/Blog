@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.149.0">
+	<meta name="generator" content="Hugo 0.150.0">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Erlend Rushfeldt - Blog</title>
@@ -15,8 +15,8 @@
 
 		
   <meta itemprop="name" content="Erlend Rushfeldt - Blog">
-  <meta itemprop="datePublished" content="2025-03-03T10:30:21+01:00">
-  <meta itemprop="dateModified" content="2025-03-03T10:30:21+01:00">
+  <meta itemprop="datePublished" content="2025-09-25T14:20:10+02:00">
+  <meta itemprop="dateModified" content="2025-09-25T14:20:10+02:00">
 		
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Erlend Rushfeldt - Blog">
@@ -77,6 +77,30 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/blogposts/new-asp-v4-ga/">
+		<img class="thumbnail__image" src="/img/appserviceplan.png" alt="New App Service Plan v4 SKUs go GA">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/blogposts/new-asp-v4-ga/" rel="bookmark">
+			New App Service Plan v4 SKUs go GA
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Microsoft releases new App Service Plan SKU Family.</p>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2025-09-25T14:20:10&#43;02:00">25-09-2025</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		<p>In the early days of September 2025, Microsoft announced the general availability for their new v4 SKU family of the Azure App Service Plans. The new plan are based on the new v6 VMs that came GA earlier this year. The SKUs utilize new and better hardware that give big performance benefits. These new SKUs might help you realize some cost savings along the way.</p>
+<p>Like the previous generation of App Serivce Plans (v3), there are both general purpose and memory optimized SKUs. This gives the flexability to get a better right-sizing for your applications needs. The difference now, is that with the new underlying hardware, you will get a lower cost to performance. So, even though the cost is the same per core, you will get a better performance for those cores. This will highly likely result in the possiblity to down-size some plans to a lower SKU tier. For example, from a P3v3 to a P2v4.</p>
+	</div>
+</article><article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/blogposts/cost-optimizing-azure-monitor/">
@@ -399,31 +423,6 @@ If you are missing any snippets of code used in a demo, or if you have any other
 	<div class="content list__excerpt post__content clearfix">
 		<p>Last blogpost I showed you an Azure Policy that checked for a SQL server firewall rule. The results would be a compliance view in Azure Policy. After the blogpost, me and Dennes Torres had a chat about the results you get in the compliance view. The problem: you don&rsquo;t get the resource ID or resource name for the SQL server with the setting on. This isn&rsquo;t really a problem if you have only one not-compliant resource, but if you have several, it becomes tedious.</p>
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/blogposts/azure-sql-allowallazureip/">
-		<img class="thumbnail__image" src="/img/sql-server-fw-setting.png" alt="The SQL Server AllowAllAzureIps setting">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/blogposts/azure-sql-allowallazureip/" rel="bookmark">
-			The SQL Server AllowAllAzureIps setting
-			</a>
-		</h2>
-		<p class="list__lead post__lead">The story about a deep dive into Azure SQL firewall rules and the setting AllowAllAzureIps</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 1 1 0 28 1 1 0 0 1 0-28m0 3a3 3 0 1 0 0 22 3 3 0 0 0 0-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class="meta__text" datetime="2022-04-27T09:08:39&#43;02:00">27-04-2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/azure/" rel="category">Azure</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		<p>This is going to be a longer one. You have been warned!
-This adventure started last week when I attended the Azure User Group Norway with a session on Azure SQL networking secrets by <a href="https://twitter.com/Dennes">Dennes Torres</a>.</p>
-<p>Dennes showed a setting in the firewall rules on Azure SQL server that said, &ldquo;Allow Azure services and resources to access this server&rdquo;. Now you might think &ldquo;Yeah, I need that for my App Service to access the database&rdquo;, but in reality, this setting will allow <strong>ALL</strong> Azure IPs to access the SQL server! Both me and the other attendees at the session was in shock and thought &ldquo;How do I prevent this from being turned on?&rdquo;. This got me diving down the rabbit hole of firewall rules on Azure SQL server and how this setting worked.</p>
-	</div>
 </article>
 </main>
 
@@ -438,11 +437,11 @@ This adventure started last week when I attended the Azure User Group Norway wit
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/blogposts/new-asp-v4-ga/">New App Service Plan v4 SKUs go GA</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optimizing-azure-monitor/">Cost Optimizing Azure Monitor</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/log-analytics-agent-deprecation/">Log Analytics Agent deprecation - Prepare for the end</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/santas-magic-cost-management-automation/">Santa´s Magic Cost Management Automation</a></li>
 			<li class="widget__item"><a class="widget__link" href="/blogposts/azurebacktoschool23/">Automate common cost optimizations</a></li>
-			<li class="widget__item"><a class="widget__link" href="/blogposts/cost-optmization-in-the-wild/">Cost Optmization in the Wild</a></li>
 		</ul>
 	</div>
 </div>
@@ -458,6 +457,7 @@ This adventure started last week when I attended the Azure User Group Norway wit
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/app-services/" title="App Services">App Services</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/automation/" title="Automation">Automation</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-ad-connect/" title="Azure AD Connect">Azure AD Connect</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/azure-automation/" title="Azure Automation">Azure Automation</a>
@@ -479,6 +479,7 @@ This adventure started last week when I attended the Azure User Group Norway wit
 		<a class="widget-taglist__link widget__link btn" href="/tags/governance/" title="Governance">Governance</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iac/" title="IaC">IaC</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kql/" title="KQL">KQL</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/news/" title="News">News</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/operations/" title="Operations">Operations</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/powershell/" title="PowerShell">PowerShell</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/public-speaking/" title="Public Speaking">Public Speaking</a>

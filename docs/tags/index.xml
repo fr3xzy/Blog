@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Mar 2025 10:30:21 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 25 Sep 2025 14:20:10 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>App Services</title>
+      <link>/tags/app-services/</link>
+      <pubDate>Thu, 25 Sep 2025 14:20:10 +0200</pubDate>
+      <guid>/tags/app-services/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cost Optimization</title>
+      <link>/tags/cost-optimization/</link>
+      <pubDate>Thu, 25 Sep 2025 14:20:10 +0200</pubDate>
+      <guid>/tags/cost-optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>News</title>
+      <link>/tags/news/</link>
+      <pubDate>Thu, 25 Sep 2025 14:20:10 +0200</pubDate>
+      <guid>/tags/news/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Azure Monitor</title>
       <link>/tags/azure-monitor/</link>
@@ -20,13 +41,6 @@
       <link>/tags/azure-spring-clean/</link>
       <pubDate>Mon, 03 Mar 2025 10:30:21 +0100</pubDate>
       <guid>/tags/azure-spring-clean/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cost Optimization</title>
-      <link>/tags/cost-optimization/</link>
-      <pubDate>Mon, 03 Mar 2025 10:30:21 +0100</pubDate>
-      <guid>/tags/cost-optimization/</guid>
       <description></description>
     </item>
     <item>
