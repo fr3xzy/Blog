@@ -6,8 +6,15 @@
     <description>Recent content in Azure on Erlend Rushfeldt - Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Mar 2025 10:30:21 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 25 Sep 2025 14:20:10 +0200</lastBuildDate>
     <atom:link href="/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New App Service Plan v4 SKUs go GA</title>
+      <link>/blogposts/new-asp-v4-ga/</link>
+      <pubDate>Thu, 25 Sep 2025 14:20:10 +0200</pubDate>
+      <guid>/blogposts/new-asp-v4-ga/</guid>
+      <description>&lt;p&gt;In the early days of September 2025, Microsoft announced the general availability for their new v4 SKU family of the Azure App Service Plans. The new plan are based on the new v6 VMs that came GA earlier this year. The SKUs utilize new and better hardware that give big performance benefits. These new SKUs might help you realize some cost savings along the way.&lt;/p&gt;&#xA;&lt;p&gt;Like the previous generation of App Serivce Plans (v3), there are both general purpose and memory optimized SKUs. This gives the flexability to get a better right-sizing for your applications needs. The difference now, is that with the new underlying hardware, you will get a lower cost to performance. So, even though the cost is the same per core, you will get a better performance for those cores. This will highly likely result in the possiblity to down-size some plans to a lower SKU tier. For example, from a P3v3 to a P2v4.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Cost Optimizing Azure Monitor</title>
       <link>/blogposts/cost-optimizing-azure-monitor/</link>

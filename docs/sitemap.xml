@@ -2,8 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/app-services/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
     <loc>/categories/azure/</loc>
-    <lastmod>2025-03-03T10:30:21+01:00</lastmod>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
+    <loc>/blogposts/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
+    <loc>/tags/cost-optimization/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
+    <loc>/blogposts/new-asp-v4-ga/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
+    <loc>/tags/news/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-09-25T14:20:10+02:00</lastmod>
   </url><url>
     <loc>/tags/azure-monitor/</loc>
     <lastmod>2025-03-03T10:30:21+01:00</lastmod>
@@ -11,28 +35,13 @@
     <loc>/tags/azure-spring-clean/</loc>
     <lastmod>2025-03-03T10:30:21+01:00</lastmod>
   </url><url>
-    <loc>/blogposts/</loc>
-    <lastmod>2025-03-03T10:30:21+01:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2025-03-03T10:30:21+01:00</lastmod>
-  </url><url>
-    <loc>/tags/cost-optimization/</loc>
-    <lastmod>2025-03-03T10:30:21+01:00</lastmod>
-  </url><url>
     <loc>/blogposts/cost-optimizing-azure-monitor/</loc>
-    <lastmod>2025-03-03T10:30:21+01:00</lastmod>
-  </url><url>
-    <loc>/</loc>
     <lastmod>2025-03-03T10:30:21+01:00</lastmod>
   </url><url>
     <loc>/tags/governance/</loc>
     <lastmod>2025-03-03T10:30:21+01:00</lastmod>
   </url><url>
     <loc>/tags/kql/</loc>
-    <lastmod>2025-03-03T10:30:21+01:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2025-03-03T10:30:21+01:00</lastmod>
   </url><url>
     <loc>/tags/azure-automation/</loc>

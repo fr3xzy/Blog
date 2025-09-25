@@ -30,13 +30,14 @@ widgets: # Enable sidebar widgets in given order per page
 - 2021
   - Atea Community Trondheim 2021
 - 2023
-  - Azure User-group Norway Summer meetup
+  - Azure User group Norway Summer meetup
 - 2024
   - EUCTech Spring
   - [Microsoft Learn Zero to Hero Community](https://www.youtube.com/watch?v=en2DQwZAHC4)
 - 2025
   - [Microsoft Community Insights Podcast](https://www.youtube.com/watch?v=bTZsm8HWEc8)
   - [European AI & CloudSummit](https://cloudsummit.eu/en/session?guid=267d577f-ca0e-400a-b92f-966551a29545)
+  - [Azure User Group Norway - Virtual Lunch](https://www.meetup.com/azure-user-group-norway/events/306951060/?eventOrigin=group_upcoming_events)
 
 ## Upcoming speakings
 
